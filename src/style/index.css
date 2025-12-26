@@ -1,3 +1,41 @@
-	.text{
-    	font: bold 1rem "Sans-serif", Serif 
-	}
+
+
+.text{
+	margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+	color: rgb(0,0,0);
+    font: 1.3rem Serif;
+}
+
+
+.div-1{
+	display: block; 
+	margin: 20vh 0vw 0vh 30vw;
+	width: 40vw;
+}
+
+.button-1{
+	margin: 0.7rem 0.7rem 0.7rem 3rem;
+	padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+	border: 0px solid rgb(0,0,0);
+	border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+	background-color: rgb(0,0,0);
+	color: rgb(255,255,255);
+	font: bold 1.1rem Serif;
+	box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+	cursor: pointer;
+}
+
+.error{
+    position: fixed;
+    inset-inline-end: 3rem;
+    inset-block-start: 2rem;
+
+    margin: 0.7rem 0.7rem 0.7rem 3rem;
+	padding: 0.4rem 0.7rem 0.4rem 0.7rem;
+	width: 10rem;
+
+    background: rgb(255,0,0);
+	box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+    font: bold 1.0rem Serif;
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
