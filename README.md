@@ -1,14 +1,16 @@
 
 # TO DO
 
-Etape 1: Faire des tutoriels pour apprendre Vue + écrire une synthése
-Etape 2: Faire un nav comme en Angular avec "Accueil", "Jeux", "Scores", "A propos"
-2 bis: Faire compatible mobile (hors jeux- édition jeux) !!
+Déjà fait: Le nav est fini, et est en code Vue
+
 Etape 3: Creation de jeux sans API au début (un seul niveau de jeu, ou deux).
     Et donc voir à utiliser canva + comment on fait les collisions et tout...
 3 bis: Faire compatible mobile (hors jeux- édition jeux) !!
-3 bis bis: Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
-3 bis bis: Voir un premier déploiement  PAR OVH (J'ai vérifié peu cher en fait 22 par an) + faire un autre projet
+3 bis bis: Je me demande si le mieux ne sera pas de reprendre la présentation Erdline + A voir, la 
+    présentation Mynrisyta à un certain charme, mais quand même moins + d'adapter en vue mobile + aussi 
+    reprendre niveau div la façon Myrinsta (donc le titre plus à gauche, et moins grand).
+3 bis bis bis : Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
+3 bis bis bis bis: Voir un premier déploiement  PAR OVH (J'ai vérifié peu cher en fait 22 par an) + faire un autre projet
 nommé "commun_site" pour comment gérer un site en https + faire ATTENTION à quel page est affichée en *cas de 404
 serveur (Je dirai réutilise l'icone plot + mettre message en grand en centre fenetre)
 Etape 4: Creation API

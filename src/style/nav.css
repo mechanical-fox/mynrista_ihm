@@ -1,0 +1,52 @@
+
+.div-for{
+    display: inline-block; 
+    margin: 0vh 0vw 0vh 0vw;
+    padding: 0vh 0vw 0vh 0vw;
+}
+
+
+.nav-div-1{
+    display: block; 
+    margin: 4vh 0vw 0vh 2vw;
+    width: 15vw;
+}
+
+.nav-div-2{
+    display: block; 
+    margin: 0vh 0vw 0vh 17vw;
+    width: 70vw;
+}
+
+.flex-line{
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.title{
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+    color: rgb(42, 30, 170);
+    font: bold italic 1.8rem Serif;
+    text-shadow: 0.1rem 0.1rem 0.2rem rgb(186, 186, 186);
+}
+
+.item-activated{
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+    color: rgb(30, 42, 168);
+    font: bold 1.4rem Serif;
+    width: 7rem;
+    cursor: pointer;
+}
+
+.item-desactivated{
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+    color: rgb(82, 82, 82);
+    font: bold 1.4rem Serif;
+    width: 7rem;
+    cursor: pointer;
+}
+
+
