@@ -18,7 +18,9 @@ Etape 6: Gestion des scores
 Etape 7: Penser à passer sur genre Java 25 (pom.xml + changer Java / Maven sur mon ordinateur)
 Etape 7 bis: Vérifier Vue compatible mobile !!
 Etape 7 bis bis: Tests manuels !!
-Etape 7 bis bis bis: Ai je bien pensé à pouvoir gérer des environnements dev et prod ?
+Etape 7 bis bis bis: Ai je bien pensé à pouvoir gérer des environnements dev et prod ? + écrire synthèse Vue gestion des environnements
+Etape x: TEST UNITAIRE + écrire synthèse Vue
+Etape x: Voir comment avoir % couverture Test + écrire synthèse Vue
 Etape 7 bis bis bis: TEST UNITAIRE + faire GitAction + faire merge request + ensuite cela sera juste de la modification de CV
 Etape 8: Faire un bon ReadMe + bien indiquer test unitaire, déploiement...
 8 bis: Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
