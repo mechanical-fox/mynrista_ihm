@@ -1,42 +1,43 @@
 
 # TO DO
 
-Déjà fait: Le nav est fini, et est en code Vue
+EN FAIT CHANGEMENT IDEE TOTAL - Voir en bas 
 
-Etape 3: Creation de jeux sans API au début (un seul niveau de jeu, ou deux).
-    Et donc voir à utiliser canva + comment on fait les collisions et tout...
-3 bis: Faire compatible mobile (hors jeux- édition jeux) !!
-3 bis bis: Je me demande si le mieux ne sera pas de reprendre la présentation Erdline + A voir, la 
-    présentation Mynrisyta à un certain charme, mais quand même moins + d'adapter en vue mobile + aussi 
-    reprendre niveau div la façon Myrinsta (donc le titre plus à gauche, et moins grand).
-3 bis bis bis : Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
-3 bis bis bis bis: Voir un premier déploiement  PAR OVH (J'ai vérifié peu cher en fait 22 par an) + faire un autre projet
-nommé "commun_site" pour comment gérer un site en https + faire ATTENTION à quel page est affichée en *cas de 404
-serveur (Je dirai réutilise l'icone plot + mettre message en grand en centre fenetre)
-Etape 4: Creation API
-Etape 5: Creation Editeur
-Etape 6: Gestion des scores
-6 bis bis: Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
-Etape 7: Penser à passer sur genre Java 25 (pom.xml + changer Java / Maven sur mon ordinateur)
-Etape 7 bis: Vérifier Vue compatible mobile !!
-Etape 7 bis bis: Tests manuels !!
-Etape 7 bis bis bis: Ai je bien pensé à pouvoir gérer des environnements dev et prod ? + écrire synthèse Vue gestion des environnements
-Etape x: TEST UNITAIRE + écrire synthèse Vue
-Etape x: Voir comment avoir % couverture Test + écrire synthèse Vue
-Etape 7 bis bis bis: TEST UNITAIRE + faire GitAction + faire merge request + ensuite cela sera juste de la modification de CV
-Etape 8: Faire un bon ReadMe + bien indiquer test unitaire, déploiement...
-8 bis: Rappel OVH peu cher (22/ an) donc faire PAR OVH et non PAS PAR EXPRESS
-Etape 8 bis: Vérifier readMe en comparanat avec mes autres projets
-Etape 9: Penser à déployer + à utiliser un certificat https
+Refaire en README la description du projet
+Passer API en Java 25
+Verifie Vue Compatible Mobile
+Acheter OVH car en fait juste 22/an
+Faire environnement dev et prod
+Faire Test Unitaire
+Indiquer comment avoir % couverture
 
-Pour rappel, mon jeu va avoir une sorte de "grille". L'on aura des arbres, des murs...
-Il y a des personnages alliées, et ennemies qui se déplacent automatiquement.
-Et le joueur pourra dépenser des points de mécanisme, pour soit par exemple casser un mur (permanent),
-faire tourner un pont (non permanent), ouvrir / fermer une porte (non permanent)...
 
-Il y aura différent sortes de personnages, mais en gros au moins archer, soldat de base.
-Eventuellement boss à faire.
-Eventuellement cavalier à faire.
+PRESENTATION TROUVEE
+
+En haut La Barre façon Steam --> Couleur Noir ou Bleu foncée, Nom  + les boutons avec Accueil + A Propos Juste
+En bas-> Faire un fond coloré comme Steam. Pour cela changer la couleur du body.
+1- Avertisement qu'il s'agit d'un site vitrine
+2- Une liste. S'inspirer de la façon Steam de montrer les sites "tableaux"
+    Faire aussi le fait de faire un changement de couleur au survol. 
+
+
+
+EN haut une barre droite "Mynrista", inspiré de https://www.fandom.com/
+
+Juste en dessous le texte -> 
+
+2- Partie Explorer, les vignettes en très grand car peu élément au début, et faire du encadré, image, nom.
+S'inspirer de Steam au besoin.
+3- En items un peu comme Mynrista, 
+
+Faire Compatible mobile.
+PRESENTATION VOIR https://www.fandom.com/ et Steam
+Faire En fait presentation fandom comme "https://steins-gate.fandom.com" et 1er version sans compte + après avec création compte. Au début me faire une page dédié qui demande un mot de passe, et me permettre de créer les pages.
+Le site ne doit PAS apparaitre sur internet, donc bien écrire au début "portfolio" et tout. Mais faire malgré tout un message genre "alerte", mais ici genre message flotant, qui précise qu'il s'agit d'un portfolio. Et essayer au début de faire une page genre "welcome".
+L'idée c'est je le fais avec mon API, et ma base de donnée. Donc je prends des informations, et je copie. Voir j'écris moi-même si Visual Novel. Juste il y aura alors peu de jeux... Et limite je devrais jouer juste pour aider mon site...
+
+J'hesite entre Séries (informations facilement disponible), et Visual Novel... Mais Visual Novel j'aurai sans doute assez peu à dire par moi même. Et si je prend d'un autre site... bah il y aura sans doute juste un seul autre site avec ces informations, donc cela ferait un peu plagiat.
+
 
 # Projet
 
