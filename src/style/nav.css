@@ -1,4 +1,27 @@
 
+body{
+    margin: 0rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
+}
+
+.banner{
+    margin: 0rem 0rem 0rem 0rem;
+    width: 100%;
+    background-color: rgb(20, 18, 71);
+}
+
+.nav-button{
+    margin: 1.4rem 1.8rem 0.7rem 0.3rem;
+    padding: 0.2rem 0.4rem 0.2rem 0.4rem;
+    border: 0px solid rgb(0,0,0);
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    background-color: rgb(0,0,0);
+    color: rgb(255,255,255);
+    font: bold 1.0rem Serif;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+    cursor: pointer;
+}
+
 .div-for{
     display: inline-block; 
     margin: 0vh 0vw 0vh 0vw;
@@ -7,15 +30,18 @@
 
 
 .nav-div-1{
-    display: block; 
-    margin: 4vh 0vw 0vh 2vw;
-    width: 15vw;
+    display: inline-block; 
+    margin: 0vh 0vw 1vh 2vw;
 }
 
 .nav-div-2{
+    display: inline-block; 
+    margin: 2vh 0vw 1vh 5vw;
+}
+
+.nav-div-3{
     display: block; 
-    margin: 0vh 0vw 0vh 17vw;
-    width: 70vw;
+    margin: 0vh 5vw 0vh 0vw;
 }
 
 .flex-line{
@@ -26,25 +52,40 @@
     justify-content: flex-start;
 }
 
+.flex-line-end{
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.flex-line-align-top{
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
 .title{
-    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
-    color: rgb(42, 30, 170);
+    margin: 0rem 1.2rem 0rem 0.7rem;
+    color: rgb(217, 218, 225);
     font: bold italic 1.8rem Serif;
-    text-shadow: 0.1rem 0.1rem 0.2rem rgb(186, 186, 186);
 }
 
 .item-activated{
     margin: 0.7rem 0.7rem 0.7rem 0.7rem;
-    color: rgb(30, 42, 168);
-    font: bold 1.4rem Serif;
+    color: rgb(233, 233, 233);
+    font: bold 1.2rem Serif;
     width: 7rem;
     cursor: pointer;
 }
 
 .item-desactivated{
     margin: 0.7rem 0.7rem 0.7rem 0.7rem;
-    color: rgb(82, 82, 82);
-    font: bold 1.4rem Serif;
+    color: rgb(158, 158, 168);
+    font: bold 1.2rem Serif;
     width: 7rem;
     cursor: pointer;
 }
