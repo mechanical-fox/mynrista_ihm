@@ -1,22 +1,44 @@
 
 
+.flex-line{
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.flex-column{
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .text{
     margin: 0.7rem 0.7rem 0.7rem 0.7rem;
     color: rgb(0, 0, 0);
     font: 1.1rem Serif;
-    cursor: pointer;
 }
 
 .welcome-div{
     display: block; 
-    margin: 15vh 0vw 0vh 10vw;
+    margin: 15vh 0vw 5vh 10vw;
     width: 70vw;
 }
 
 .about-div{
     display: block; 
-    margin: 15vh 0vw 0vh 10vw;
+    margin: 15vh 0vw 5vh 10vw;
     width: 70vw;
+}
+
+.registration-div{
+    display: block; 
+    margin: 15vh 0vw 5vh 20vw;
+    width: 60vw;
 }
 
 

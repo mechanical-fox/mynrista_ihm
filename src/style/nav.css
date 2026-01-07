@@ -44,13 +44,7 @@ body{
     margin: 0vh 5vw 0vh 0vw;
 }
 
-.flex-line{
-    flex-direction: line;
-    flex-wrap: wrap;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
+
 
 .flex-line-end{
     flex-direction: line;

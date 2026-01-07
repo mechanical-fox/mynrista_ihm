@@ -3,13 +3,29 @@
 
 EN FAIT CHANGEMENT IDEE TOTAL - Voir en bas 
 
+ATTENTION Verifier que durant inscription j'envoie les mails avec
+   mynrista, et non pas erdline...
 Refaire en README la description du projet
 Passer API en Java 25
 Verifie Vue Compatible Mobile
-Acheter OVH car en fait juste 22/an
+Acheter OVH mynrista.fr car en fait juste 22/an + achat nom API
+registration-mynrista.fr ou registration.mynrista.fr (nom pour le lien) + acheter SANS adresse mail 
+(qui sera mynrista.com) et ATTENTION en .fr car... je ferais peut être le 
+site en anglais après
 Faire environnement dev et prod
 Faire Test Unitaire
 Indiquer comment avoir % couverture
+
+Etape 1 - Fait: Création Page d'inscription
+Etape 2- Gérer les pseudos déjà existant, email existant, mot passe vide, mot passe mal répété.
+         Mon idée pseudo et emailserait une API qui envoit un objet avec "accepte/non accepté + raison" et renvoit 200
+         même si soucis. Et on appelle cette API uniquement à la création, inutile de vérifier en temps réel.
+         Surtout pour le mail. Pseudo à la limite pour une API professionnelle...
+Etape 3- Gérer validation via mail si non fait avant + utiliser adresse mynrista... comme j'en dispose 
+         actuellement
+Etape 4- Gérer si connecter, mettre photo du profil, pseudo et bouton déconnection
+Etape 3-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
+Etape 4 - Faire les listes hyper-jolies voir en bas !!
 
 FIRST
 
@@ -22,8 +38,15 @@ En bas-> Faire un fond coloré comme Steam. Pour cela changer la couleur du body
 1- Avertisement qu'il s'agit d'un site vitrine
 2- Une liste. S'inspirer de la façon Steam de montrer les sites "tableaux"
     Faire aussi le fait de faire un changement de couleur au survol. 
-
-
+3- Hum changement... En fait en haut faire "Dernière sorties", montrer juste un item avec texte à côté comme
+Steam. Et faire une fléche pour switcher à gauche ou droite. La fleche n'apparait que si Et après l'on boucle.
+4- Et donc deuxième liste. Un titre, explorer. Et après cela est juste 100% des Visuals Novels car il y en a 
+peu. Et la l'information sera plus synthétique. Juste Image, Genre. Un peu plus comme ce que j'avais fait sur mobile.
+5- Et en idée d'amélioration. Pour ceux qui ont un compte permet de faire une liste favoris
+6- Et aussi permettre pour tout le monde de trier par catégorie. Comme "Aventure", "Fantasy"...
+7- Permettre une recherche Fuzzy avec une barre de recherche serait cool aussi. AU pire, mettre en idée d'amélioration.
+8- Si je fais pleins de listes... voir avant à tester les tests unitaires façon Vue. Comme je sais que je suis
+un peu timé, et que cela sera une partie longue.
 
 EN haut une barre droite "Mynrista", inspiré de https://www.fandom.com/
 
@@ -41,6 +64,10 @@ J'AI EXEMPLE Java MAIL au niveau de java_mail + de ma synthèse aussi
 Dès le départ il faut commencer avec la gestion compte car... c'est la que l'on rentrera les info (hormis le mock du début)
 
 Faire Compatible mobile.
+ATTENTION traduire toutes les présentations en francais. Car je vais faire du ".fr", et aussi pour que les recruteurs
+ou mes amis si je montre comprennent.
+HYPER IMP après reflexion mettre genre 10 Visual Novels quitte à avoir quelques rubriques vides. Prendre 100% les informations
+de Steams. L'idée est que vraiment, la présentation va être regardée par les recruteurs, donc...
 PRESENTATION VOIR https://www.fandom.com/ et Steam
 Visual Novel en anglais MAIS même si je choisit visual novel faire présentation en FRANCAIS + faire une section "Langue" ou 
    je dis les langues disponibles et comme site démo cela n'est pas trop grave
