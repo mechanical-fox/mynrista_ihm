@@ -6,7 +6,7 @@
     <div class="banner">
         <div class="flex-line-end">
             <div class="nav-div-3">
-                <button class="nav-button"> Connexion </button>
+                <button class="nav-button" @click="select('Login')"> Connexion </button>
                 <button class="nav-button" @click="select('Registration')"> Inscription </button>
             </div>
         </div>
@@ -29,6 +29,7 @@
     <Welcome v-if="selected=='Accueil'" />
     <About v-if="selected=='A propos'" />
     <Registration v-if="selected=='Registration'" />
+    <Login v-if="selected=='Login'" />
 
 </template>
 
@@ -39,6 +40,7 @@
     import Welcome from './Welcome.vue';
     import About from './About.vue';
     import Registration from './Registration.vue';
+    import Login from './Login.vue';
 
     const items = ref(["Accueil", "A propos"]);
     const selected = ref("Accueil");

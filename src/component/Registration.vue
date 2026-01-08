@@ -20,7 +20,7 @@
         </div>
         
         
-            <button class="registration-button"> Inscription </button>
+        <button class="registration-button"> Inscription </button>
        
 
     </div>

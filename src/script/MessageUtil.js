@@ -5,21 +5,14 @@ class MessageUtil {
 
     static functionList = new Map();
 
-    /** Register a function to treat the message specified.
-    * 
-    *  @param {string} message The message to receive to use the function f
-    *  @param {string[]=>void} f A function to execute, when receiving the message matching 
-    * */
+    /** Register a function to treat the message specified. The function must take an array
+    * of string as argument, and returns nothing. */
     static listen(message, f){
         MessageUtil.functionList.set(message, f);
     }
 
-    /** Send a message with the arguments given, and treat it with the function registered. If the message
-    * is matching with no function, a warning will be send.
-    * 
-    * @param {string} message A message to send
-    * @param {string[]} args A list of arguments to treat
-    */
+    /** Send a message with the arguments given, and treat it with the function registered. The arguments given must
+     * be given as an array of string. */
     static call(message, args) {
         const functionRegistered = MessageUtil.functionList.get(message);
 
