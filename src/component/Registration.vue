@@ -21,8 +21,26 @@
         
         
         <button class="registration-button"> Inscription </button>
+
+        
        
 
     </div>
 
 </template>
+
+
+
+<script setup>
+        
+    import {ref} from 'vue';
+
+    const items = ref(["Accueil", "A propos"]);
+    const selected = ref("Accueil");
+
+    /** A function to change what page is shown */
+    function select(item){
+        selected.value = item;
+    }
+    
+</script>

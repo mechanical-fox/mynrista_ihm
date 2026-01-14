@@ -31,6 +31,13 @@
     <Registration v-if="selected=='Registration'" />
     <Login v-if="selected=='Login'" />
 
+    <p v-if="error_message" class="error-message">
+        <b>{{ error_title }}</b>
+        <br/><br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        {{ error_message }}
+    </p>
+
 </template>
 
 
@@ -44,11 +51,24 @@
 
     const items = ref(["Accueil", "A propos"]);
     const selected = ref("Accueil");
+    const error_title = ref("ERR_CONNECT");
+    const error_message = ref("Erreur de connexion");
 
     /** A function to change what page is shown */
     function select(item){
         selected.value = item;
     }
+
+    /** Clear the errors displayed in the page */
+    function clearError(){
+        error_title.value = "";
+        error_message.value = "";
+    }
+
+    Util.createTimer("ErrorTimer",()=>clearError(),8000);
+    Util.startTimer("ErrorTimer");
+
+
     
 </script>
 

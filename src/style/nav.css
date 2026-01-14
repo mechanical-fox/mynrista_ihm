@@ -84,4 +84,19 @@ body{
     cursor: pointer;
 }
 
+.error-message{
+    position: fixed;
+    inset-inline-end: 0rem;
+    inset-block-start: 0rem;
+
+    margin: 0.7rem 1.4rem 0.7rem 1.4rem;
+    padding: 0.8rem 1.4rem 0.8rem 1.4rem;
+    width: 12rem;
+
+    background: rgb(255,0,0);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+    font: 1.0rem Serif;
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+}
+
 
