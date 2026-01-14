@@ -1,7 +1,8 @@
 
 # TO DO
 
-
+NOW -> Gérer via l'API l'envoi de mail + clic du lien + connexion AVEC VERIF A CLIQUE LIEN MAIL
+    -> Et ensuite gestion connexion avec token
 
 ATTENTION Verifier que durant inscription j'envoie les mails avec
    mynrista, et non pas erdline...
@@ -65,6 +66,12 @@ ATTENTION penser à cacher le mot de passe
 J'AI EXEMPLE Java MAIL au niveau de java_mail + de ma synthèse aussi
 Dès le départ il faut commencer avec la gestion compte car... c'est la que l'on rentrera les info (hormis le mock du début)
 
+ATTENTION TEST - Prevoir un test avec serveur en https à cause de ...
+nécessité de vérifier si email marche avec port 443
+
+INDIQUER EN TEST manuel - Verification envoie email inscription... Avec les ports qui changent entre dev et prod et tout,
+juste à cause des emails et des liens en email,cela semble un peu compliqué...
+
 Faire Compatible mobile.
 ATTENTION traduire toutes les présentations en francais. Car je vais faire du ".fr", et aussi pour que les recruteurs
 ou mes amis si je montre comprennent.
@@ -106,19 +113,19 @@ Une partie spécifique à la création des niveaux de jeu sera aussi crée:
 Démarrer le site
 
 ```sh
-npx vite
+npm run serve
 ```
 
 Construire le site en répertoire ./dist
 
 ```sh
-npx vite build
+npm run build
 ```
 
 Sert le répertoire ./dist, ou crée une erreur s'il n'existe pas
 
 ```sh
-npx vite preview
+npm run preview
 ```
 
 
