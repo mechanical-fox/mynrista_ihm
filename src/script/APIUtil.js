@@ -2,7 +2,7 @@
 
 class API_Util {
 
-    static BASE_URL = "http:/127.0.0.1:8080";
+    static BASE_URL = "http://localhost";
 
     /** A function to send a POST call. It will be necessary to use await, to retrieve the result.
     * The response is returned under the form of a Promise<API_Response>. */
@@ -12,14 +12,14 @@ class API_Util {
         if (body) 
             headers['Content-Type'] = 'application/json';
 
-        return API_Util.request<T, V>(url, 'POST', headers, body);
+        return API_Util.request(url, 'POST', headers, body);
     }
 
 
     /** A function to send a GET call. It will be necessary to use await, to retrieve the result.
     * The response is returned under the form of a Promise<API_Response>. */
     static async get(url) {
-        return API_Util.request<undefined, V>(url, 'GET', {}, undefined);
+        return API_Util.request(url, 'GET', {}, undefined);
     }
 
 
@@ -28,11 +28,15 @@ class API_Util {
     * fuzzy, to allow to display the message to the client in the browser, if needed.*/
     static async request(url, method, headers, body){
         const newUrl = API_Util.BASE_URL + url;
+        let bodyParsed = null;
+
+        if (body) 
+            bodyParsed = JSON.stringify(body);
 
         const options = {
             method : method,
             headers: headers,
-            body : body
+            body : bodyParsed
         };
         
         let response = null;

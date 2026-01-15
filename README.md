@@ -1,13 +1,17 @@
 
 # TO DO
 
-NOW -> Gérer via l'API l'envoi de mail + clic du lien + connexion AVEC VERIF A CLIQUE LIEN MAIL
-    -> Et ensuite gestion connexion avec token
+
+NOW -> Je suis à debug de pourquoi je n'arrive pas à créer de compte.
+       Et après l'on pourra passer à l'url de connexion !!
+
+NOW -> Je suis à gérer la connexion (Api + après en graphique mettre juste photo nom - et plus tard photo et nom)
+    -> Ensuite faire les tests unitaire en IHM !! Car ceux-ci m'ont l'air compliqués / long
 
 ATTENTION Verifier que durant inscription j'envoie les mails avec
    mynrista, et non pas erdline...
 Refaire en README la description du projet
-Reste en Java 21 pour les API
+
 Verifie Vue Compatible Mobile
 Acheter OVH mynrista.fr car en fait juste 22/an + achat nom API
 registration-mynrista.fr ou registration.mynrista.fr (nom pour le lien) + acheter SANS adresse mail 

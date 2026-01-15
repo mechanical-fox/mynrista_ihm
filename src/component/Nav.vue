@@ -49,10 +49,12 @@
     import Registration from './Registration.vue';
     import Login from './Login.vue';
 
+    const MESSAGE_TIME_MS = 8000;
+
     const items = ref(["Accueil", "A propos"]);
     const selected = ref("Accueil");
-    const error_title = ref("ERR_CONNECT");
-    const error_message = ref("Erreur de connexion");
+    const error_title = ref("");
+    const error_message = ref("");
 
     /** A function to change what page is shown */
     function select(item){
@@ -65,11 +67,24 @@
         error_message.value = "";
     }
 
-    Util.createTimer("ErrorTimer",()=>clearError(),8000);
-    Util.startTimer("ErrorTimer");
+    /** A function than given an array string of two arguments, will display the error.
+     * The first argument must be the error_title. The second argument must be the error_message.*/
+    function logError(args){
+
+        if(args.length == undefined || args.length != 2)
+            console.warn("Function logError uncorrectly called");
+        else{
+            error_title.value = args[0];
+            error_message.value = args[1];
+            Util.startTimer("ErrorTimer");
+        }
+
+    }
+
+    Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
+    MessageUtil.listen("logError", (args)=>logError(args));
 
 
-    
 </script>
 
 
