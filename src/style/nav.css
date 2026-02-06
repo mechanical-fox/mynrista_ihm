@@ -10,6 +10,20 @@ body{
     background-color: rgb(20, 18, 71);
 }
 
+.nav-user-image{
+    margin: 1.4rem 1.0rem 0.7rem 1.0rem;
+    width: 2rem;
+    height: 2rem;
+    display : inline-block;
+}
+
+.nav-pseudo{
+    display : inline-block;
+    margin: 1.4rem 10vw 0.7rem 1.0rem;
+    color: rgb(217, 218, 225);
+    font: bold 1.0rem Serif; 
+}
+
 .nav-button{
     margin: 1.4rem 1.8rem 0.7rem 0.3rem;
     padding: 0.2rem 0.4rem 0.2rem 0.4rem;

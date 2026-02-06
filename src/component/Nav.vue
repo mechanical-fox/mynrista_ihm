@@ -5,10 +5,13 @@
 
     <div class="banner">
         <div class="flex-line-end">
-            <div class="nav-div-3">
+
+            <div v-if="!connected" class="nav-div-3">
                 <button class="nav-button" @click="select('Login')"> Connexion </button>
                 <button class="nav-button" @click="select('Registration')"> Inscription </button>
             </div>
+            <img v-if="connected" class="nav-user-image" src="/user.svg"/>
+            <p v-if="connected" class="nav-pseudo"> {{ pseudo }}</p>
         </div>
         <div class="flex-line-align-top">
             <div class="nav-div-1">
@@ -55,6 +58,8 @@
     const selected = ref("Accueil");
     const error_title = ref("");
     const error_message = ref("");
+    const connected = ref(false);
+    const pseudo = ref("");
 
     /** A function to change what page is shown */
     function select(item){
@@ -65,6 +70,25 @@
     function clearError(){
         error_title.value = "";
         error_message.value = "";
+    }
+
+
+    /** A function than given an array string of two arguments, will display the user as connected.
+     * The first argument must be the pseudo to display. The second argument must be the token to use when
+     * calling the server. */
+    function connect(args){
+
+        if(args.length == undefined || args.length != 2)
+            console.warn("Function connect uncorrectly called");
+        else{
+            let argPseudo = args[0];
+            let argToken = args[1];
+            MessageUtil.setVar("token", argToken);
+            selected.value = "Accueil";
+            pseudo.value = argPseudo;
+            connected.value = true;
+        }
+        
     }
 
     /** A function than given an array string of two arguments, will display the error.
@@ -83,7 +107,7 @@
 
     Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
     MessageUtil.listen("logError", (args)=>logError(args));
-
+     MessageUtil.listen("connect", (args)=>connect(args));
 
 </script>
 

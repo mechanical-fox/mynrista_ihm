@@ -2,33 +2,32 @@
 # TO DO
 
 
-NOW -> Je suis à debug de pourquoi je n'arrive pas à créer de compte.
-       Et après l'on pourra passer à l'url de connexion !!
 
-NOW -> Je suis à gérer la connexion (Api + après en graphique mettre juste photo nom - et plus tard photo et nom)
+NOW -> Je suis à gérer la connexion (Api + après en graphique mettre juste photo nom - photo ou bouton déconnection peu important
+              car presque personne ne créera de compte)
+   -> -- IMPORTANT: Connection avec mon mail yahoo et le mot passe defaut de Itsuki (Swagger) en base de donnée locale ---
     -> Ensuite faire les tests unitaire en IHM !! Car ceux-ci m'ont l'air compliqués / long
 
-ATTENTION Verifier que durant inscription j'envoie les mails avec
-   mynrista, et non pas erdline...
+
+
 Refaire en README la description du projet
 
 Verifie Vue Compatible Mobile
-Acheter OVH mynrista.fr car en fait juste 22/an + achat nom API
-registration-mynrista.fr ou registration.mynrista.fr (nom pour le lien) + acheter SANS adresse mail 
-(qui sera mynrista.com) et ATTENTION en .fr car... je ferais peut être le 
+ 
 site en francais afin que les recruteurs puissent comprendre
 Faire environnement dev et prod
 Faire Test Unitaire
 Indiquer comment avoir % couverture
 
 Etape 1 - Fait: Création Page d'inscription
-Etape 2- Gérer les pseudos déjà existant, email existant, mot passe vide, mot passe mal répété.
+Etape 2- Fait: Gérer les pseudos déjà existant, email existant, mot passe vide, mot passe mal répété.
          Mon idée pseudo et email serait une API qui envoit un objet avec "accepte/non accepté + raison" et renvoit 200
          même si soucis. Et on appelle cette API uniquement à la création, inutile de vérifier en temps réel.
          Surtout pour le mail. Pseudo à la limite pour une API professionnelle...
-Etape 3- Gérer validation via mail si non fait avant + utiliser adresse mynrista... comme j'en dispose 
+Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse mynrista... comme j'en dispose 
          actuellement
-Etape 4- Gérer si connecter, mettre photo du profil, pseudo et bouton déconnection
+Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
+
 Etape 4 bis - Commencer à faire les premiers tests unitaires... d'autant que en Vue, je ne sais pas comment
          cela marche + écrire synthèse comment faire tests Vue.
 Etape 3-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
@@ -93,6 +92,19 @@ faire avec un email.
 
 J'hesite entre Séries (informations facilement disponible), et Visual Novel... Mais Visual Novel j'aurai sans doute assez peu à dire par moi même. Et si je prend d'un autre site... bah il y aura sans doute juste un seul autre site avec ces informations, donc cela ferait un peu plagiat.
 
+
+# Idées d'amélioration
+
+
+Important pour éviter les crash car API en port 80 (admin) - et cela même si l'on pourrait se  > 
+1. Gérer la vérification des emails via une page présente sur l'IHM, et bien sur faire un appel au serveur +
+juste après envoyer une redirection sur le site habituel, et cela sans connecter l'utilisateur. L'APi devra juste être modifiée
+pour faire la vérification via une url non graphique. Cela est plus en IHM ou il va falloir faire 2 pages, et lire les paramètres query,
+genre il va falloir passer un token et indiquer "accepté" ou "refusé" en page web avant la redirection.
+2. Ensuite changer le port serveur à 8080 + changer en IHM le port appellé. L'idée est d'éviter de faire des crash sous linux,
+juste car l'API utilise le port 80 qui ne peut être utilisé que par un administrateur...
+3. Modifier en Readme API le lien swagger
+4. Modifier en IHM les ports d'appel de l'API
 
 # Projet
 
