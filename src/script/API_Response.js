@@ -1,6 +1,6 @@
 
 
-class API_Response{
+export class API_Response{
 
     url;
     status;

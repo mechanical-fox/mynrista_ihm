@@ -1,6 +1,6 @@
 
 
-class MessageUtil {
+export class MessageUtil {
 
 
     static functionList = new Map();

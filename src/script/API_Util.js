@@ -1,6 +1,8 @@
 
+import {API_Response} from './API_Response';
+import { EErrorCode } from './EErrorCode';
 
-class API_Util {
+export class API_Util {
 
     static BASE_URL = "http://localhost";
 

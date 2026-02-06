@@ -27,6 +27,9 @@
 <script setup>
 
     import {ref} from 'vue';
+    import {API_Util} from '../script/API_Util';
+    import {EErrorCode} from '../script/EErrorCode';
+    import {MessageUtil} from '../script/MessageUtil';
 
     const error_message = ref("");
 

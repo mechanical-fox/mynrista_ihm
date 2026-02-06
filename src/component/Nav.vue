@@ -51,6 +51,8 @@
     import About from './About.vue';
     import Registration from './Registration.vue';
     import Login from './Login.vue';
+    import {MessageUtil} from '../script/MessageUtil';
+    import {Util} from '../script/Util';
 
     const MESSAGE_TIME_MS = 8000;
 

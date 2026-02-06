@@ -1,5 +1,5 @@
 
-class Util {
+export class Util {
 
 
     static timers = new Map();

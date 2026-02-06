@@ -28,8 +28,9 @@ Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse m
          actuellement
 Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
 
-Etape 4 bis - Commencer à faire les premiers tests unitaires... d'autant que en Vue, je ne sais pas comment
-         cela marche + écrire synthèse comment faire tests Vue.
+Etape 4 bis - NOW Tests unitaires + je suis à faire "npm run test" importer jest surement (expect non défini) + 
+               mettre à jour synthèse avec ce que j'aurai trouvé.
+
 Etape 3-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
 Etape 4 - Faire les listes hyper-jolies voir en bas !!
 
