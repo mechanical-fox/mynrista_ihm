@@ -18,7 +18,7 @@
                 <p class="title">Mynrista</p>
             </div>
             <div class="nav-div-2">
-                <div  class="flex-line">
+                <div  id="item-bar" class="flex-line">
                     <div v-for="item in items" class="div-for">
                         <p v-if="selected == item" class="item-activated">{{ item }}</p>
                         <p v-else class="item-desactivated" @click="select(item)" >{{ item }}</p>

@@ -10,7 +10,8 @@ NOW -> Je suis à gérer la connexion (Api + après en graphique mettre juste ph
 
 
 
-Refaire en README la description du projet
+Refaire en README la description du projet car la elle est totalement fausse.
+Il s'agissait de mon ancienne idée.
 
 Verifie Vue Compatible Mobile
  
@@ -28,15 +29,13 @@ Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse m
          actuellement
 Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
 
-Etape 4 bis - NOW Tests unitaires + je suis à faire "npm run test" importer jest surement (expect non défini) + 
-               mettre à jour synthèse avec ce que j'aurai trouvé.
+Etape 5- Syntaxe tests unitaires à jour. Maintenant il reste plus juste à créer les tests unitaires !!
+        Bref, il va y avoir l'API à mocker. Et il faudra voir si setValue(...) de Vue fonctionne bien ou non pour les inputs. 
+        Lors de la vérification de connection.
 
-Etape 3-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
-Etape 4 - Faire les listes hyper-jolies voir en bas !!
+Etape 6-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
+Etape 7 - Faire les listes hyper-jolies voir en bas !!
 
-FIRST
-
-Voir comment envoyer mail depuis mon API en java + écrire code quelque part + utiliser erdline.fr pour cela
 
 PRESENTATION TROUVEE
 
@@ -124,6 +123,21 @@ Une partie spécifique à la création des niveaux de jeu sera aussi crée:
 - La création des niveau de jeu se fera via une sous-page "/editor" non indiquée sur le site
 - Un mot de passe devra être rentré pour la création des niveaux de jeu
 
+# Tests unitaires
+
+Les tests unitaires du projet peuvent être lancés avec la commande suivante.
+
+```sh
+npx vitest run
+```
+
+La couverture de de test peut être obtenue via la commande suivante.
+
+```sh
+npx vitest run --coverage
+```
+
+Un rapport html sur la couverture de test est alors généré à "coverage/index.html"
 
 # Executer
 
