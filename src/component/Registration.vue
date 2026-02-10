@@ -1,26 +1,26 @@
 
 <template>
 
-    <div class="registration-div">
+    <div id="registration-div" class="registration-div">
         <p class="registration-title">Créer un compte</p>
 
         <div v-if=" user_message == '' || color_message == 'red' " class="flex-line">
             <div class="flex-column">
                 <p class="registration-text-input"> Pseudo </p>
-                <input id="input-pseudo" class="registration-input"/>
+                <input id="input-pseudo" v-model="pseudo" class="registration-input"/>
                 <p class="registration-text-input"> Email </p>
-                <input id="input-email" class="registration-input"/>
+                <input id="input-email" v-model="email" class="registration-input"/>
             </div>
             <div class="flex-column">
                 <p class="registration-text-input"> Mot de Passe </p>
-                <input id="input-password-1" class="registration-input" type="password"/>
+                <input id="input-password-1" v-model="password1" class="registration-input" type="password"/>
                 <p class="registration-text-input"> Confirmation Mot de Passe </p>
-                <input id="input-password-2" class="registration-input" type="password"/>
+                <input id="input-password-2" v-model="password2" class="registration-input" type="password"/>
             </div>
         </div>
         
         
-        <button v-if=" user_message == '' || color_message == 'red' " class="registration-button" @click="register()"> Inscription </button>
+        <button id="confirmation-button" v-if=" user_message == '' || color_message == 'red' " class="registration-button" @click="register()"> Inscription </button>
 
         <p v-if=" user_message != '' && color_message=='green' " v-html="user_message" class="registration-user-message registration-green"></p>
         <p v-if=" user_message != '' && color_message=='red' " v-html="user_message" class="registration-user-message registration-red"></p>
@@ -43,10 +43,15 @@
     const user_message = ref("");
     const color_message = ref("");
 
+    const pseudo = ref("");
+    const email = ref("");
+    const password1 = ref("");
+    const password2 = ref("");
+
     /** Check if pseudo, email, and passwords respect basic rules (Filled, Minimum length, password and confirmation password 
      * match... ). Returns true if it's the case, or false in the other cases. Moreover, an error message will be displayed to the 
      * client, if a problem is encountered. */
-    async function checkValidity(pseudo, email, password, confirmation_password){
+    async function checkValidity(pseudoValue, emailValue, password, confirmation_password){
 
         if(password.length < 6){
             user_message.value = "Mot de passe trop court.<br/><br/>";
@@ -60,18 +65,18 @@
             color_message.value = "red";
             return false;
         }
-        else if(pseudo.trim().length < 4){
+        else if(pseudoValue.trim().length < 4){
             user_message.value = "Login trop court.<br/><br/>";
             user_message.value += "Celui-ci devrait comporter au moins 4 caractères."
             color_message.value = "red";
             return false;
         }
-        else if(email.trim().length < 4 || !email.includes("@")){
+        else if(emailValue.trim().length < 4 || !emailValue.includes("@")){
             user_message.value = "Email non valide.";
             color_message.value = "red";
             return false;
         }
-        else if(pseudo.includes(" ")){
+        else if(pseudoValue.includes(" ")){
             user_message.value = "Un pseudo ne peut pas contenir d'espaces.";
             color_message.value = "red";
             return false;
@@ -87,7 +92,7 @@
         let url = "/users/validity/" + pseudo + "/" + email;
         let answer = await API_Util.get(url);
 
-        if(answer.hasFailed && errorCode == EErrorCode.ERROR_CONNECTION){
+        if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION){
             MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);
             return false;
         }
@@ -115,22 +120,18 @@
     message is displayed on screen, in case of failure. */
     async function register(){
 
-        let pseudo = document.getElementById('input-pseudo').value;
-        let email = document.getElementById('input-email').value;
-        let password1 = document.getElementById('input-password-1').value;
-        let password2 = document.getElementById('input-password-2').value;
-        let valid = await checkValidity(pseudo, email, password1, password2);
+        let valid = await checkValidity(pseudo.value, email.value, password1.value, password2.value);
 
         if(valid){
-            let available = await checkAvailability(pseudo, email);
+            let available = await checkAvailability(pseudo.value, email.value);
 
             if(available){
                 user_message.value = "";
                 color_message.value = "";
                 let body = {
-                    pseudo : pseudo,
-                    email : email,
-                    password : password1
+                    pseudo : pseudo.value,
+                    email : email.value,
+                    password : password1.value
                 };
                 
                 let answer = await API_Util.post("/users", body);

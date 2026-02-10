@@ -1,6 +1,7 @@
 
 import {API_Response} from './API_Response';
 import { EErrorCode } from './EErrorCode';
+import { Provider } from './Provider';
 
 export class API_Util {
 
@@ -44,7 +45,7 @@ export class API_Util {
         let response = null;
 
         try {
-            response = await fetch(newUrl, options);
+            response = await Provider.fetch(newUrl, options);
         } 
         catch {
             return new API_Response(newUrl, undefined, true, EErrorCode.ERROR_CONNECTION, null, null);

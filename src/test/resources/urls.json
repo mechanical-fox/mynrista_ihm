@@ -1,0 +1,15 @@
+[
+    {
+        "method": "GET",
+        "url": "/users/validity/Wolf/wolf.studart@gmail.com",
+        "status": 200,
+        "data": {
+            "isRegistrationAccepted": false,
+            "pseudoAlreadyExisting": false,
+            "emailAlreadyExisting": true,
+            "othersRules": [
+                "The passwords must be of length >= 6"
+            ]
+        }
+    }
+]

@@ -7,8 +7,8 @@
         <div class="flex-line-end">
 
             <div v-if="!connected" class="nav-div-3">
-                <button class="nav-button" @click="select('Login')"> Connexion </button>
-                <button class="nav-button" @click="select('Registration')"> Inscription </button>
+                <button id="signin-button" class="nav-button" @click="select('Login')"> Connexion </button>
+                <button id="signup-button" class="nav-button" @click="select('Registration')"> Inscription </button>
             </div>
             <img v-if="connected" class="nav-user-image" src="/user.svg"/>
             <p v-if="connected" class="nav-pseudo"> {{ pseudo }}</p>
@@ -20,8 +20,8 @@
             <div class="nav-div-2">
                 <div  id="item-bar" class="flex-line">
                     <div v-for="item in items" class="div-for">
-                        <p v-if="selected == item" class="item-activated">{{ item }}</p>
-                        <p v-else class="item-desactivated" @click="select(item)" >{{ item }}</p>
+                        <p v-if="selected == item.text" :id="item.id" class="item-activated">{{ item.text }}</p>
+                        <p v-else class="item-desactivated" :id="item.id" @click="select(item.text)" >{{ item.text }}</p>
                     </div>
                 </div>
             </div>
@@ -56,7 +56,9 @@
 
     const MESSAGE_TIME_MS = 8000;
 
-    const items = ref(["Accueil", "A propos"]);
+    const items = ref([]);
+    items.value.push({id : "welcome-item", text : "Accueil"});
+    items.value.push({id : "about-item", text : "A propos"});
     const selected = ref("Accueil");
     const error_title = ref("");
     const error_message = ref("");

@@ -3,8 +3,8 @@
 <template>
     
 
-    <div class="about-div">
-        <p class="text"> This is a beautiful world </p>
+    <div id="about-div" class="about-div">
+        <p class="text"> This is the About Page  </p>
     </div>
 
 </template>

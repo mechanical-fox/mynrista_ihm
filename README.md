@@ -29,9 +29,10 @@ Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse m
          actuellement
 Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
 
-Etape 5- Syntaxe tests unitaires à jour. Maintenant il reste plus juste à créer les tests unitaires !!
-        Bref, il va y avoir l'API à mocker. Et il faudra voir si setValue(...) de Vue fonctionne bien ou non pour les inputs. 
-        Lors de la vérification de connection.
+Etape 5- Presque finit. Finir de faire les tests unitaires.
+        Je pense qu'il va suffir de faire vérifier message ok recu si API dit bon.
+        Ainsi que vérier la connection si bon mot de passe.
+        Et vérifier refus connection si mauvais mot de passe.
 
 Etape 6-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
 Etape 7 - Faire les listes hyper-jolies voir en bas !!
