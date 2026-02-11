@@ -10,8 +10,8 @@
                 <button id="signin-button" class="nav-button" @click="select('Login')"> Connexion </button>
                 <button id="signup-button" class="nav-button" @click="select('Registration')"> Inscription </button>
             </div>
-            <img v-if="connected" class="nav-user-image" src="/user.svg"/>
-            <p v-if="connected" class="nav-pseudo"> {{ pseudo }}</p>
+            <img v-if="connected" id="user_image" class="nav-user-image" src="/user.svg"/>
+            <p v-if="connected" id="user_pseudo" class="nav-pseudo"> {{ pseudo }}</p>
         </div>
         <div class="flex-line-align-top">
             <div class="nav-div-1">

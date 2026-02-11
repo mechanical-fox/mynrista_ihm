@@ -1,20 +1,20 @@
 
 <template>
 
-    <div class="registration-div">
+    <div id="login-div" class="registration-div">
 
         <p class="registration-title">Connexion</p>
 
         <div class="flex-line">
             <div class="flex-column">
                 <p class="registration-text-input"> Email </p>
-                <input id="input-email" class="registration-input"/>
+                <input id="input-email" v-model="email" class="registration-input"/>
                 <p class="registration-text-input"> Mot de Passe </p>
-                <input id="input-password" class="registration-input" type="password"/>
+                <input id="input-password" v-model="password" class="registration-input" type="password"/>
             </div>
         </div>
         
-        <button class="registration-button" @click="connect()"> Connexion </button>
+        <button id="connection-button" class="registration-button" @click="connect()"> Connexion </button>
        
         <p v-if=" error_message != ''" v-html="error_message" class="registration-user-message registration-red"></p>
         
@@ -32,14 +32,14 @@
     import {MessageUtil} from '../script/MessageUtil';
 
     const error_message = ref("");
+    const email = ref("");
+    const password = ref("");
 
     /** Call the server to retrieve a token with the informations provided. And after return to the welcome page, with a status connected.
      * The email, and password are retrieved from the input field. If the authentification is incorrect, or if the server is down, an error message 
      * is displayed to the client. */
     async function connect(){
-        let email = document.getElementById("input-email").value;
-        let password = document.getElementById("input-password").value;
-        let body = {email : email, password : password};
+        let body = {email : email.value, password : password.value};
 
         let answer = await API_Util.post("/auth", body);
 

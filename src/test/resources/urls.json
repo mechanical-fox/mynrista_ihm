@@ -2,14 +2,67 @@
     {
         "method": "GET",
         "url": "/users/validity/Wolf/wolf.studart@gmail.com",
+        "body" : null,
         "status": 200,
         "data": {
             "isRegistrationAccepted": false,
             "pseudoAlreadyExisting": false,
             "emailAlreadyExisting": true,
             "othersRules": [
-                "The passwords must be of length >= 6"
+                "The passwords must be of length >= 6",
+                "The fields pseudo, email, and password are mandatory"
             ]
+        }
+    },
+    {
+        "method": "GET",
+        "url": "/users/validity/Shuumei/shuumei.studart@gmail.com",
+        "body" : null,
+        "status": 200,
+        "data": {
+            "isRegistrationAccepted": true,
+            "pseudoAlreadyExisting": false,
+            "emailAlreadyExisting": false,
+            "othersRules": [
+                "The passwords must be of length >= 6",
+                "The fields pseudo, email, and password are mandatory"
+            ]
+        }
+    },
+    {
+        "method": "POST",
+        "url": "/users",
+        "body" : {
+            "pseudo": "Shuumei",
+            "email": "shuumei.studart@gmail.com",
+            "password": "b4dl5f"
+        },
+        "status": 201,
+        "data": null
+    },
+    {
+        "method": "POST",
+        "url": "/auth",
+        "body" : {
+            "email": "itsuki@gmail.com",
+            "password": "-----"
+        },
+        "status": 401,
+        "data": "Password incorrect"
+    },
+    {
+        "method": "POST",
+        "url": "/auth",
+        "body" : {
+            "email": "itsuki@gmail.com",
+            "password": "Sky@Rim&"
+        },
+        "status": 201,
+        "data":{
+            "token": "1171660c4f41406d",
+            "expireIn": 3600,
+            "authorizationType": "Bearer Authentication",
+            "pseudo": "Itsuki"
         }
     }
 ]

@@ -29,13 +29,13 @@ Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse m
          actuellement
 Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
 
-Etape 5- Presque finit. Finir de faire les tests unitaires.
-        Je pense qu'il va suffir de faire vérifier message ok recu si API dit bon.
-        Ainsi que vérier la connection si bon mot de passe.
-        Et vérifier refus connection si mauvais mot de passe.
+Etape 5- Fait: tests unitaires IHM sur la 1er partie réalisée
 
 Etape 6-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
 Etape 7 - Faire les listes hyper-jolies voir en bas !!
+ETape 8 - Tests unitaires finaux + cela comprend API aussi
+Etape 9 - Les trucs mis en bas... je crois que j'ai du README et tout
+Etape 10- Déployer + tester une fois déployé
 
 
 PRESENTATION TROUVEE
