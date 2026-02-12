@@ -10,7 +10,7 @@ export class Helper{
 
 
     /** Return true if two objects are identical. The attributes are checked one by one, and this function works for 
-     * objects containing others objects.*/
+     * objects containing other objects.*/
     static match(obj1, obj2){
 
         if(obj1 == obj2)

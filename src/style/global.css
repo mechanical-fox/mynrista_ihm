@@ -1,5 +1,9 @@
 
 
+
+
+
+
 .flex-line{
     flex-direction: line;
     flex-wrap: wrap;
@@ -29,12 +33,6 @@
     width: 70vw;
 }
 
-.about-div{
-    display: block; 
-    margin: 15vh 0vw 5vh 10vw;
-    width: 70vw;
-}
-
 .registration-div{
     display: block; 
     margin: 15vh 0vw 5vh 20vw;
@@ -42,7 +40,6 @@
 }
 
 
-   
 
 
 

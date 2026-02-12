@@ -1,0 +1,22 @@
+
+
+.edition-div{
+    display: block; 
+    margin: 15vh 0vw 5vh 20vw;
+    width: 50vw;
+    max-width: 700px;
+}
+
+
+
+.edition-title{
+    margin: 0.7rem 0.7rem 0.7rem 0.7rem;
+    color: rgb(0,0,0);
+    font: bold 1.3rem Serif;
+}
+
+.edition-image{
+    display:block;
+    width:100px;
+    height:100px;
+}

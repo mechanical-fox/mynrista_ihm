@@ -3,8 +3,7 @@
 
 
 
-NOW -> Je suis à gérer la connexion (Api + après en graphique mettre juste photo nom - photo ou bouton déconnection peu important
-              car presque personne ne créera de compte)
+NOW 
    -> -- IMPORTANT: Connection avec mon mail yahoo et le mot passe defaut de Itsuki (Swagger) en base de donnée locale ---
     -> Ensuite faire les tests unitaire en IHM !! Car ceux-ci m'ont l'air compliqués / long
 
@@ -17,19 +16,51 @@ Verifie Vue Compatible Mobile
  
 site en francais afin que les recruteurs puissent comprendre
 Faire environnement dev et prod
-Faire Test Unitaire
-Indiquer comment avoir % couverture
 
-Etape 1 - Fait: Création Page d'inscription
-Etape 2- Fait: Gérer les pseudos déjà existant, email existant, mot passe vide, mot passe mal répété.
-         Mon idée pseudo et email serait une API qui envoit un objet avec "accepte/non accepté + raison" et renvoit 200
-         même si soucis. Et on appelle cette API uniquement à la création, inutile de vérifier en temps réel.
-         Surtout pour le mail. Pseudo à la limite pour une API professionnelle...
-Etape 3- Fait: Gérer validation via mail si non fait avant + utiliser adresse mynrista... comme j'en dispose 
-         actuellement
-Etape 4- Fait: Gérer si connecter, mettre une icone "User", et un pseudo
 
-Etape 5- Fait: tests unitaires IHM sur la 1er partie réalisée
+Etape 5- Fait: tests unitaires IHM 1er partie
+Etape 6- Faire écran "Publication" qui renvoit aux composants création + affiche les Visual Novels crées sous forme de liste.
+     + ATTENTION pour rappel publication n'est disponible que si connecté
+
+NOW Résumé: Je suis à essayer de résoudre le bug de "pourquoi l'image ne s'affiche pas". Utiliser ma synthèse pour me remémorer.
+        Utiliser l'inspecteur. + bien vérifier que la balise src a été mise à jour, mais cela semble être le cas.
+        + vérifier que la base 64 est correct le site suivant https://jaredwinick.github.io/base64-image-viewer/
+        + cela était le cas... donc il va falloir chercher autre chose
+
+Création nouvelle page
+    Faire formulaire.
+    Image Visual Novel, Titre, Description
+    Fait: Au début faire quand même un message d'erreur si input vide, ou titre < 6 caractères
+    Faire un message d'erreur si un titre de ce nom existe déjà --> Faire simple. Demander la liste des Visuals Novels à l'API...
+                                                            Faire un logError pour le message.
+                                                            Mais à faire UNIQUEMENT après avoir fait les autres champs.
+                                                            Car je vais d'abord faire le formulaire, et seulement alors permettre ajout sur API...
+                                                                et donc possibilité de mettre ce message d'erreur
+    Faire un message d'erreur si certains champs sont vides
+    ATTENTION après test Image doit être un champ optionnel... sinon en test unitaire cela va poser soucis.
+
+
+Etape 7 - Donc création mais avec informations MINIMALES car pour liste cela sera suffisant.
+            Image Visual Novel
+            Titre
+            Description
+            Avoir une vue jolie, et adaptable mobile.
+            Cela va être tout au début.
+Etape 8 - Faire une image default quand aucune image n'est mise pour la création des visuals novels.
+           + cette image doit être renvoyé par le serveur. Car il va y avoir le passage d'un fichier img vers la base64 et tout.
+Etape 7 bis- avant la modification faire en page "publishing" la liste des visuals novel déjà crées.
+             Image, titre. Plus tard genre éventuellement. Ou genre modifier directement l'API pour mettre des tags ?
+Etape 8 - Gérer la modification + vérifier que cela est bien enregistré en faisant modifier.
+Etape 9- Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
+Etape 10- Mettre un peu plus de paramètres en publication : Idées sont déjà Tags. Date publication.
+            Cela servira pour les listes en plus. Après ajouter des notes, mais cela par les utilisateurs.
+Etape 11 - Faire un système de Page en publishing... Sinon à plus de 5 Visual Novel il va y avoir un soucis.
+           Niveau API toujours demander 100 % des Visual Novel ou pas ? Possible je pense.
+           Mais pages au moins au niveau graphique.
+
+ de création
+Etape 7- Faire écran avec liste pour choisir visual novel à modifier pour permettre la modification de ce qui a déjà été ajouté +
+           renvoie à la même page que a la création
 
 Etape 6-  Permettre d'ajouter des Visual Novel en créeant les pages nécessaires.
 Etape 7 - Faire les listes hyper-jolies voir en bas !!
@@ -129,16 +160,11 @@ Une partie spécifique à la création des niveaux de jeu sera aussi crée:
 Les tests unitaires du projet peuvent être lancés avec la commande suivante.
 
 ```sh
-npx vitest run
+npm run test
 ```
 
-La couverture de de test peut être obtenue via la commande suivante.
-
-```sh
-npx vitest run --coverage
-```
-
-Un rapport html sur la couverture de test est alors généré à "coverage/index.html"
+Un rapport html sur la couverture de test est alors généré à "coverage/index.html".
+En cas de couverture de test insuffisante, un message warning sera affiché.
 
 # Executer
 

@@ -1,0 +1,30 @@
+
+
+.publishing-div{
+    display: block; 
+    margin: 15vh 0vw 5vh 20vw;
+    width: 50vw;
+    max-width: 700px;
+}
+
+.publishing-input{
+    margin: 0.2rem 0.7rem 1.0rem 4.0rem;
+    padding: 0.1rem 0.4rem 0.1rem 0.4rem;
+    color: rgb(0, 0, 0);
+    font: 1.0rem Serif;
+    border: 1px solid rgb(73, 73, 73);
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.14rem rgb(125, 125, 125);
+}
+
+.publishing-button{
+    margin: 0.7rem 0.7rem 0.7rem 2.0rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border: 0px solid rgb(0,0,0);
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    background-color: rgb(241, 149, 29);
+    color: rgb(0, 0, 0);
+    font: bold 1.0rem Serif;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(53, 53, 53);
+    cursor: pointer;
+}

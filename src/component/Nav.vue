@@ -31,6 +31,7 @@
 
     <Welcome v-if="selected=='Accueil'" />
     <About v-if="selected=='A propos'" />
+    <Publishing v-if="selected=='Publication'" />
     <Registration v-if="selected=='Registration'" />
     <Login v-if="selected=='Login'" />
 
@@ -50,6 +51,7 @@
     import Welcome from './Welcome.vue';
     import About from './About.vue';
     import Registration from './Registration.vue';
+    import Publishing from './Publishing.vue';
     import Login from './Login.vue';
     import {MessageUtil} from '../script/MessageUtil';
     import {Util} from '../script/Util';
@@ -91,6 +93,7 @@
             selected.value = "Accueil";
             pseudo.value = argPseudo;
             connected.value = true;
+            items.value.push({id : "publishing-item", text : "Publication"});
         }
         
     }
