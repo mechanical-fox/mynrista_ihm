@@ -22,10 +22,6 @@ Etape 5- Fait: tests unitaires IHM 1er partie
 Etape 6- Faire écran "Publication" qui renvoit aux composants création + affiche les Visual Novels crées sous forme de liste.
      + ATTENTION pour rappel publication n'est disponible que si connecté
 
-NOW Résumé: Je suis à essayer de résoudre le bug de "pourquoi l'image ne s'affiche pas". Utiliser ma synthèse pour me remémorer.
-        Utiliser l'inspecteur. + bien vérifier que la balise src a été mise à jour, mais cela semble être le cas.
-        + vérifier que la base 64 est correct le site suivant https://jaredwinick.github.io/base64-image-viewer/
-        + cela était le cas... donc il va falloir chercher autre chose
 
 Création nouvelle page
     Faire formulaire.
