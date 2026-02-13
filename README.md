@@ -18,33 +18,13 @@ site en francais afin que les recruteurs puissent comprendre
 Faire environnement dev et prod
 
 
-Etape 5- Fait: tests unitaires IHM 1er partie
-Etape 6- Faire écran "Publication" qui renvoit aux composants création + affiche les Visual Novels crées sous forme de liste.
-     + ATTENTION pour rappel publication n'est disponible que si connecté
 
+Etape 6- Faire niveau création Visual Novel si je clique sur enregistrer avec un "output", renvoi page d'avant. + 
+          Et j'ai déjà gérer le message d'erreur si description vide (ne pas le faire pour image à cause test unitaire).
 
-Création nouvelle page
-    Faire formulaire.
-    Image Visual Novel, Titre, Description
-    Fait: Au début faire quand même un message d'erreur si input vide, ou titre < 6 caractères
-    Faire un message d'erreur si un titre de ce nom existe déjà --> Faire simple. Demander la liste des Visuals Novels à l'API...
-                                                            Faire un logError pour le message.
-                                                            Mais à faire UNIQUEMENT après avoir fait les autres champs.
-                                                            Car je vais d'abord faire le formulaire, et seulement alors permettre ajout sur API...
-                                                                et donc possibilité de mettre ce message d'erreur
-    Faire un message d'erreur si certains champs sont vides
-    ATTENTION après test Image doit être un champ optionnel... sinon en test unitaire cela va poser soucis.
-
-
-Etape 7 - Donc création mais avec informations MINIMALES car pour liste cela sera suffisant.
-            Image Visual Novel
-            Titre
-            Description
-            Avoir une vue jolie, et adaptable mobile.
-            Cela va être tout au début.
-Etape 8 - Faire une image default quand aucune image n'est mise pour la création des visuals novels.
-           + cette image doit être renvoyé par le serveur. Car il va y avoir le passage d'un fichier img vers la base64 et tout.
-Etape 7 bis- avant la modification faire en page "publishing" la liste des visuals novel déjà crées.
+Etape 7 - Faire API créer visual novel + renvoyer liste tous visual novel.
+Etape 7 bis - Lors de la création faire un PUT à l'API avec l'url crée.
+Etape 7 bis bis- avant la modification faire en page "publishing" la liste des visuals novel déjà crées.
              Image, titre. Plus tard genre éventuellement. Ou genre modifier directement l'API pour mettre des tags ?
 Etape 8 - Gérer la modification + vérifier que cela est bien enregistré en faisant modifier.
 Etape 9- Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
@@ -53,8 +33,10 @@ Etape 10- Mettre un peu plus de paramètres en publication : Idées sont déjà 
 Etape 11 - Faire un système de Page en publishing... Sinon à plus de 5 Visual Novel il va y avoir un soucis.
            Niveau API toujours demander 100 % des Visual Novel ou pas ? Possible je pense.
            Mais pages au moins au niveau graphique.
+Etape 12- Au niveau étape "publication" la vue mobile n'est pas gérée. Donc faire cela rapidement je pense. 
+Etape 13- Faire pour la description la possibilité d'ajouter des titres avec "# titre". Et faire un bouton preview.       
 
- de création
+
 Etape 7- Faire écran avec liste pour choisir visual novel à modifier pour permettre la modification de ce qui a déjà été ajouté +
            renvoie à la même page que a la création
 
@@ -81,6 +63,7 @@ peu. Et la l'information sera plus synthétique. Juste Image, Genre. Un peu plus
 7- Permettre une recherche Fuzzy avec une barre de recherche serait cool aussi. AU pire, mettre en idée d'amélioration.
 8- Si je fais pleins de listes... voir avant à tester les tests unitaires façon Vue. Comme je sais que je suis
 un peu timé, et que cela sera une partie longue.
+9- Github Action ajouter les tests unitaires... comme maintenant je les aient
 
 EN haut une barre droite "Mynrista", inspiré de https://www.fandom.com/
 
