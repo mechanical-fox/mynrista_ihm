@@ -23,7 +23,7 @@ test('The text change when I click on the item "A propos"', async ()=>{
     await wrapper.find("#about-item").trigger("click");
 
     expect(wrapper.find("#about-div").exists()).toBe(true);
-    expect(wrapper.find("#about-div").text()).toContain("This is the About Page");
+    expect(wrapper.find("#about-div").text()).toContain("Site créé avec les technologies Java 25, et Vue 3.5");
     
 });
 

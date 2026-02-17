@@ -8,8 +8,7 @@
         <p class="basic-text"> <i>Liste des Visuals Novels à réaliser après</i></p>
     </div>
 
-    <EditionScreen v-if="editingInProgress" :title="title"/>
-    
+    <EditionScreen v-if="editingInProgress" :title="title" @submit="editingCompleted($event)"/>
 </template>
 
 <script setup>
@@ -33,6 +32,12 @@
             editingInProgress.value = true;
         }
         
+    }
+
+    function editingCompleted(event){
+        editingInProgress.value = false;
+
+        // TO DO: refresh the list of the visuals novel
     }
 
 </script>

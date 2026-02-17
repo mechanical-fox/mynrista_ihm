@@ -17,12 +17,14 @@ Verifie Vue Compatible Mobile
 site en francais afin que les recruteurs puissent comprendre
 Faire environnement dev et prod
 
+Etape 6- Fait: API pouvoir créer visual novel
 
+Etape 7 - Fait: Faire l'appel en POST dans la partie graphique pour créer le visual Novel
 
-Etape 6- Faire niveau création Visual Novel si je clique sur enregistrer avec un "output", renvoi page d'avant. + 
-          Et j'ai déjà gérer le message d'erreur si description vide (ne pas le faire pour image à cause test unitaire).
-
-Etape 7 - Faire API créer visual novel + renvoyer liste tous visual novel.
+Etape 7 bis - Faire API le GET pour renvoyer tous les visual novel (Si headre authorization correct) 
+Etape 7 bis - Grace à l'appel en GET l'on va maintenant pouvoir afficher un message si l'on veut créer un
+           Visual novel qui existe déjà !! 
+Etape 7 bis bis -  Faire en IHM Affichage Liste des Visuals Novels déjà crées
 Etape 7 bis - Lors de la création faire un PUT à l'API avec l'url crée.
 Etape 7 bis bis- avant la modification faire en page "publishing" la liste des visuals novel déjà crées.
              Image, titre. Plus tard genre éventuellement. Ou genre modifier directement l'API pour mettre des tags ?
