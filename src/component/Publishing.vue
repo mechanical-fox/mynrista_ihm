@@ -5,7 +5,14 @@
     <div v-if="!editingInProgress" class="publishing-div">
         <input v-model="titleInput" type="text" class="publishing-input"></input>
         <button class="publishing-button" @click="create()">Créer Page</button>
-        <p class="basic-text"> <i>Liste des Visuals Novels à réaliser après</i></p>
+
+        <div class="publishing-novel-div">
+            <div v-for="novel in novels" class="publishing-novel">
+                <img :src="novel.image_base64"class="publishing-novel-image"/>
+                <p class="publishing-novel-title">{{ novel.title }}</p>
+            </div>
+        </div>
+        
     </div>
 
     <EditionScreen v-if="editingInProgress" :title="title" @submit="editingCompleted($event)"/>
@@ -14,30 +21,61 @@
 <script setup>
 
     import EditionScreen from './EditionScreen.vue';
-    import { MessageUtil } from '@/script/MessageUtil';
+    import {API_Util} from '../script/API_Util';
+    import { EErrorCode } from '../script/EErrorCode';
+    import { MessageUtil } from '../script/MessageUtil';
     import {ref} from 'vue';
 
     const editingInProgress = ref(false);
     const title = ref("");
     const titleInput = ref("");
+    const novels = ref([]);
+
+    refreshList();
+
+    /** This function will refresh the list of the visual novels on screen. */
+    async function refreshList(){
+        let answer = await API_Util.get("/visual-novel");
+
+        if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION)
+            MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);
+        else if(answer.hasFailed)
+            MessageUtil.call("logError", [answer.status, "Une erreur innatendue s'est produite. Veuillez réesayer ultérieurement."]);
+        else
+            novels.value = answer.data;
+    }
+
 
     /** Redirect to the Edition Screen to create a new entry for a Visual Novel. The title for the visual novel
     * to create is retrieved from the publishing-input field. The title can't be changed after. */
-    function create(){
+    async function create(){
 
         if(titleInput.value.length < 6)
             MessageUtil.call("logError", ["Entrée Invalide", "Pour créer une page, un titre d'au moins 6 caractères doit être renseigné."]);
         else{
-            title.value = titleInput.value;
-            editingInProgress.value = true;
+            
+            let valueTitle = titleInput.value.trim().toLowerCase();
+            let alreadyExisting = false;
+
+            for(let novel of novels.value){
+                if(!alreadyExisting && novel.title.trim().toLowerCase() == valueTitle){
+                    MessageUtil.call("logError", ["Page Existante", `Une page existe déjà pour le Visual Novel ${titleInput.value.trim()}`]);
+                    alreadyExisting = true;
+                }
+            }
+
+            if(!alreadyExisting){
+                title.value = titleInput.value.trim();
+                editingInProgress.value = true;
+            }
         }
-        
     }
-
-    function editingCompleted(event){
+        
+    /** A function called when the editing of a Visual Novel is finished, to return to the view outside of the editing mode. */
+    async function editingCompleted(event){
+        await refreshList();
+        titleInput.value = "";
         editingInProgress.value = false;
-
-        // TO DO: refresh the list of the visuals novel
     }
 
 </script>

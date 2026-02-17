@@ -21,14 +21,11 @@ Etape 6- Fait: API pouvoir créer visual novel
 
 Etape 7 - Fait: Faire l'appel en POST dans la partie graphique pour créer le visual Novel
 
-Etape 7 bis - Faire API le GET pour renvoyer tous les visual novel (Si headre authorization correct) 
-Etape 7 bis - Grace à l'appel en GET l'on va maintenant pouvoir afficher un message si l'on veut créer un
-           Visual novel qui existe déjà !! 
-Etape 7 bis bis -  Faire en IHM Affichage Liste des Visuals Novels déjà crées
-Etape 7 bis - Lors de la création faire un PUT à l'API avec l'url crée.
-Etape 7 bis bis- avant la modification faire en page "publishing" la liste des visuals novel déjà crées.
-             Image, titre. Plus tard genre éventuellement. Ou genre modifier directement l'API pour mettre des tags ?
-Etape 8 - Gérer la modification + vérifier que cela est bien enregistré en faisant modifier.
+Etape 7 bis - Fait: Faire API le GET pour renvoyer tous les visual novel (Si header authorization correct) 
+Etape 7 bis bis - Fait:  Faire en IHM Affichage Liste des Visuals Novels déjà crées
+
+Etape 8 - Gérer la modification + appel en PATCH + vérifier que cela est bien enregistré en faisant modifier.
+Etape 8 bis - Pour l'écran Création / Modification faire un bouton "annuler"
 Etape 9- Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
 Etape 10- Mettre un peu plus de paramètres en publication : Idées sont déjà Tags. Date publication.
             Cela servira pour les listes en plus. Après ajouter des notes, mais cela par les utilisateurs.
