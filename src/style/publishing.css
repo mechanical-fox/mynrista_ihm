@@ -63,3 +63,16 @@
 .publishing-novel-div{
     margin: 5rem 0rem 0rem 0rem;
 }
+
+.publishing-edit-button{
+    margin: 0rem 0rem 0rem 2.5rem;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: 0px solid;
+    background-color: rgb(39, 39, 39);
+    cursor: pointer;
+}
+
+.publishing-edit-image{
+    width: 1.3rem;
+}

@@ -14,7 +14,11 @@
         </div>
         
         <p v-if=" error_message != ''" v-html="error_message" class="edition-error-message"></p>
-        <button id="edition-save-button" class="edition-save-button" @click="save()"> Enregistrer </button>
+
+        <div class="flex-line">
+            <button id="edition-save-button" class="edition-button" @click="save()"> Enregistrer </button>
+            <button id="edition-cancel-button" class="edition-button" @click="cancel()"> Annuler </button>
+        </div>
        
         
     </div>
@@ -34,13 +38,36 @@
     "cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAuIwAALiM" + 
     "BeKU/dgAAAAd0SU1FB+oCDQgYNrATRYEAAAAVSURBVBjTY1y/fj0DbsDEgBeMVGkAhRQCISTTBI4AAAAASUVORK5CYII=";
 
-    const props = defineProps(['title']);
-    const emit = defineEmits(['submit']) ;
-    const title = ref(props.title);
+    const props = defineProps(['title','edit_id']);
+    const emit = defineEmits(['submit']);
+    const title = props.title;
+    const edit_id = props.edit_id;
     const data = ref(imageDefault);
     const error_message = ref("");
     const description = ref("");
     const EDITION_MESSAGE_TIME_MS = 8000;
+
+    if(edit_id != null)
+        loadData(edit_id);
+
+    /** In the inputs field, change the values with the informations retrieved from the API for this visual novel. This function is called only
+     * if the user edit an existing Visual Novel, and not when there is a creation.*/
+    async function loadData(id){
+
+        let answer = await API_Util.get(`/visual-novel/${id}`);
+
+        if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION){
+            MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);
+            emit("submit"); //return to the previous page
+        }
+        else if(answer.hasFailed){
+            MessageUtil.call("logError", [answer.status, "Une erreur innatendue s'est produite. Veuillez réesayer ultérieurement."]);
+            emit("submit"); //return to the previous page
+        } 
+        
+        data.value = answer.data.image_base64;
+        description.value = answer.data.description;
+    }
 
     /** Change the image for the visual novel displayed on screen, by the image given by the user. The parameter is an event
      * received during the event "change" of an input of type file.*/
@@ -64,6 +91,11 @@
         error_message.value = "";
     }
 
+    /** A function to cancel the creation, or the edition of a Visual Novel */
+    function cancel(){
+        emit("submit");
+    }
+
     /** Register the Visual Novel in the database if the informations filled are correct. An error message is displayed to the client
      * if some informations are missing.*/
     async function save(){
@@ -74,14 +106,18 @@
         }
         else{
             let body = {
-                title : title.value,
+                title : title,
                 description : description.value,
                 image_base64 : data.value
 
             };
             let token = MessageUtil.getVar("token");
+            let answer = null;
 
-            let answer = await API_Util.postAuth("/visual-novel", body, token);
+            if(edit_id == null)
+                answer = await API_Util.postAuth("/visual-novel", body, token);
+            else
+                answer = await API_Util.putAuth(`/visual-novel/${edit_id}`, body, token);
 
             if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION)
                 MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);

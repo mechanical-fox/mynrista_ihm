@@ -19,6 +19,17 @@ export class API_Util {
         return API_Util.request(url, 'POST', headers, body);
     }
 
+    /** A function to send a PUT call, and perform an authentification. It will be necessary to use await, to 
+     * retrieve the result. The response is returned under the form of a Promise<API_Response>. */
+    static async putAuth(url, body, token){
+        let headers = { Authorization: `Bearer ${token}`};
+
+        if (body) 
+            headers['Content-Type'] = 'application/json';
+
+        return API_Util.request(url, 'PUT', headers, body);
+    }
+
     /** A function to send a POST call. It will be necessary to use await, to retrieve the result.
     * The response is returned under the form of a Promise<API_Response>. */
     static async post(url, body){

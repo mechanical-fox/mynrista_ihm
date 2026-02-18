@@ -8,7 +8,6 @@ NOW
     -> Ensuite faire les tests unitaire en IHM !! Car ceux-ci m'ont l'air compliqués / long
 
 
-
 Refaire en README la description du projet car la elle est totalement fausse.
 Il s'agissait de mon ancienne idée.
 
@@ -17,16 +16,23 @@ Verifie Vue Compatible Mobile
 site en francais afin que les recruteurs puissent comprendre
 Faire environnement dev et prod
 
-Etape 6- Fait: API pouvoir créer visual novel
+Etape 8 - Fait - Gérer la modification
+Etape 8 bis - Fait - Pour l'écran Création / Modification faire un bouton "annuler"
+Etape 9- Fait - Faire des tests manuels avec "création" "edit" et "annuler" pour les visuals novels
 
-Etape 7 - Fait: Faire l'appel en POST dans la partie graphique pour créer le visual Novel
+Etape 10- Fait -  Remplir la page de donnée avec 8-10 Visual Novel
+Etape 9- Faire Présentation 1er page en s'aidant Royal Road des présentations "Recommanded for you" mais SANS TRANSITION
+        pour moi faire un "Nouveautés et tendances (Selon Date Release)". + Après faire une liste "Tendance (selon note)"
+        et s'aider présentation Royal Road de "Rising Star".
+Etape 9 bis- Faire la page d'affichage / présentation des visuals novels
+Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
+        Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
+        car il faudra ajouter les genres en gris par exemple. Ou la date de release. Ce genre de chose.
 
-Etape 7 bis - Fait: Faire API le GET pour renvoyer tous les visual novel (Si header authorization correct) 
-Etape 7 bis bis - Fait:  Faire en IHM Affichage Liste des Visuals Novels déjà crées
 
-Etape 8 - Gérer la modification + appel en PATCH + vérifier que cela est bien enregistré en faisant modifier.
-Etape 8 bis - Pour l'écran Création / Modification faire un bouton "annuler"
-Etape 9- Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
+Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
+Etape 9 bis- Voir à faire tests unitaire API + compléter tests unitaire IHM histoire de ne pas être pris de court...
+
 Etape 10- Mettre un peu plus de paramètres en publication : Idées sont déjà Tags. Date publication.
             Cela servira pour les listes en plus. Après ajouter des notes, mais cela par les utilisateurs.
 Etape 11 - Faire un système de Page en publishing... Sinon à plus de 5 Visual Novel il va y avoir un soucis.
