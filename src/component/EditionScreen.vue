@@ -109,7 +109,6 @@
             Util.startTimer("EditionErrorTimer");
         }
         else{
-            console.log(`Release Date: ${JSON.stringify(release_date.value)}`);
             let body = {
                 title : title,
                 description : description.value,
