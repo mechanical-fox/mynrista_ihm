@@ -9,6 +9,8 @@
             <p class="edition-text"> {{ title }}</p>
             <p class="edition-text-title"> Image (465 * 215) </p>
             <input type="file" class="edition-browse-image-button" @change="changeImage($event)"/>
+            <p class="edition-text-title"> Date de parution </p>
+            <input v-model="release_date" type="date" class="edition-input-date"/>
             <p class="edition-text-title"> Description </p>
             <textarea v-model="description" class="edition-textarea" rows="12" cols="60" spellcheck="false"></textarea>
         </div>
@@ -46,6 +48,7 @@
     const error_message = ref("");
     const description = ref("");
     const EDITION_MESSAGE_TIME_MS = 8000;
+    const release_date = ref(null);
 
     if(edit_id != null)
         loadData(edit_id);
@@ -67,6 +70,7 @@
         
         data.value = answer.data.image_base64;
         description.value = answer.data.description;
+        release_date.value = Util.toDateFormatIHM(answer.data.releaseDate);
     }
 
     /** Change the image for the visual novel displayed on screen, by the image given by the user. The parameter is an event
@@ -105,11 +109,12 @@
             Util.startTimer("EditionErrorTimer");
         }
         else{
+            console.log(`Release Date: ${JSON.stringify(release_date.value)}`);
             let body = {
                 title : title,
                 description : description.value,
-                image_base64 : data.value
-
+                image_base64 : data.value,
+                releaseDate : Util.toDateFormatAPI(release_date.value)
             };
             let token = MessageUtil.getVar("token");
             let answer = null;

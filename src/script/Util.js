@@ -4,6 +4,30 @@ export class Util {
 
     static timers = new Map();
 
+    /** Convert a date null or with format "JJ/MM/AAAA" to the format "YYYY-MM-DD". This function convert the dates of the format
+     * used by the API, to the format used by the IHM. The format used by the IHM, is the format used by the inputs of type date. */
+    static toDateFormatIHM(date){
+        if(!date)
+            return null;
+
+        if(date.length != "JJ/MM/AAAA".length)
+            throw new Error(`Date incorrectly formatted`);
+
+        return date.substring(6,10) + "-" + date.substring(3,5) + "-" + date.substring(0,2);
+    }
+
+    /** Convert a date null or with format "YYYY-MM-DD" to the format "JJ/MM/AAAA". This function convert the dates of the format
+     * used by the IHM, to the format used by the API. The format used by the IHM, is the format used by the inputs of type date. */
+    static toDateFormatAPI(date){
+        if(!date)
+            return null;
+
+        if(date.length != "YYYY-MM-DD".length)
+            throw new Error(`Date incorrectly formatted "${date}"`);
+
+        return  date.substring(8,10) + "/" + date.substring(5,7) + "/" + date.substring(0,4);
+    }
+
     /** Create a timer with the name, and the function given. A timer is a signal than will execute the function
      * after the number of millisecond specified, if the timer is started. */
     static createTimer(name, fct, duration){

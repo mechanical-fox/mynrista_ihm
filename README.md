@@ -19,8 +19,8 @@ Faire environnement dev et prod
 Etape 8 - Fait - Gérer la modification
 Etape 8 bis - Fait - Pour l'écran Création / Modification faire un bouton "annuler"
 Etape 9- Fait - Faire des tests manuels avec "création" "edit" et "annuler" pour les visuals novels
-
 Etape 10- Fait -  Remplir la page de donnée avec 8-10 Visual Novel
+
 Etape 9- Faire Présentation 1er page en s'aidant Royal Road des présentations "Recommanded for you" mais SANS TRANSITION
         pour moi faire un "Nouveautés et tendances (Selon Date Release)". + Après faire une liste "Tendance (selon note)"
         et s'aider présentation Royal Road de "Rising Star".
