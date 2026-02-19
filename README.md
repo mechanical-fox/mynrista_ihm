@@ -20,19 +20,21 @@ Etape 8 - Fait - Gérer la modification
 Etape 8 bis - Fait - Pour l'écran Création / Modification faire un bouton "annuler"
 Etape 9- Fait - Faire des tests manuels avec "création" "edit" et "annuler" pour les visuals novels
 Etape 10- Fait -  Remplir la page de donnée avec 8-10 Visual Novel
+Etape 9 - Fait: ReleaseDate est maintenant fonctionnelle
+Etape 9- Fait - Faire Présentation 1er page "Nouveautés et tendances (Selon Date Release)". 
 
-
-Etape 9 - Fait: ReleaseDate est maintenant fonctionnelle !!(correction des bugs partie API faite) 
-Etape 9- Faire Présentation 1er page en s'aidant Royal Road des présentations "Recommanded for you" mais SANS TRANSITION
-        pour moi faire un "Nouveautés et tendances (Selon Date Release)". + Après faire une liste "Tendance (selon note)"
-        et s'aider présentation Royal Road de "Rising Star".
-Etape 9 bis- Faire la page d'affichage / présentation des visuals novels
+Etape 9- Faire que pour le 2ème top, si Visual = selectionner elle ne grandit pas (ce qui est dur à gérer - j'ai vu via Steam et Royal Road
+   qui ne font pas cela) mais plutôt faire un effet comme titre souligné, ou qui change de couleur
+Etape 9 - Après faire une liste "Meilleur Evaluations(selon note)" et s'aider présentation Royal Road de "Rising Star".
+Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus
 Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
         Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
         car il faudra ajouter les genres en gris par exemple. Ou la date de release. Ce genre de chose.
 
+ETape 9 - Euh... ne pas oublier de gérer le fait que si clic = renvoyer vers la page détail.
+            Vérifier pour les DEUX top.
 
-Commencer à faire la premières jolie liste pour user niveau page accueil (voir en bas)
+
 Etape 9 bis- Voir à faire tests unitaire API + compléter tests unitaire IHM histoire de ne pas être pris de court...
 
 Etape 10- Mettre un peu plus de paramètres en publication : Idées sont déjà Tags. Date publication.
@@ -52,6 +54,13 @@ Etape 7 - Faire les listes hyper-jolies voir en bas !!
 ETape 8 - Tests unitaires finaux + cela comprend API aussi
 Etape 9 - Les trucs mis en bas... je crois que j'ai du README et tout
 Etape 10- Déployer + tester une fois déployé
+Etape 11- NOUVELLE IDEE REMPLACER ERDLINE -> Un site qui permet créer Visual Novel depuis Internet. En l'occurence des Visuals Novels HTML.
+        Avec une partie "Tutoriel" qui vient avec un exemple, et une sans rien. 
+        Une autre partie "Exemple" aussi + mais pareil ici mettre des démos (des début de 15mn).
+        Pour mon exemple... il faudra que j'ai fini de créer au moins les 15 premières minutes de mon visual novel.
+        Mais après, celui ci est en cours.
+        Et comme Drawio l'on fait sans compte, mais l'utilisateur peut télécharger et upload des fichiers.
+        L'idée est que Erdline et la documentation API, cela parle à peu de personnes.
 
 
 PRESENTATION TROUVEE
@@ -111,18 +120,6 @@ faire avec un email.
 J'hesite entre Séries (informations facilement disponible), et Visual Novel... Mais Visual Novel j'aurai sans doute assez peu à dire par moi même. Et si je prend d'un autre site... bah il y aura sans doute juste un seul autre site avec ces informations, donc cela ferait un peu plagiat.
 
 
-# Idées d'amélioration
-
-
-Important pour éviter les crash car API en port 80 (admin) - et cela même si l'on pourrait se  > 
-1. Gérer la vérification des emails via une page présente sur l'IHM, et bien sur faire un appel au serveur +
-juste après envoyer une redirection sur le site habituel, et cela sans connecter l'utilisateur. L'APi devra juste être modifiée
-pour faire la vérification via une url non graphique. Cela est plus en IHM ou il va falloir faire 2 pages, et lire les paramètres query,
-genre il va falloir passer un token et indiquer "accepté" ou "refusé" en page web avant la redirection.
-2. Ensuite changer le port serveur à 8080 + changer en IHM le port appellé. L'idée est d'éviter de faire des crash sous linux,
-juste car l'API utilise le port 80 qui ne peut être utilisé que par un administrateur...
-3. Modifier en Readme API le lien swagger
-4. Modifier en IHM les ports d'appel de l'API
 
 # Projet
 
@@ -172,6 +169,16 @@ Sert le répertoire ./dist, ou crée une erreur s'il n'existe pas
 npm run preview
 ```
 
+
+
+# Idées d'amélioration
+
+
+Des idées d'améliorations futures sont prévues, afin de faciliter le processus d'évolution du site.\
+Ces idées d'améliorations peuvent être trouvées dans le fichier suivant.
+
+
+[/doc/amelioration_idea](./doc/amelioration_idea.md)
 
 
 

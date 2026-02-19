@@ -1,8 +1,27 @@
 
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
+.loading-circle {
+    margin: 20vh 0vw 0vh 0vw;
+    animation: spin 2s linear infinite;
+    border: 1rem solid #3498db;
+    border-top: 0.3rem solid #ecf0f1;
+    border-radius: 80%;
+    width: 20vh;
+    height: 20vh;
+}
 
-
+.flex-line-center{
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .flex-line{
     flex-direction: line;
@@ -27,17 +46,9 @@
     font: 1.1rem Serif;
 }
 
-.welcome-div{
-    display: block; 
-    margin: 15vh 0vw 5vh 10vw;
-    width: 70vw;
-}
 
-.registration-div{
-    display: block; 
-    margin: 15vh 0vw 5vh 20vw;
-    width: 60vw;
-}
+
+
 
 
 

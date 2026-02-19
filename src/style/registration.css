@@ -27,6 +27,12 @@
     }  
 }
 
+.registration-div{
+    display: block; 
+    margin: 15vh 0vw 5vh 20vw;
+    width: 60vw;
+}
+
 .registration-title{
     margin: 0.0rem 0.9rem 3.0rem 0.9rem;
     color: rgb(35, 21, 113);

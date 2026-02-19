@@ -7,7 +7,8 @@
     <p class="basic-text">
         &nbsp;&nbsp;&nbsp;&nbsp;
         Site créé par Pierre Meunier (Développeur).    
-        Si vous êtes sur ce site, cela est surement car vous êtes une entreprise auquelle j'ai pu envoyer un CV.   
+        Si vous êtes sur ce site, cela est surement car vous êtes une entreprise auquelle j'ai pu envoyer un CV. 
+        Le but de ce site est en effet de servir de portfolio. Et ce site n'est ainsi pas indexé sur Google.
         <br/>
         <br/>
         <br/>
