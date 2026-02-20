@@ -9,6 +9,11 @@
 .welcome-div-top{
     margin: 0rem 0rem 0rem 3rem;
     width : 50rem;
+    flex-direction: line;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .welcome-div-inline{
