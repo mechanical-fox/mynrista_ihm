@@ -11,6 +11,10 @@
             <input type="file" class="edition-browse-image-button" @change="changeImage($event)"/>
             <p class="edition-text-title"> Date de parution </p>
             <input v-model="release_date" type="date" class="edition-input-date"/>
+            <p class="edition-text-title"> Pourcentage d'évaluations Positives (Steam) </p>
+            <input v-model="percent_evaluation" class="edition-input-number" type="number"/>
+            <p class="edition-text-title"> Nombre d'évaluations (Steam) </p>
+            <input v-model="number_evaluation"  class="edition-input-number" type="number"/>
             <p class="edition-text-title"> Description </p>
             <textarea v-model="description" class="edition-textarea" rows="12" cols="60" spellcheck="false"></textarea>
         </div>
@@ -47,6 +51,8 @@
     const data = ref(imageDefault);
     const error_message = ref("");
     const description = ref("");
+    const percent_evaluation = ref("");
+    const number_evaluation = ref("");
     const EDITION_MESSAGE_TIME_MS = 8000;
     const release_date = ref(null);
 
@@ -70,6 +76,8 @@
         
         data.value = answer.data.image_base64;
         description.value = answer.data.description;
+        percent_evaluation.value = answer.data.percentPositiveEvaluationOnSteam;
+        number_evaluation.value = answer.data.numberEvaluationOnSteam;
         release_date.value = Util.toDateFormatIHM(answer.data.releaseDate);
     }
 
@@ -104,16 +112,32 @@
      * if some informations are missing.*/
     async function save(){
 
+        console.log(`percent vaut ${JSON.stringify(percent_evaluation.value)}`);
+
         if(description.value.trim() == ""){
             error_message.value = "Le champ description est obligatoire, afin de créer une nouvelle page.";
             Util.startTimer("EditionErrorTimer");
         }
+        else if(percent_evaluation?.value?.trim && percent_evaluation.value.trim() != "" && !Number.isInteger(number_evaluation.value)){
+            error_message.value = " Pourcentage d'évaluations Positives (Steam) doit être un entier.";
+            Util.startTimer("EditionErrorTimer");
+        }
+        else if(number_evaluation?.value?.trim && number_evaluation.value.trim() != "" && !Number.isInteger(number_evaluation.value)){
+            error_message.value = "Nombre d'évaluations (Steam) doit être un entier.";
+            Util.startTimer("EditionErrorTimer");
+        }
         else{
+
+            let percentPositiveEvaluationOnSteam = !percent_evaluation?.value?.trim  || percent_evaluation.value.trim() == "" ? percent_evaluation.value : null;
+            let  numberEvaluationOnSteam  = !number_evaluation?.value?.trim  || number_evaluation.value.trim() == "" ? number_evaluation.value : null;
+
             let body = {
                 title : title,
+                releaseDate : Util.toDateFormatAPI(release_date.value),
+                percentPositiveEvaluationOnSteam : percentPositiveEvaluationOnSteam,
+                numberEvaluationOnSteam :  numberEvaluationOnSteam,
                 description : description.value,
-                image_base64 : data.value,
-                releaseDate : Util.toDateFormatAPI(release_date.value)
+                image_base64 : data.value  
             };
             let token = MessageUtil.getVar("token");
             let answer = null;

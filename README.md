@@ -26,6 +26,12 @@ Etape 9- Fait - Faire Présentation 1er page "Nouveautés et tendances (Selon Da
 Etape 9- Faire que pour le 2ème top, si Visual = selectionner elle ne grandit pas (ce qui est dur à gérer - j'ai vu via Steam et Royal Road
    qui ne font pas cela) mais plutôt faire un effet comme titre souligné, ou qui change de couleur
 Etape 9 - Après faire une liste "Meilleur Evaluations(selon note)" et s'aider présentation Royal Road de "Rising Star".
+     Elements à mettre - titre, score, date.
+     Ce qui a été fait --> Score ajouté en database + j'ai objet "ScoreBar"
+     Reste à faire ->    Gérer infobulle DYNAMIQUE donc création style (créer une balise style dédié dans index.Html avec un certain id) +  
+                        +  infobulle ne doit apparraitre QUE si j'ai mit le paramètre html de l'afficher car en top on n'affiche pas mais en détail on affiche  +
+                        le top via API et via IHM après + info bulle doit être "... % évaluation positives sur Steam, sur ... évaluation"
+     Attention -> Eh bien j'ai un 2ème top à faire + page catégorie + vue détail + test unitaire... Je crois que cela va être un peu long.
 Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus
 Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
         Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
@@ -54,13 +60,23 @@ Etape 7 - Faire les listes hyper-jolies voir en bas !!
 ETape 8 - Tests unitaires finaux + cela comprend API aussi
 Etape 9 - Les trucs mis en bas... je crois que j'ai du README et tout
 Etape 10- Déployer + tester une fois déployé
-Etape 11- NOUVELLE IDEE REMPLACER ERDLINE -> Un site qui permet créer Visual Novel depuis Internet. En l'occurence des Visuals Novels HTML.
+Etape 10- IDEE aussi faire un site présentation "Tora Lockfire" et cela SANS ma photo après. Expliquer mon parcours, montrer mes projets
+        de jeu... L'idée est que cela va me permettre avec Mynrista + erdline de montrer ce que je sais faire. Et ce site présentation Tora Lockfire 
+        sera surement plus jolie que Erdline.
+Etape 10 bis- Modifier page about pour dire "Mynrista est un site dédié à la découverte, et à la présentation de visual novel... Vous pouvez actuellement
+        ..." puis finir sur un "Site crée par Pierre Meunier (Développeur). Site crée avec les technologies..." + mettre en début un message 
+        "Ce site est actuellement en début de développement, et sera amené à évoluer dans le futur".
+Etape 11- Dans le about BIEN PRECISE que les scores sont repris de Steam partit "..."
+Etape 11- IDEE Suite à ma nouvelle idée "Si soucis voir freelance - montrer des sites PRO", alors ne PAS voir à faire de projet tests auto.
+        Directement embrayer sur mon moteur Visual Novel basique + après sur améliorer MYNRISTA.
+Etape 12- NOUVELLE IDEE REMPLACER ERDLINE -> Un site qui permet créer Visual Novel depuis Internet. En l'occurence des Visuals Novels HTML.
         Avec une partie "Tutoriel" qui vient avec un exemple, et une sans rien. 
         Une autre partie "Exemple" aussi + mais pareil ici mettre des démos (des début de 15mn).
         Pour mon exemple... il faudra que j'ai fini de créer au moins les 15 premières minutes de mon visual novel.
         Mais après, celui ci est en cours.
         Et comme Drawio l'on fait sans compte, mais l'utilisateur peut télécharger et upload des fichiers.
         L'idée est que Erdline et la documentation API, cela parle à peu de personnes.
+Etape 13- IDEE qui remplace erdline en REPRENDRE PROJET GITHUB et aussi NOM DOMAINE pour faire des économies au niveau nom de domaine.
 
 
 PRESENTATION TROUVEE

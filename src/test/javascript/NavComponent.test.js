@@ -17,8 +17,9 @@ test('The text change when I click on the item "A propos"', async ()=>{
 
     const wrapper = mount(Nav);
 
+    await Helper.sleep(300);
     expect(wrapper.find("#welcome-div").exists()).toBe(true);
-    expect(wrapper.find("#welcome-div").text()).toContain("This is the Welcome Page");
+    expect(wrapper.find("#welcome-div").text()).toContain("Nouveautés et Tendances");
 
     await wrapper.find("#about-item").trigger("click");
 

@@ -8,7 +8,9 @@
                 <p :class="visual.style">{{ visual.title }}</p>
             </div>
         </div>
-        <!--<p class="welcome-top-title">NOUVEAUTES ET TENDANCES</p>-->
+
+        <ScoreBar score="30"></ScoreBar>
+        <ScoreBar score="67"></ScoreBar>
     </div>
 
     <div v-if="!isRecentlyOpened && !isLoaded" class="flex-line-center">
@@ -25,6 +27,7 @@
     import { EErrorCode } from "../script/EErrorCode";
     import { MessageUtil } from "../script/MessageUtil";
     import {Util} from "../script/Util";
+    import ScoreBar from "./ScoreBar.vue";
 
     const DELAY_BEFORE_LOADING_CIRCLE = 1200;
     let topRecent = ref([]);
@@ -35,10 +38,15 @@
     async function loadData(){
         let answer = await API_Util.get("/visual-novel/top-new");
 
-        if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION)
+        if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION){
             MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);
-        else if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_STATUS_CODE)
+            isLoaded.value = true;
+        }
+            
+        else if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_STATUS_CODE){
             MessageUtil.call("logError", [answer.status, "Une erreur innatendue s'est produite. Veuillez réesayer ultérieurement."]);
+            isLoaded.value = true;
+        }
         else{
             if(answer.data.length && answer.data.length <= 4)
                 topRecent.value = answer.data;
@@ -49,7 +57,6 @@
                 visual.style = ref(`welcome-top-text`);
                 visual.id = `visual-novel-${visual.id}`;
             }   
-                
 
             isLoaded.value = true;
         }
