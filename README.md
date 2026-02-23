@@ -25,6 +25,7 @@ Etape 9- Fait - Faire Présentation 1er page "Nouveautés et tendances (Selon Da
 
 Etape 9- Faire que pour le 2ème top, si Visual = selectionner elle ne grandit pas (ce qui est dur à gérer - j'ai vu via Steam et Royal Road
    qui ne font pas cela) mais plutôt faire un effet comme titre souligné, ou qui change de couleur
+   
 Etape 9 - Après faire une liste "Meilleur Evaluations(selon note)" et s'aider présentation Royal Road de "Rising Star".
      Elements à mettre - titre, score, date.
      Ce qui a été fait --> Score ajouté en database + j'ai objet "ScoreBar"
@@ -32,6 +33,7 @@ Etape 9 - Après faire une liste "Meilleur Evaluations(selon note)" et s'aider p
                         +  infobulle ne doit apparraitre QUE si j'ai mit le paramètre html de l'afficher car en top on n'affiche pas mais en détail on affiche  +
                         le top via API et via IHM après + info bulle doit être "... % évaluation positives sur Steam, sur ... évaluation"
      Attention -> Eh bien j'ai un 2ème top à faire + page catégorie + vue détail + test unitaire... Je crois que cela va être un peu long.
+Etape 9- Ajouter en base de donnée "Love Notes", "Guilty Parade" (Image ok)
 Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus
 Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
         Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
@@ -69,10 +71,13 @@ Etape 10 bis- Modifier page about pour dire "Mynrista est un site dédié à la 
 Etape 11- Dans le about BIEN PRECISE que les scores sont repris de Steam partit "..."
 Etape 11- IDEE Suite à ma nouvelle idée "Si soucis voir freelance - montrer des sites PRO", alors ne PAS voir à faire de projet tests auto.
         Directement embrayer sur mon moteur Visual Novel basique + après sur améliorer MYNRISTA.
-Etape 12- NOUVELLE IDEE REMPLACER ERDLINE -> Un site qui permet créer Visual Novel depuis Internet. En l'occurence des Visuals Novels HTML.
-        Avec une partie "Tutoriel" qui vient avec un exemple, et une sans rien. 
-        Une autre partie "Exemple" aussi + mais pareil ici mettre des démos (des début de 15mn).
-        Pour mon exemple... il faudra que j'ai fini de créer au moins les 15 premières minutes de mon visual novel.
+Etape 12- NOUVELLE IDEE REMPLACER ERDLINE -> 
+        Un site qui permet créer Visual Novel depuis Internet.
+        Avec le PRIVILEGIER VOIR EN NAVIGATEUR VITE (Pas juste voir au téléchargement) --> cause recruteur
+        et le PEU DE FORMULAIRE  --> cause recruteur
+        et FAIRE UNE PAGE TUTORIEL AVEC DES IMAGES
+        et PERMETTRE CHARGER UN EXEMPLE
+        Il me faudra avoir fini légèrement plus mon visual 
         Mais après, celui ci est en cours.
         Et comme Drawio l'on fait sans compte, mais l'utilisateur peut télécharger et upload des fichiers.
         L'idée est que Erdline et la documentation API, cela parle à peu de personnes.
