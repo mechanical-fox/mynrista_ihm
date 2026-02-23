@@ -15,6 +15,7 @@ faire attention à avoir un nombre limité de catégorie. Et cela afin d'être s
 Celle-ci doit permettre de selectionner des Visuals Novels par Catégorie, comme
 "Aventure", "Romance", "...".
 
+
 ## Idée 2 : Ajout d'une 3ème top
 
 Ajout d'un 3ème top qui mixera note + date release. S'aider de la présentation du 2ème top.

@@ -61,7 +61,7 @@ body{
 
 
 .flex-line-end{
-    flex-direction: line;
+    flex-direction: row;
     flex-wrap: wrap;
     display: flex;
     align-items: center;
@@ -69,7 +69,7 @@ body{
 }
 
 .flex-line-align-top{
-    flex-direction: line;
+    flex-direction: row;
     flex-wrap: wrap;
     display: flex;
     align-items: flex-start;

@@ -15,6 +15,9 @@
     const images = ref([]);
     let remain = props.score;
 
+    if(remain >= 95)
+        remain = 100;
+
     for(let i = 0; i < 5; i++){
         if(remain >= 20){
             remain -= 20;

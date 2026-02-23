@@ -22,19 +22,12 @@ Etape 9- Fait - Faire des tests manuels avec "création" "edit" et "annuler" pou
 Etape 10- Fait -  Remplir la page de donnée avec 8-10 Visual Novel
 Etape 9 - Fait: ReleaseDate est maintenant fonctionnelle
 Etape 9- Fait - Faire Présentation 1er page "Nouveautés et tendances (Selon Date Release)". 
+Etape 9- Fait: Faire un 2ème top "Meilleurs Evaluations" avec une présentation différente
+Etape 9- Fait: Ajouter en base de donnée "Love Notes", "Guilty Parade" (Image ok)
 
-Etape 9- Faire que pour le 2ème top, si Visual = selectionner elle ne grandit pas (ce qui est dur à gérer - j'ai vu via Steam et Royal Road
-   qui ne font pas cela) mais plutôt faire un effet comme titre souligné, ou qui change de couleur
-   
-Etape 9 - Après faire une liste "Meilleur Evaluations(selon note)" et s'aider présentation Royal Road de "Rising Star".
-     Elements à mettre - titre, score, date.
-     Ce qui a été fait --> Score ajouté en database + j'ai objet "ScoreBar"
-     Reste à faire ->    Gérer infobulle DYNAMIQUE donc création style (créer une balise style dédié dans index.Html avec un certain id) +  
-                        +  infobulle ne doit apparraitre QUE si j'ai mit le paramètre html de l'afficher car en top on n'affiche pas mais en détail on affiche  +
-                        le top via API et via IHM après + info bulle doit être "... % évaluation positives sur Steam, sur ... évaluation"
-     Attention -> Eh bien j'ai un 2ème top à faire + page catégorie + vue détail + test unitaire... Je crois que cela va être un peu long.
-Etape 9- Ajouter en base de donnée "Love Notes", "Guilty Parade" (Image ok)
-Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus
+Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus + faire gestion 
+        de titres avec les "#"
+Etape 9 bis bis- Faire en description la gestion des titres avec "#"
 Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
         Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
         car il faudra ajouter les genres en gris par exemple. Ou la date de release. Ce genre de chose.

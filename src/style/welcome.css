@@ -1,4 +1,21 @@
 
+@media (min-width: 900px) { 
+
+    :root{
+        --top-rating-width: 40rem;
+        --top-rating-item-right-width: 20rem;
+    }
+    
+}
+
+@media (max-width: 900px) { 
+
+    :root{
+        --top-rating-width: 20rem;
+        --top-rating-item-right-width: 10rem;
+    }
+    
+}
 
 .welcome-div{
     display: block; 
@@ -6,23 +23,107 @@
     width: 70vw;
 }
 
-.welcome-div-top{
-    margin: 0rem 0rem 0rem 3rem;
+.hr-rating {
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  color: rgb(89, 102, 161);
+  height: 0.2px;
+  width: 90%;
+}
+
+.hr-rating-2 {
+  margin: 0rem 0rem 2rem 0rem;
+  color: rgb(89, 102, 161);
+  height: 0.2px;
+  width: 90%;
+}
+
+.welcome-div-top-trend{
+    margin: 0rem 0rem 0rem 0rem;
     width : 50rem;
-    flex-direction: line;
+    max-width: 90vw;
+    flex-direction: row;
     flex-wrap: wrap;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
+.welcome-div-top-rating{
+    border-radius: 0.5rem;
+    background-color: rgb(17, 17, 17);
+    margin: 4rem 0rem 5rem 0rem;
+    width : var(--top-rating-width);
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border: 3px solid rgb(80, 100, 187);
+}
+
+.welcome-div-top-rating-item{
+    margin: 1rem 1rem 2rem 1rem;
+    padding: 0rem 1.4rem 0rem 1.4rem;
+    border-radius: 0.3rem;
+    background-color: rgb(17, 17, 17);
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.welcome-div-top-rating-item-selected{
+    margin: 1rem 1rem 2rem 1rem;
+    padding: 0rem 1.4rem 0rem 1.4rem;
+    border-radius: 0.3rem;
+    background-color: rgb(95, 95, 95);
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.welcome-rating-item-right{
+    padding: 1rem 0rem 1rem 0rem;
+    width: var(--top-rating-item-right-width);
+}
+
+.welcome-rating-text{
+    margin: 0rem 0rem 1.2rem 0rem;
+    color: rgb(255, 255, 255);
+    font: bold 0.9rem Serif;   
+    width: 17rem;
+    max-width: 90%;
+}
+
+.welcome-rating-date{
+    display: inline-block;
+    margin: 1rem 0rem 0rem 0rem;
+    color: rgb(255, 255, 255);
+    font:  bold 0.9rem Serif;   
+}
+
+
 .welcome-div-inline{
     display : inline-block;
+    cursor: pointer;
 }
 
 .welcome-top-title{
     color: rgb(0, 0, 0);
     font: bold 1.5rem Serif;
+}
+
+.welcome-top-title-2{
+    margin: 1.5rem 0rem 1rem 0rem;
+    color: rgb(255, 255, 255);
+    font: bold 1.3rem Serif;
+    text-align: left;
+    width: 80%;
 }
 
 .welcome-image{
@@ -31,6 +132,15 @@
     object-fit: cover;
     width: 16.5rem;
     height: 7.58rem;
+    border-radius: 0.5rem;
+}
+
+.welcome-image-rating{
+    margin: 1rem 1.5rem 1rem 1rem;
+    display: inline-block;
+    object-fit: cover;
+    width: 9.9rem;
+    height: 4.55rem;
     border-radius: 0.5rem;
 }
 
