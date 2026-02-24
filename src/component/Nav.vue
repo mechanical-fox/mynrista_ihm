@@ -29,11 +29,12 @@
     </div>
     
 
-    <Welcome v-if="selected=='Accueil'" />
+    <Welcome v-if="selected=='Accueil'" @requestVisual="showVisual($event)"/>
     <About v-if="selected=='A propos'" />
     <Publishing v-if="selected=='Publication'" />
     <Registration v-if="selected=='Registration'" />
     <Login v-if="selected=='Login'" />
+    <Description v-if="selected=='Description'" :visual_id="idVisualRequested"/>
 
     <p v-if="error_message" class="error-message">
         <b>{{ error_title }}</b>
@@ -48,13 +49,16 @@
 <script setup>
         
     import {ref} from 'vue';
+    import {MessageUtil} from '../script/MessageUtil';
+    import {Util} from '../script/Util';
+
     import Welcome from './Welcome.vue';
     import About from './About.vue';
     import Registration from './Registration.vue';
     import Publishing from './Publishing.vue';
     import Login from './Login.vue';
-    import {MessageUtil} from '../script/MessageUtil';
-    import {Util} from '../script/Util';
+    import Description from './Description.vue';
+
 
     const MESSAGE_TIME_MS = 8000;
 
@@ -62,10 +66,18 @@
     items.value.push({id : "welcome-item", text : "Accueil"});
     items.value.push({id : "about-item", text : "A propos"});
     const selected = ref("Accueil");
+    const idVisualRequested = ref(null);
     const error_title = ref("");
     const error_message = ref("");
     const connected = ref(false);
     const pseudo = ref("");
+
+    /** A function to redirect toward the page Description, giving informations about the visual novel of id
+    * "event.id" */
+    function showVisual(event){
+        idVisualRequested.value = event.id;
+        selected.value = "Description";
+    }
 
     /** A function to change what page is shown */
     function select(item){

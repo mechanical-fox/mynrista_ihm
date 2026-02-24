@@ -25,16 +25,18 @@ Etape 9- Fait - Faire Présentation 1er page "Nouveautés et tendances (Selon Da
 Etape 9- Fait: Faire un 2ème top "Meilleurs Evaluations" avec une présentation différente
 Etape 9- Fait: Ajouter en base de donnée "Love Notes", "Guilty Parade" (Image ok)
 
-Etape 9 bis- Faire la page d'affichage / présentation des visuals novels lorsque l'on à cliqué dessus + faire gestion 
-        de titres avec les "#"
-Etape 9 bis bis- Faire en description la gestion des titres avec "#"
+Etape 9 - 
+      FAIT: Gérer le fait d'escaper les caractères Html
+      RESTE: Gerer les # + Attention super cool il n'y a même pas besoin de modifier mon API !!
+            Rentrer les summary de chaque visual novel!!
+            git push
+
+
 Etape 9- Créer une 2ème page + Faire une présentation de la 2ème page "Catégorie" mais PAS CATEGORIE donc cela necessitera d'avoir ajouté les genres
         Niveau présentation juste faire des Visuals Novels de haut en Bas. Faire un peu différent de ma "Publication"
         car il faudra ajouter les genres en gris par exemple. Ou la date de release. Ce genre de chose.
 
-ETape 9 - Euh... ne pas oublier de gérer le fait que si clic = renvoyer vers la page détail.
-            Vérifier pour les DEUX top.
-
+Etape 9- Remplir le champ "Sommaire" pour tous les visual novel
 
 Etape 9 bis- Voir à faire tests unitaire API + compléter tests unitaire IHM histoire de ne pas être pris de court...
 

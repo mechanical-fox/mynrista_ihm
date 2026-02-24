@@ -15,6 +15,8 @@
             <input v-model="percent_evaluation" class="edition-input-number" type="number"/>
             <p class="edition-text-title"> Nombre d'évaluations (Steam) </p>
             <input v-model="number_evaluation"  class="edition-input-number" type="number"/>
+            <p class="edition-text-title"> Sommaire </p>
+            <textarea v-model="summary" class="edition-textarea" rows="6" cols="60" spellcheck="false"></textarea>
             <p class="edition-text-title"> Description </p>
             <textarea v-model="description" class="edition-textarea" rows="12" cols="60" spellcheck="false"></textarea>
         </div>
@@ -50,6 +52,7 @@
     const edit_id = props.edit_id;
     const data = ref(imageDefault);
     const error_message = ref("");
+    const summary = ref("");
     const description = ref("");
     const percent_evaluation = ref("");
     const number_evaluation = ref("");
@@ -76,6 +79,7 @@
         
         data.value = answer.data.image_base64;
         description.value = answer.data.description;
+        summary.value = answer.data.summary;
         percent_evaluation.value = answer.data.percentPositiveEvaluationOnSteam;
         number_evaluation.value = answer.data.numberEvaluationOnSteam;
         release_date.value = Util.toDateFormatIHM(answer.data.releaseDate);
@@ -114,7 +118,11 @@
 
         console.log(`percent vaut ${JSON.stringify(percent_evaluation.value)}`);
 
-        if(description.value.trim() == ""){
+        if(summary.value.trim() == ""){
+            error_message.value = "Le champ sommaire est obligatoire, afin de créer une nouvelle page.";
+            Util.startTimer("EditionErrorTimer");
+        }
+        else if(description.value.trim() == ""){
             error_message.value = "Le champ description est obligatoire, afin de créer une nouvelle page.";
             Util.startTimer("EditionErrorTimer");
         }
@@ -137,6 +145,7 @@
                 percentPositiveEvaluationOnSteam : percentPositiveEvaluationOnSteam,
                 numberEvaluationOnSteam :  numberEvaluationOnSteam,
                 description : description.value,
+                summary : summary.value,
                 image_base64 : data.value  
             };
             let token = MessageUtil.getVar("token");

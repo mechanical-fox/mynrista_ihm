@@ -64,4 +64,23 @@ export class Util {
     }
 
 
+    /** This function return the same text, but in html. Space and enter are converted, and all html characters like
+    *  "<" are escaped to be displayed correctly, and for security purposes. */
+    static toHtmlEscaped(text){
+
+        if(text == null)
+            return null;
+        else{
+            let answer = text.replaceAll("&", "&amp;");
+
+            answer = answer.replaceAll("<", "&lt;");
+            answer = answer.replaceAll(">", "&gt;");
+            answer = answer.replaceAll('"', "&quot;");
+            answer = answer.replaceAll("'", "&#39;");
+
+            answer = answer.replaceAll("\n", "<br/>");
+            return answer;      
+        }
+    }
+
 }

@@ -1,8 +1,8 @@
 
 <template>
 
-    <div class="score-div">
-        <img v-for="image in images" :src="image" class="score-star" />
+    <div class="score-a-div">
+        <img v-for="image in images" :src="image" class="score-a-star" />
     </div>
 
 </template>
@@ -13,6 +13,7 @@
 
     const props = defineProps(['score']);
     const images = ref([]);
+
     let remain = props.score;
 
     if(remain >= 95)

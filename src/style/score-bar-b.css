@@ -1,0 +1,12 @@
+
+
+.score-b-div{
+    display: inline-block;
+    width: 20rem;
+}
+
+.score-b-star{
+    margin: 0rem 0.4rem 0rem 0.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
+}
