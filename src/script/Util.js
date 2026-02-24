@@ -78,7 +78,7 @@ export class Util {
             answer = answer.replaceAll('"', "&quot;");
             answer = answer.replaceAll("'", "&#39;");
 
-            answer = answer.replaceAll("\n", "<br/>");
+            answer = answer.replaceAll("\n", " <br/> ");
             return answer;      
         }
     }

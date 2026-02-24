@@ -116,8 +116,6 @@
      * if some informations are missing.*/
     async function save(){
 
-        console.log(`percent vaut ${JSON.stringify(percent_evaluation.value)}`);
-
         if(summary.value.trim() == ""){
             error_message.value = "Le champ sommaire est obligatoire, afin de créer une nouvelle page.";
             Util.startTimer("EditionErrorTimer");

@@ -16,9 +16,7 @@
             <p class="description-sub-title"> {{ visual.percentPositiveEvaluationOnSteam }} % évaluations positives (Steam)</p>
             <p class="description-sub-title"> {{ visual.numberEvaluationOnSteam }} évaluations (Steam)</p>
 
-            <!--<div v-html="description"> </div>-->
-            <!--<div id="here"> </div>-->
-            <p v-html="description" class="description-text" ></p>
+            <div v-html="description" class="description-div-text"> </div>
         </div>
 
     </div>
@@ -64,11 +62,42 @@
         }
         else{
             visual.value = answer.data;
-            
-            description.value = Util.toHtmlEscaped(answer.data.description);
+            let descriptionHtml = translateDescription(answer.data.description);
+
+            description.value = descriptionHtml;
             isLoaded.value = true;
         }
         
+    }
+
+    /** Translate the description given by the API in a code Html to be displayed. Particulary, it will be used html elements like 
+     * <p class="text"> ... </p>. Some characters such as "\n", "<", ">", will be escaped. And when there will be a line beginning 
+     * by "#", a title in color will be added.*/
+    function translateDescription(text){
+        let textHtml = Util.toHtmlEscaped(text);
+        let result = "";
+
+        if(textHtml && textHtml.split){
+            
+            let lines = textHtml.split("<br/>");
+            let lineAfterTitle = false;
+
+            for(let line of lines){
+                if(line.trim().startsWith("# ")){
+                    let title = line.trim().substring(2, line.trim().length);
+                    result += `</p> <p class="description-section-title"> ${title} </p> <p class="description-text">`;
+                    lineAfterTitle = true;
+                }
+                else if(!lineAfterTitle || line.trim() != ""){
+                    result += line + " <br/> ";
+                    lineAfterTitle = false;
+                }   
+            }
+
+            result = `<p class="description-text"> ${result} </p>`
+        }
+
+        return result;
     }
 
 </script>
