@@ -15,6 +15,13 @@
             <input v-model="percent_evaluation" class="edition-input-number" type="number"/>
             <p class="edition-text-title"> Nombre d'évaluations (Steam) </p>
             <input v-model="number_evaluation"  class="edition-input-number" type="number"/>
+            <p class="edition-text-title"> Tags </p>
+            <div class="edition-tag-flex">
+                <div v-for="tag in tags" class="edition-tag-flex2">
+                    <p class="edition-tag-name">{{ tag.name }}</p>
+                    <input v-model="tag.checked" type="checkbox" class="edition-tag-checkbox"/>
+                </div>
+            </div>
             <p class="edition-text-title"> Sommaire </p>
             <textarea v-model="summary" class="edition-textarea" rows="6" cols="60" spellcheck="false"></textarea>
             <p class="edition-text-title"> Description </p>
@@ -42,15 +49,18 @@
     import { MessageUtil } from '../script/MessageUtil';
     import { EErrorCode } from '../script/EErrorCode';
 
-    const imageDefault = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAAXNSR0IB2" + 
+    const DEFAULT_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAIAAAACUFjqAAAAAXNSR0IB2" + 
     "cksfwAAAARnQU1BAACxjwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAuIwAALiM" + 
     "BeKU/dgAAAAd0SU1FB+oCDQgYNrATRYEAAAAVSURBVBjTY1y/fj0DbsDEgBeMVGkAhRQCISTTBI4AAAAASUVORK5CYII=";
+
+    const AVAILABLE_TAGS = ["Casual", "Fantasy", "Aventure", "Mystère", "Comédie", "Otome", "Fin multiples", 
+        "LGBTQ+", "Indépendant", "Philosophique"];
 
     const props = defineProps(['title','edit_id']);
     const emit = defineEmits(['submit']);
     const title = props.title;
     const edit_id = props.edit_id;
-    const data = ref(imageDefault);
+    const data = ref(DEFAULT_IMAGE);
     const error_message = ref("");
     const summary = ref("");
     const description = ref("");
@@ -58,9 +68,15 @@
     const number_evaluation = ref("");
     const EDITION_MESSAGE_TIME_MS = 8000;
     const release_date = ref(null);
+    const tags = ref([]);
+    
+    Util.createTimer("EditionErrorTimer",()=>clearEditionError(), EDITION_MESSAGE_TIME_MS);
 
     if(edit_id != null)
         loadData(edit_id);
+
+    for(let tag of AVAILABLE_TAGS)
+        tags.value.push({name: tag, checked : false});
 
     /** In the inputs field, change the values with the informations retrieved from the API for this visual novel. This function is called only
      * if the user edit an existing Visual Novel, and not when there is a creation.*/
@@ -83,6 +99,13 @@
         percent_evaluation.value = answer.data.percentPositiveEvaluationOnSteam;
         number_evaluation.value = answer.data.numberEvaluationOnSteam;
         release_date.value = Util.toDateFormatIHM(answer.data.releaseDate);
+
+        for(let tagAPI of answer.data.tags){
+            for(let tagIHM of tags.value){
+                if(tagAPI == tagIHM.name)
+                    tagIHM.checked = true;
+            }
+        }
     }
 
     /** Change the image for the visual novel displayed on screen, by the image given by the user. The parameter is an event
@@ -112,36 +135,54 @@
         emit("submit");
     }
 
-    /** Register the Visual Novel in the database if the informations filled are correct. An error message is displayed to the client
-     * if some informations are missing.*/
-    async function save(){
-
+    /** A function than check if all fields are correctly filled. If yes will return true, else will return false and
+     * display an error message to the user.*/
+    function formValid(){
         if(summary.value.trim() == ""){
             error_message.value = "Le champ sommaire est obligatoire, afin de créer une nouvelle page.";
             Util.startTimer("EditionErrorTimer");
+            return false;
         }
         else if(description.value.trim() == ""){
             error_message.value = "Le champ description est obligatoire, afin de créer une nouvelle page.";
             Util.startTimer("EditionErrorTimer");
+            return false;
         }
         else if(percent_evaluation?.value?.trim && percent_evaluation.value.trim() != "" && !Number.isInteger(number_evaluation.value)){
             error_message.value = " Pourcentage d'évaluations Positives (Steam) doit être un entier.";
             Util.startTimer("EditionErrorTimer");
+            return false;
         }
         else if(number_evaluation?.value?.trim && number_evaluation.value.trim() != "" && !Number.isInteger(number_evaluation.value)){
             error_message.value = "Nombre d'évaluations (Steam) doit être un entier.";
             Util.startTimer("EditionErrorTimer");
+            return false;
         }
-        else{
+
+        return true;
+    }
+
+    /** Register the Visual Novel in the database if the informations filled are correct. An error message is displayed to the client
+     * if some informations are missing.*/
+    async function save(){
+
+        if(formValid()){
 
             let percentPositiveEvaluationOnSteam = !percent_evaluation?.value?.trim  || percent_evaluation.value.trim() == "" ? percent_evaluation.value : null;
-            let  numberEvaluationOnSteam  = !number_evaluation?.value?.trim  || number_evaluation.value.trim() == "" ? number_evaluation.value : null;
+            let numberEvaluationOnSteam  = !number_evaluation?.value?.trim  || number_evaluation.value.trim() == "" ? number_evaluation.value : null;
+            let tagsList = [];
+            
+            for(let tag of tags.value){
+                if(tag.checked)
+                    tagsList.push(tag.name);
+            }
 
             let body = {
                 title : title,
                 releaseDate : Util.toDateFormatAPI(release_date.value),
                 percentPositiveEvaluationOnSteam : percentPositiveEvaluationOnSteam,
                 numberEvaluationOnSteam :  numberEvaluationOnSteam,
+                tags: tagsList,
                 description : description.value,
                 summary : summary.value,
                 image_base64 : data.value  
@@ -164,6 +205,6 @@
 
     }
 
-    Util.createTimer("EditionErrorTimer",()=>clearEditionError(), EDITION_MESSAGE_TIME_MS);
+    
 
 </script>

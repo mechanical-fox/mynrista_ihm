@@ -1,0 +1,124 @@
+
+@media (min-width: 900px) { 
+
+    :root{
+        --tag-div-width: 10rem;
+        --tag-text-width: 4rem;
+    }
+
+}
+
+@media (max-width: 900px) { 
+
+    :root{
+        --tag-div-width: 6rem;
+        --tag-text-width: 2rem;
+    }
+    
+}
+
+
+.category-tag-panel{
+    margin: 3rem 0rem 0rem 5vw;
+    padding: 1rem 0rem 1rem 0rem;
+    background-color: rgb(32, 32, 32);
+    width: 80vw;
+    border-radius: 0.4rem;
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.category-tag-div{
+    margin: 0.8rem 0rem 0.8rem 1rem;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: var(--tag-div-width);
+    border-radius: 0.5rem;
+}
+
+.category-tag-div-selected{
+    margin: 0.8rem 0rem 0.8rem 1rem;
+    padding: 0.7rem 1rem 0.7rem 1rem;
+    background-color: rgb(180, 180, 180);
+    display: inline-block;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: var(--tag-div-width);
+    border-radius: 0.5rem;
+}
+
+.category-tag-image{
+    display: inline-block;
+    width: 1.3rem;
+}
+
+.category-tag-text{
+    width: var(--tag-text-width);
+    margin: 0rem 0rem 0rem 1rem;
+    display : inline-block;
+    font: 1.0rem Serif;
+    color: rgb(194, 194, 194);
+}
+
+.category-tag-text-selected{
+    width: var(--tag-text-width);
+    margin: 0rem 0rem 0rem 1rem;
+    display : inline-block;
+    font: 1.0rem Serif;
+    color: rgb(252, 252, 252);
+}
+
+
+
+.category-visual-global-div{
+    margin: 5rem 0rem 0rem 5vw;
+    width : 80vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.category-visual-second-div{
+    display : inline-block;
+    cursor: pointer;
+}
+
+.category-visual-image{
+    margin: 1.0rem 1.5rem 0.5rem 1.5rem;
+    display:block;
+    object-fit: cover;
+    width: 16.5rem;
+    height: 7.58rem;
+    border-radius: 0.5rem;
+}
+
+.category-visual-text{
+    margin: 1.0rem 1.5rem 0.5rem 2.5rem;
+    text-align: center;
+    color: rgb(44, 44, 44);
+    font: bold 0.9rem Serif;
+    width: 13.5rem;
+}
+
+.category-visual-text-selected{
+    margin: 1.0rem 1.5rem 0.5rem 2.5rem;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font: bold 0.9rem Serif;
+    width: 13.5rem;
+    text-decoration: underline;
+}

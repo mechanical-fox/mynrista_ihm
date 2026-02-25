@@ -30,6 +30,7 @@
     
 
     <Welcome v-if="selected=='Accueil'" @requestVisual="showVisual($event)"/>
+    <Category v-if="selected=='Catégories'" @requestVisual="showVisual($event)"/>
     <About v-if="selected=='A propos'" />
     <Publishing v-if="selected=='Publication'" />
     <Registration v-if="selected=='Registration'" />
@@ -58,12 +59,14 @@
     import Publishing from './Publishing.vue';
     import Login from './Login.vue';
     import Description from './Description.vue';
+    import Category from './Category.vue';
 
 
     const MESSAGE_TIME_MS = 8000;
 
     const items = ref([]);
     items.value.push({id : "welcome-item", text : "Accueil"});
+    items.value.push({id : "category-item", text : "Catégories"});
     items.value.push({id : "about-item", text : "A propos"});
     const selected = ref("Accueil");
     const idVisualRequested = ref(null);
