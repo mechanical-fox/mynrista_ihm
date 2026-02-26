@@ -6,26 +6,26 @@
 NOW 
    -> -- IMPORTANT: Connection avec mon mail yahoo et le mot passe defaut de Itsuki (Swagger) en base de donnée locale ---
 
+début coverage IHM:
+   - line 35.48
+   - branche 31.87
 
-Etape 9- Faire la 2ème page "Catégorie". 
-    1- Fait: Voir à récupérer les tags + pouvoir les envoyer au niveau de l'edition Screen
-    2- Fait: Test les tags en POST et en PUT mais avec l'IHM
-    ATTENTION PRESENTATION CATEGORIE reprendre de présentation "Nouveauté et tendances" pour les vignettes.
-        Au niveau API -> Les tags sont ajoutés et gérés au niveau API!!
-    Faire selection catégorie à gauche, items à droite + pour savoir tags ne PAS faire appel API mais aditioner le tag
-        de tous les vn renvoyés
-    Mais sur mobile devient selection catégorie en haut. Items en bas.
-    
+1er test unitaire:
+    - voir les tests manuels écrits
+    - ATTENTION tous tests soient en anglais, soit en francais...
+        Idée actuelle est francais.
+    - en plus il y aura un test sur les catégories
 
-
-Etape 9 bis- Voir à faire tests unitaire API + compléter tests unitaire IHM histoire de ne pas être pris de court...
+Etape 9 bis- Tests unitaires IHM
+Etape 9 bis- Tests unitaires API
 
 Etape 8- Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
            Et seulement en 20 voir 10% dire que cela est un site portfolio...
            Histoire que cela fasse plus pro.
 Etape 8 - Taille police d'écriture à réduire dans la page "A propos"
 ETape 8 - Tests unitaires finaux + cela comprend API aussi
-Etape 8- Github Action ajouter les tests unitaires
+Etape 8- Faire Github Action API aussi (pas juste IHM) !! Pour ajouter la vérification des tests unitaires.
+Etape 8- Github Action IHM ajouter les tests unitaires
 Etape 9 - faire les environnement dev et prod en API
 Etape 10 - faire les environnement dev et prod en IHM
 Etape 9- Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
@@ -121,16 +121,6 @@ npm run preview
 ```
 
 
-# Idées d'amélioration
-
-
-Des idées d'améliorations futures sont prévues, afin de faciliter le processus d'évolution du site.\
-Ces idées d'améliorations peuvent être trouvées dans le fichier suivant.
-
-
-[/doc/amelioration_idea](./doc/amelioration_idea.md)
-
-
 # Descriptions, et Titres 
 
 Le site Mynrista permet de rentrer des descriptions, pour les Visual Novels. Si vous parcourez le site
@@ -140,5 +130,28 @@ novel.
 
 Si vous souhaitez améliorer l'affichage des descriptions, le formatage est réalisé dans le composant 
 Description.vue, à la fonction translateDescription(text).
+
+# Tests Manuels
+
+Ce logiciel a déjà été testé de façon extensive. Que cela soit en test manuel, ou en test unitaire.
+Néanmoins en cas de modification du code source, et d'ajout de nouvelles fonctionnalités, vous pourriez
+souhaitez vérifier si le logiciel fonctionne toujours correctement sur les anciennes fonctionnalités.
+
+Pour cette raisons, il a été conservé une liste des tests manuels précédement effectués dans le fichier
+suivant.
+
+[/doc/tests](./doc/tests.md)
+
+
+# Idées d'amélioration
+
+Bien que présentant déjà un grand nombre de fonctionnalités, ce site sera amené à évoluer dans le futur.
+Afin de préparer au mieux cette évolutions, plusieurs idées d'améliorations ont déjà été préparées en
+avance.  
+
+Ces idées d'améliorations peuvent être trouvées dans le fichier suivant.
+
+
+[/doc/amelioration_idea](./doc/amelioration_idea.md)
 
 

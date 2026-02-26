@@ -1,18 +1,21 @@
 
+import Nav from '../../component/Nav.vue';
 
 import {mount} from "@vue/test-utils";
-import Nav from '../../component/Nav.vue';
+import { expect, test, beforeAll} from 'vitest';
+
 import {Helper} from './helpers/Helper';
 import {Provider} from '../../script/Provider';
 import { FetchMock } from "./helpers/FetchMock";
 
-import { expect, test} from 'vitest';
-
-Provider.mockFetch((url, options)=> FetchMock.fetch(url, options));
 
 
 
-test('The text change when I click on the item "A propos"', async ()=>{
+beforeAll(()=>{
+    Provider.mockFetch((url, options)=> FetchMock.fetch(url, options));
+});
+
+test(`La page affichée change lorsque je clique sur l'item "A propos"`, async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -29,7 +32,7 @@ test('The text change when I click on the item "A propos"', async ()=>{
 });
 
 
-test("I can't register with a password < 6 characters", async ()=>{
+test("Impossible de s'enregistrer avec un mot de passe < 6 caractères", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -51,7 +54,7 @@ test("I can't register with a password < 6 characters", async ()=>{
 });
 
 
-test("I can't register with an email already used", async ()=>{
+test("Impossible de s'enregistrer avec un email déjà utilisé", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -73,7 +76,7 @@ test("I can't register with an email already used", async ()=>{
     
 });
 
-test("The registration is successful, when all the informations are correct", async ()=>{
+test("L'inscription est un succès, quand toutes les informations remplis sont correctes", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -95,7 +98,7 @@ test("The registration is successful, when all the informations are correct", as
     
 });
 
-test("I can't connect with an incorrect password", async ()=>{
+test("Un message d'erreur apparait en cas de mot de passe erroné", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -112,7 +115,7 @@ test("I can't connect with an incorrect password", async ()=>{
 });
 
 
-test("When the connection is successful, pseudo and user image are visible", async ()=>{
+test("Après une connexion réussie, pseudo et image sont visibles", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -128,6 +131,42 @@ test("When the connection is successful, pseudo and user image are visible", asy
     expect(wrapper.find("#user_pseudo").exists()).toBe(true);
     expect(wrapper.find("#user_pseudo").text()).toContain("Itsuki");
     
+});
+
+
+
+test("Cliquer sur un Visual Novel du Top Nouveautés et Tendances affiche les informations sur le Visual Novel", async ()=>{
+
+    const wrapper = mount(Nav);
+
+    await Helper.sleep(300);
+
+    expect(wrapper.find("#top-recent-3").exists()).toBe(true);
+    expect(wrapper.find("#top-recent-3").text()).toContain("Kiss/OFF");
+
+    wrapper.find("#top-recent-3").trigger("click");
+    await Helper.sleep(300);
+
+    expect(wrapper.text()).toContain("Kiss/OFF is an action-packed visual novel");
+    expect(wrapper.text()).toContain("31 mars 2024");
+    expect(wrapper.text()).toContain("92 % évaluations positives (Steam)");
+});
+
+test("Cliquer sur un Visual Novel du Top Meilleurs évaluations affiche les informations sur le Visual Novel", async ()=>{
+
+    const wrapper = mount(Nav);
+
+    await Helper.sleep(300);
+
+    expect(wrapper.find("#top-rating-2").exists()).toBe(true);
+    expect(wrapper.find("#top-rating-2").text()).toContain("Twofold");
+
+    wrapper.find("#top-rating-2").trigger("click");
+    await Helper.sleep(300);
+
+    expect(wrapper.text()).toContain("Twofold is a story about love, family, and connection");
+    expect(wrapper.text()).toContain("27 oct. 2023");
+    expect(wrapper.text()).toContain("97 % évaluations positives (Steam)");
 });
 
 

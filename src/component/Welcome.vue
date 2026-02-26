@@ -3,10 +3,10 @@
     <div v-if="isLoaded" id="welcome-div" class="welcome-div">
         <p class="welcome-top-title">Nouveautés et Tendances</p>
         <div class="welcome-div-top-trend">
-            <div v-for="visual in topRecent" class="welcome-div-inline" @mouseover="mouseOver(visual.htmlId)" 
+            <div v-for="visual in topRecent" :id="visual.htmlId" class="welcome-div-inline" @mouseover="mouseOver(visual.htmlId)" 
             @mouseout="mouseOut(visual.htmlId)" @click="requestVisualNovel(visual.id)">
                 <img :src="visual.image_base64" class="welcome-image" />
-                <p :class="visual.style">{{ visual.title }}</p>
+                <p :class="visual.style" :id="visual.htmlTextId">{{ visual.title }}</p>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
         
             <div v-for="visual in topRating" class="flex-column">
             
-                <div :class="visual.style" @mouseover="mouseOver(visual.htmlId)" @mouseout="mouseOut(visual.htmlId)" 
+                <div :class="visual.style" :id="visual.htmlId" @mouseover="mouseOver(visual.htmlId)" @mouseout="mouseOut(visual.htmlId)" 
                 @click="requestVisualNovel(visual.id)">
                     <img :src="visual.image_base64" class="welcome-image-rating" />
                     <div class="welcome-rating-item-right">
@@ -91,15 +91,16 @@
             topRecent.value = answer.data;
             topRating.value = answer2.data;
 
-            for(let visual of topRecent.value){
-                visual.style = ref(`welcome-top-text`);
-                visual.htmlId = `top-recent-${visual.id}`;
-            }   
+            for(let i = 0; i < topRecent.value.length;i++){
+                topRecent.value[i].style = ref(`welcome-top-text`);
+                topRecent.value[i].htmlTextId = `top-recent-text-${i + 1}`;
+                topRecent.value[i].htmlId = `top-recent-${i + 1}`;
+            }
 
-            for(let visual of topRating.value){
-                visual.style = ref(`welcome-div-top-rating-item`);
-                visual.htmlId = `top-rating-${visual.id}`;
-            }   
+            for(let i = 0; i < topRating.value.length;i++){
+                topRating.value[i].style = ref(`welcome-div-top-rating-item`);
+                topRating.value[i].htmlId = `top-rating-${i + 1}`;
+            } 
 
             if(topRating.value && topRating.value.length)
                 lastRatingId.value = topRating.value[topRating.value.length - 1].id;
