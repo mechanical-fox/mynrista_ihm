@@ -20,7 +20,7 @@ novel. Faire comme Steam, et au dessus d'un certain nombre de tag arreter de les
 ajouter un bouton avec une icone bootstrap "voir" qui permet de voir tous les tags. Et mettre en
 infobulle "voir tous les tags".
 
-## Idée 2: Ajout d'une barre de recherche
+## Idée 3: Ajout d'une barre de recherche
 
 Ajouter une barre de recherche. Et cela surement dans la page catégorie, et bien faire attention à
 la présentation en vue mobile.
@@ -31,17 +31,17 @@ en tets soit envoyé une autre requête SQL, avec les mots clés pour la base H2
 qui serait le mieux. Soit ne pas tester la barre de recherche en test unitaire.
 
 
-## Idée 3 : Ajout d'un bouton "Steam" et un "Itchio".
+## Idée 4 : Ajout d'un bouton "Steam" et un "Itchio".
 
 Ajouter un bouton Steam, ou itchio. Qui renvoit vers la bonne page Steam, ou itchio, selon le bouton.
 Et cela sur la page détail.
 
-## Idée 4 : Permettre d'ajouter des captures d'écrans
+## Idée 5 : Permettre d'ajouter des captures d'écrans
 
 Permettre pour les jeux d'ajouter des captures d'écran du jeu considéré. Eviter les vidéos par contre.
 Cela risquerait d'être un peu lourd.
 
-### Idée 5: Amélioration processus d'inscription
+## Idée 6: Amélioration processus d'inscription
 
 Le processus d'inscription actuelle à 2 soucis:
 - l'API doit être démarrée en mode Admin à cause de l'utilisation du port 80. Lié à servir une 
@@ -59,7 +59,7 @@ Et l'idée serait ensuite pour l'API d'enfin changer, le port de 80 à un port n
 de lancer l'API comme admin.
 
 
-## Idée 6 : Faire une vue profil client + séparer admin / non-admin
+## Idée 7 : Faire une vue profil client + séparer admin / non-admin
 
 Faire une vrai vue de profil client. En client sur le bouton en haut à droite.
 Juste permettre la modification des informations au début. Et plus tard, de voir les visuals novels
@@ -74,7 +74,7 @@ que les comptes non-admin plus:
 
 Le flag admin devra être switché directement en base. Et il faudra écrire en README cette spécificité.
 
-## Idée 7 : Possibilité de mettre Favoris + Interessé / Acheter...
+## Idée 8 : Possibilité de mettre Favoris + Interessé / Acheter...
 
 Ici il y a 2 fonctions. L'on doit pouvoir faire une liste de Favoris, et il y aura une page favoris
 à indiquer au client.
@@ -84,14 +84,14 @@ Ces états seront utilisés après pour des recommandations par genre
 
 
 
-## Idée 8 : Possibilité dd'ajouter des commentaires
+## Idée 9 : Possibilité dd'ajouter des commentaires
 
 Permettre aux clients d'ajouter des commentaires. Il faudra éventuellement ajouter quelques commentaires.
 Mais je dirai en mettre juste 1/2 sur des Visuals Novels auxquelles j'ai pu jouer. Et toujours
 avec le même compte qui ici me représentera.
 
 
-## Idée 9 : Ajout d'une 3ème top
+## Idée 10 : Ajout d'une 3ème top
 
 Ajout d'un 3ème top qui mixera note + date release. S'aider de la présentation du 2ème top.
 
@@ -100,7 +100,7 @@ La formule de calcul sera note, et faire -10% pour chaque année écoulé. Mais 
 de puissance, afin que même d'anciens jeux puissent être proposé. La valeur de -10% sera d'ailleurs
 à mettre en paramètre, et sera éventuellement moins que 10. Comme par exemple 5%.
 
-## Idée 10 : Ajout de recommandations
+## Idée 11 : Ajout de recommandations
 
 Permettre d'avoir des recommandations. A faire uniquement en fonction du genre + d'un score qui sera le 
 même que pour le 3ème top (mix note et date release).

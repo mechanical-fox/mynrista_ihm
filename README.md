@@ -1,33 +1,13 @@
 
 # TO DO
 
-
-
 NOW 
    -> -- IMPORTANT: Connection avec mon mail yahoo et le mot passe defaut de Itsuki (Swagger) en base de donnée locale ---
 
-début coverage IHM:
-   - line 35.48
-   - branche 31.87
 
-Après test des Top:
-   - line 51.65
-   - branche 41.11
-
-Après test des Top + Publishing:
-   - line 65.03
-   - branche 57.42
-
-1er test unitaire:
-    - voir les tests manuels écrits
-    - ATTENTION tous tests soient en anglais, soit en francais...
-        Idée actuelle est francais.
-    - en plus il y aura un test sur les catégories
-    - Reste juste --> 1. Création Visual Novel
-                      2. Vue Catégory (Ne pas tester les clics, ce qui nécessiterai composant Nav)
-
-Etape 9 bis- Tests unitaires IHM
+Etape 9 bis- Fait: Tests unitaires IHM
 Etape 9 bis- Tests unitaires API
+Etape 9 bis bis- Faire github action + au départ tester en déclenchant sur la branche draft aussi
 
 Etape 8- Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
            Et seulement en 20 voir 10% dire que cela est un site portfolio...
@@ -45,7 +25,9 @@ Etape 10- Déployer + tester une fois déployé
 Etape 10 bis- Modifier page about pour dire "Mynrista est un site dédié à la découverte, et à la présentation de visual novel... Vous pouvez actuellement
     ..." puis finir sur un "Site crée par Pierre Meunier (Développeur). Site crée avec les technologies..." + mettre en début un message 
     "Ce site est actuellement en début de développement, et sera amené à évoluer dans le futur".
-Etape 11- Dans le about BIEN PRECISE que les scores sont repris de Steam partit "..."
+Etape 11 - Site portfolio juste après après reflexion voir à mettre site ET backend. Et cela car l'on va surement me demander 
+    de prouver mon expertise back-end et tout. (Rappel: Partie Note > Emploi j'ai déjà mis de bien mettre sur CV que j'ai fait 
+    2 sites, et aussi 2 API) 
 
 Etape 10- IDEE aussi faire un site présentation "Tora Lockfire" et cela SANS ma photo après. Expliquer mon parcours, montrer mes projets
     de jeu... L'idée est que cela va me permettre avec Mynrista + erdline de montrer ce que je sais faire. Et ce site présentation Tora Lockfire 
