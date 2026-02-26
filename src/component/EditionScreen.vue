@@ -6,26 +6,26 @@
         <div class="flex-column">
             <img v-if="data" id="edition-image" :src="data" class="edition-image" alt="something"/>
             <p class="edition-text-title"> Title </p>
-            <p class="edition-text"> {{ title }}</p>
+            <p id="display-title" class="edition-text"> {{ title }}</p>
             <p class="edition-text-title"> Image (465 * 215) </p>
             <input type="file" class="edition-browse-image-button" @change="changeImage($event)"/>
             <p class="edition-text-title"> Date de parution </p>
-            <input v-model="release_date" type="date" class="edition-input-date"/>
+            <input id="input-date" v-model="release_date" type="date" class="edition-input-date"/>
             <p class="edition-text-title"> Pourcentage d'évaluations Positives (Steam) </p>
-            <input v-model="percent_evaluation" class="edition-input-number" type="number"/>
+            <input id="input-percent-evaluation" v-model="percent_evaluation" class="edition-input-number" type="number"/>
             <p class="edition-text-title"> Nombre d'évaluations (Steam) </p>
-            <input v-model="number_evaluation"  class="edition-input-number" type="number"/>
+            <input id="input-number-evaluation" v-model="number_evaluation"  class="edition-input-number" type="number"/>
             <p class="edition-text-title"> Tags </p>
             <div class="edition-tag-flex">
                 <div v-for="tag in tags" class="edition-tag-flex2">
                     <p class="edition-tag-name">{{ tag.name }}</p>
-                    <input v-model="tag.checked" type="checkbox" class="edition-tag-checkbox"/>
+                    <input :id="tag.id" v-model="tag.checked" type="checkbox" class="edition-tag-checkbox"/>
                 </div>
             </div>
             <p class="edition-text-title"> Sommaire </p>
-            <textarea v-model="summary" class="edition-textarea" rows="6" cols="60" spellcheck="false"></textarea>
+            <textarea id="input-summary" v-model="summary" class="edition-textarea" rows="6" cols="60" spellcheck="false"></textarea>
             <p class="edition-text-title"> Description </p>
-            <textarea v-model="description" class="edition-textarea" rows="12" cols="60" spellcheck="false"></textarea>
+            <textarea id="input-description" v-model="description" class="edition-textarea" rows="12" cols="60" spellcheck="false"></textarea>
         </div>
         
         <p v-if=" error_message != ''" v-html="error_message" class="edition-error-message"></p>
@@ -75,8 +75,8 @@
     if(edit_id != null)
         loadData(edit_id);
 
-    for(let tag of AVAILABLE_TAGS)
-        tags.value.push({name: tag, checked : false});
+    for(let i = 0; i < AVAILABLE_TAGS.length;i++)
+        tags.value.push({ id: `tag-${i + 1}`, name: AVAILABLE_TAGS[i], checked : false});
 
     /** In the inputs field, change the values with the informations retrieved from the API for this visual novel. This function is called only
      * if the user edit an existing Visual Novel, and not when there is a creation.*/

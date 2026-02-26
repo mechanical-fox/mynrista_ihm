@@ -3,8 +3,8 @@
 <template>
     
     <div v-if="!editingInProgress" class="publishing-div">
-        <input v-model="titleInput" type="text" class="publishing-input"></input>
-        <button class="publishing-button" @click="create()">Créer Page</button>
+        <input id="publishing-input" v-model="titleInput" type="text" class="publishing-input"></input>
+        <button id="publishing-button" class="publishing-button" @click="create()">Créer Page</button>
 
         <div class="publishing-novel-div">
             <div v-for="novel in novels">

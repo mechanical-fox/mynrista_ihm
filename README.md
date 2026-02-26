@@ -10,11 +10,21 @@ début coverage IHM:
    - line 35.48
    - branche 31.87
 
+Après test des Top:
+   - line 51.65
+   - branche 41.11
+
+Après test des Top + Publishing:
+   - line 65.03
+   - branche 57.42
+
 1er test unitaire:
     - voir les tests manuels écrits
     - ATTENTION tous tests soient en anglais, soit en francais...
         Idée actuelle est francais.
     - en plus il y aura un test sur les catégories
+    - Reste juste --> 1. Création Visual Novel
+                      2. Vue Catégory (Ne pas tester les clics, ce qui nécessiterai composant Nav)
 
 Etape 9 bis- Tests unitaires IHM
 Etape 9 bis- Tests unitaires API

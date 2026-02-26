@@ -76,7 +76,7 @@ test("Impossible de s'enregistrer avec un email déjà utilisé", async ()=>{
     
 });
 
-test("L'inscription est un succès, quand toutes les informations remplis sont correctes", async ()=>{
+test("L'inscription est un succès, quand toutes les informations remplies sont correctes", async ()=>{
 
 
     const wrapper = mount(Nav);
@@ -135,7 +135,7 @@ test("Après une connexion réussie, pseudo et image sont visibles", async ()=>{
 
 
 
-test("Cliquer sur un Visual Novel du Top Nouveautés et Tendances affiche les informations sur le Visual Novel", async ()=>{
+test("Cliquer sur un Visual Novel du Top Nouveautés et Tendances, affiche les informations sur le Visual Novel", async ()=>{
 
     const wrapper = mount(Nav);
 
@@ -152,7 +152,7 @@ test("Cliquer sur un Visual Novel du Top Nouveautés et Tendances affiche les in
     expect(wrapper.text()).toContain("92 % évaluations positives (Steam)");
 });
 
-test("Cliquer sur un Visual Novel du Top Meilleurs évaluations affiche les informations sur le Visual Novel", async ()=>{
+test("Cliquer sur un Visual Novel du Top Meilleurs évaluations, affiche les informations sur le Visual Novel", async ()=>{
 
     const wrapper = mount(Nav);
 

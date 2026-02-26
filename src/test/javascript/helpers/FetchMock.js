@@ -33,10 +33,7 @@ export class FetchMock {
                 console.warn(msg);
                 throw new Error(msg);
             }
-
         }
-        else 
-            FetchMock.lastBodyCalled = null;
 
         for (let mock of FetchMock.mocks) {
 
@@ -78,11 +75,15 @@ export class FetchMock {
         return FetchMock.lastMethodCalled;
     }
 
-    /** Return the body given at the last url called, or null */
+    /** Return the body given at the last url called, or null. The body will be returned as a javascript object.
+     * This function suppose than the last body given was a json object, and if not this function will have an error.
+    */
     static getLastBodyGiven(){
-        return FetchMock.lastBodyCalled;
+
+        if(FetchMock.lastBodyCalled)
+            return JSON.parse(FetchMock.lastBodyCalled);
+        else
+            return null;
     }
-
-
 
 }
