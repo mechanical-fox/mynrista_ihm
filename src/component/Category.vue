@@ -7,7 +7,7 @@
 
     <div class="category-tag-panel">
 
-        <div v-for="tag in tags" :class="tag.div_style" @click="clickTag(tag.name)" @mouseover="mouseOverTag(tag.name)" @mouseout="mouseOutTag(tag.name)">
+        <div :id="tag.id" v-for="tag in tags" :class="tag.div_style" @click="clickTag(tag.name)" @mouseover="mouseOverTag(tag.name)" @mouseout="mouseOutTag(tag.name)">
             <img  :src="tag.image" class="category-tag-image"/>
             <p :class="tag.text_style">{{ tag.name }}</p>
         </div>
@@ -175,7 +175,10 @@
                 for(let tag of visualNovel.tags){
                     if(!inserted.includes(tag)){
 
+                        let id = `tag-${tag.toLowerCase().replaceAll(" ", "-")}`;
+
                         let item = {
+                            id : id,
                             name: tag, 
                             selected: false,
                             div_style : "category-tag-div", 
