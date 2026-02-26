@@ -2,7 +2,7 @@ name: Tests Unitaires
 
 on:
   push:
-    branches: [ "main", "feature/draft"]
+    branches: [ "main"]
   pull_request:
     branches: [ "main" ]
 
