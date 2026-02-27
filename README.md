@@ -165,6 +165,6 @@ npm run preview
 Afin de faciliter les mises à jours futures du projet, un peu de documentation est prévue. Il s'agit
 pour l'instant d'une liste de tests manuels, ainsi que de plusieurs idées d'améliorations.
 
-**Tests Manuels:** doc/tests.md\
-**Idées d'améliorations:** doc/amelioration_ideas.md
+**Tests Manuels:** [doc/tests.md](./doc/tests.md)\
+**Idées d'améliorations:** [doc/amelioration_ideas.md](./doc/amelioration_idea.md)
 
