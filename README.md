@@ -8,8 +8,9 @@ NOW
 
 Etape 9 bis- Fait: Ajouter à l'IHM en README les parties "Profils / Environnements" 
 Etape 9 bis- Fait: Partie "Déploiement" à écrire. Pour rappel profils ont été faits et testés
+Etape 9- Fait: Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
 
-Etape 9- Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
+
 Etape 8- Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
            Et seulement en 20 voir 10% dire que cela est un site portfolio...
            Histoire que cela fasse plus pro.
@@ -60,20 +61,17 @@ Etape 13- IDEE qui remplace erdline en REPRENDRE PROJET GITHUB et aussi NOM DOMA
 
 # Projet
 
-Ce projet contiendra le code de la partie web / graphique, du site Mynrista. Le site est en cours de
-création. Il sera prévue d'utiliser la technologie Vue pour la partie graphique.
+Ce projet contient le code de la partie frontend / graphique, du site Mynrista. Le site mynrista permet
+d'ajouter, et de consulter les informations sur différents visual novel. Tels que le sommaire du visual
+novel, sa date de parution, son pourcentage d'évaluation positives (Steam), ...
 
-Les fonctionnalités prévues pour le site internet sont les suivantes:
-- Pouvoir jouer à un jeux de type "Le joueur contrôle de labyrinthe" en navigateur internet
-- Plusieurs niveaux sont proposées aux joueurs
-- Chaque niveau est stocké en base de donnée
-- Il n'est pas nécessaire de créer un compte
-- Enregistrement des scores possibles avec un nom
+Les fonctionnalités actuelles sont les suivantes:
 
-
-Une partie spécifique à la création des niveaux de jeu sera aussi crée:
-- La création des niveau de jeu se fera via une sous-page "/editor" non indiquée sur le site
-- Un mot de passe devra être rentré pour la création des niveaux de jeu
+- Création de compte
+- Création de Pages de présentation de Visual Novel
+- Affichage des Visual Novels par top "Nouveautés et Tendances"
+- Affichage des Visual Novels par top "Meilleurs Evaluations"
+- Affichage des Visual Novels par tags / catégories
 
 
 # Tests unitaires
@@ -123,7 +121,7 @@ Description.vue, à la fonction translateDescription(text).
 Ce projet dispose de deux profils, "development" et "production". Par défaut, exécuter npx vite
 utilisera le profil "development". Et exécuter npx vite build utilisera l'environnement "production".
 
-**Profil development:** Utilisation d'une API localhost
+**Profil development:** Utilisation d'une API localhost\
 **Profil production:** Utilisation de l'API de production
 
 Vous pouvez spécifier un autre profil avec l'option --mode
@@ -133,7 +131,8 @@ npx vite --mode production
 ```
 
 Les configurations utilisées sont décrites dans les fichiers suivants
-[src/env/.env.development](./src/env/.env.development)
+
+[src/env/.env.development](./src/env/.env.development)\
 [src/env/.env.production](./src/env/.env.production)
 
 
@@ -161,11 +160,11 @@ npm run preview
 
 
 
-# Documentations
+# Documentation
 
-Afin de faciliter les mises à jours futures du projet, un peu de documentation. Il s'agit pour l'instant d'une
-liste de tests manuels, ainsi que de plusieurs idées d'améliorations.
+Afin de faciliter les mises à jours futures du projet, un peu de documentation est prévue. Il s'agit
+pour l'instant d'une liste de tests manuels, ainsi que de plusieurs idées d'améliorations.
 
-**Tests Manuels:** doc/tests.md
+**Tests Manuels:** doc/tests.md\
 **Idées d'améliorations:** doc/amelioration_ideas.md
 
