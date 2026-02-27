@@ -75,6 +75,10 @@
     const connected = ref(false);
     const pseudo = ref("");
 
+    Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
+    MessageUtil.listen("logError", (args)=>logError(args));
+    MessageUtil.listen("connect", (args)=>connect(args));
+
     /** A function to redirect toward the page Description, giving informations about the visual novel of id
     * "event.id" */
     function showVisual(event){
@@ -127,9 +131,7 @@
 
     }
 
-    Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
-    MessageUtil.listen("logError", (args)=>logError(args));
-     MessageUtil.listen("connect", (args)=>connect(args));
+
 
 </script>
 

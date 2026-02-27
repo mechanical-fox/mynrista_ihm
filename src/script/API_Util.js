@@ -5,7 +5,7 @@ import { Provider } from './Provider';
 
 export class API_Util {
 
-    static BASE_URL = "http://localhost";
+    static BASE_URL = import.meta.env.VITE_BASE_URL;
 
 
     /** A function to send a POST call, and perform an authentification. It will be necessary to use await, to 

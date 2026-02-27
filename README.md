@@ -5,29 +5,23 @@ NOW
    -> -- IMPORTANT: Connection avec mon mail yahoo et le mot passe defaut de Itsuki (Swagger) en base de donnée locale ---
 
 
-Etape 9 bis- Fait: Tests unitaires IHM
-Etape 9 bis- Tests unitaires API
-Etape 9 bis bis- Faire github action + au départ tester en déclenchant sur la branche draft aussi
 
+Etape 9 bis- Fait: Ajouter à l'IHM en README les parties "Profils / Environnements" 
+Etape 9 bis- Fait: Partie "Déploiement" à écrire. Pour rappel profils ont été faits et testés
+
+Etape 9- Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
 Etape 8- Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
            Et seulement en 20 voir 10% dire que cela est un site portfolio...
            Histoire que cela fasse plus pro.
 Etape 8 - Taille police d'écriture à réduire dans la page "A propos"
-ETape 8 - Tests unitaires finaux + cela comprend API aussi
-Etape 8- Faire Github Action API aussi (pas juste IHM) !! Pour ajouter la vérification des tests unitaires.
-Etape 8- Github Action IHM ajouter les tests unitaires
-Etape 9 - faire les environnement dev et prod en API
-Etape 10 - faire les environnement dev et prod en IHM
-Etape 9- Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
-Etape 9- Penser à mettre serveur https PROD + tester en local en config prod avant de déployer L'INSCRIPTION
-         car avec le port 443 et tout, je ne sais pas si cela marchera
 Etape 10- Déployer + tester une fois déployé
-Etape 10 bis- Modifier page about pour dire "Mynrista est un site dédié à la découverte, et à la présentation de visual novel... Vous pouvez actuellement
-    ..." puis finir sur un "Site crée par Pierre Meunier (Développeur). Site crée avec les technologies..." + mettre en début un message 
-    "Ce site est actuellement en début de développement, et sera amené à évoluer dans le futur".
+Etape 11- Après déploiement voir à tout supprimer en base + à tout remettre à la main, en mettant mon site localhost et celui
+    déployé côté à côte... A cause du soucis des id, qui avec l'import étaient mal gérés.
 Etape 11 - Site portfolio juste après après reflexion voir à mettre site ET backend. Et cela car l'on va surement me demander 
     de prouver mon expertise back-end et tout. (Rappel: Partie Note > Emploi j'ai déjà mis de bien mettre sur CV que j'ai fait 
     2 sites, et aussi 2 API) 
+
+
 
 Etape 10- IDEE aussi faire un site présentation "Tora Lockfire" et cela SANS ma photo après. Expliquer mon parcours, montrer mes projets
     de jeu... L'idée est que cela va me permettre avec Mynrista + erdline de montrer ce que je sais faire. Et ce site présentation Tora Lockfire 
@@ -81,6 +75,7 @@ Une partie spécifique à la création des niveaux de jeu sera aussi crée:
 - La création des niveau de jeu se fera via une sous-page "/editor" non indiquée sur le site
 - Un mot de passe devra être rentré pour la création des niveaux de jeu
 
+
 # Tests unitaires
 
 Les tests unitaires du projet peuvent être lancés avec la commande suivante.
@@ -92,58 +87,85 @@ npm run test
 Un rapport html sur la couverture de test est alors généré à "coverage/index.html".
 En cas de couverture de test insuffisante, un message warning sera affiché.
 
+
 # Executer
 
-Démarrer le site
+Installez tout d'abord les dépendances du projet avec
+
+```sh
+npm install
+```
+
+Vous pouvez ensuite démarrer le site internet avec
 
 ```sh
 npm run serve
 ```
 
-Construire le site en répertoire ./dist
+Vous pourrez alors vous connecter à l'adresse 
 
-```sh
-npm run build
-```
-
-Sert le répertoire ./dist, ou crée une erreur s'il n'existe pas
-
-```sh
-npm run preview
-```
+http://localhost:5173
 
 
 # Descriptions, et Titres 
 
 Le site Mynrista permet de rentrer des descriptions, pour les Visual Novels. Si vous parcourez le site
-officiel, vous pouvez  vous rendre compte que les descriptions peuvent comporter des titres de sections. 
+officiel, vous pouvez vous rendre compte que les descriptions peuvent comporter des titres de sections. 
 La façon de renseigner un titre de section est d'écrire " # Titre " dans le champ description d'un visual
 novel.
 
 Si vous souhaitez améliorer l'affichage des descriptions, le formatage est réalisé dans le composant 
 Description.vue, à la fonction translateDescription(text).
 
-# Tests Manuels
 
-Ce logiciel a déjà été testé de façon extensive. Que cela soit en test manuel, ou en test unitaire.
-Néanmoins en cas de modification du code source, et d'ajout de nouvelles fonctionnalités, vous pourriez
-souhaitez vérifier si le logiciel fonctionne toujours correctement sur les anciennes fonctionnalités.
+# Profils / Environnements
 
-Pour cette raisons, il a été conservé une liste des tests manuels précédement effectués dans le fichier
-suivant.
+Ce projet dispose de deux profils, "development" et "production". Par défaut, exécuter npx vite
+utilisera le profil "development". Et exécuter npx vite build utilisera l'environnement "production".
 
-[/doc/tests](./doc/tests.md)
+**Profil development:** Utilisation d'une API localhost
+**Profil production:** Utilisation de l'API de production
+
+Vous pouvez spécifier un autre profil avec l'option --mode
+
+```sh
+npx vite --mode production
+```
+
+Les configurations utilisées sont décrites dans les fichiers suivants
+[src/env/.env.development](./src/env/.env.development)
+[src/env/.env.production](./src/env/.env.production)
 
 
-# Idées d'amélioration
 
-Bien que présentant déjà un grand nombre de fonctionnalités, ce site sera amené à évoluer dans le futur.
-Afin de préparer au mieux cette évolutions, plusieurs idées d'améliorations ont déjà été préparées en
-avance.  
-
-Ces idées d'améliorations peuvent être trouvées dans le fichier suivant.
+# Déploiement    
 
 
-[/doc/amelioration_idea](./doc/amelioration_idea.md)
+Un site internet se déploie en plaçant dans un répertoire spécifique d'un serveur web les 
+fichiers html, css, et javascript, correspondant à notre site internet. L'on parle généralement
+de répertoire dist.
 
+Pour construire le répertoire ./dist
+
+```sh
+npm install
+npm run build
+```
+
+Une fois le répertoire ./dist crée, vous pouvez vérifier le rendu du site internet en servant
+ce répertoire via la commande suivante
+
+```sh
+npm run preview
+```
+
+
+
+# Documentations
+
+Afin de faciliter les mises à jours futures du projet, un peu de documentation. Il s'agit pour l'instant d'une
+liste de tests manuels, ainsi que de plusieurs idées d'améliorations.
+
+**Tests Manuels:** doc/tests.md
+**Idées d'améliorations:** doc/amelioration_ideas.md
 
