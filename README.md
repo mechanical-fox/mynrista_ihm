@@ -9,18 +9,30 @@ NOW
 Etape 9 bis- Fait: Ajouter à l'IHM en README les parties "Profils / Environnements" 
 Etape 9 bis- Fait: Partie "Déploiement" à écrire. Pour rappel profils ont été faits et testés
 Etape 9- Fait: Refaire en README la description du projet car la elle est totalement fausse (ancienne idée inscrite)
-
-
-Etape 8- Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
+Etape 9- Fait: Après déploiement voir à tout supprimer en base + à tout remettre à la main, à cause des soucis d'id
+Etape 8- Fait: Au niveau "A propos" texte à refaire pour en 80% parler ce que fait le site.
            Et seulement en 20 voir 10% dire que cela est un site portfolio...
            Histoire que cela fasse plus pro.
-Etape 8 - Taille police d'écriture à réduire dans la page "A propos"
-Etape 10- Déployer + tester une fois déployé
-Etape 11- Après déploiement voir à tout supprimer en base + à tout remettre à la main, en mettant mon site localhost et celui
-    déployé côté à côte... A cause du soucis des id, qui avec l'import étaient mal gérés.
-Etape 11 - Site portfolio juste après après reflexion voir à mettre site ET backend. Et cela car l'on va surement me demander 
+Etape 8 - Fait: Taille police d'écriture à réduire dans la page "A propos"
+
+
+Etape 8 - SUR APRES REFLEXION, et voir ma synthese java sur ce qu'il faut tester. Je pense chercher à résoudre en 8 
+secondes les cas "Meilleur affichage message si serveur down quand on arrive -> Gérer UNIQUEMENT lors de la 1er
+connection, et non à chaque page" + Si serveur down, afficher cela en 3 ou 4 secondes (je pense tester timeout de 
+fetch voir si marche - et sinon juste utiliser 2 fonctions en asynchrone) (Aussi, utiliser une url "health" censé
+répondre rapidement, genre soit swagger actuellement, soit url de base tous les vn si elle répond vite... cela 
+semble être le cas).
+
+
+Etape 9- relancer les tests unitaire après les modifications dites auparavant. Voir si le % de couverture est encore bon ou non.
+Etape 10- Déployer + tester IHM une fois déployé. Tester entre autre édition (mais pas création) de visual novel.
+Tester aussi l'inscription, en me supprimant de la base de donnée à la main. Il s'agit de 2 fonctionnalités importantes.
+Etape 10- Faire Merge + texte merge request + tag + release + vérifier à chaque fois (1 merge, 1 push sur main) que la Github Action
+est bien passée
+Etape 10 - Site portfolio juste après après reflexion voir à mettre site ET backend. Et cela car l'on va surement me demander 
     de prouver mon expertise back-end et tout. (Rappel: Partie Note > Emploi j'ai déjà mis de bien mettre sur CV que j'ai fait 
     2 sites, et aussi 2 API) 
+Etape 11 - Les trucs en bas à dégager dans un fichier spécifique + supprimer le TODO
 
 
 

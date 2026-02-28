@@ -37,7 +37,7 @@
     import {Util} from "../script/Util";
 
 
-    const DELAY_BEFORE_LOADING_CIRCLE = 1200;
+    const DELAY_BEFORE_LOADING_CIRCLE = import.meta.env.VITE_DELAY_BEFORE_LOADING_CIRCLE;
     const emit = defineEmits(['requestVisual']);
     let visualNovels = ref([]);
     let selectedVisualNovels = ref([]);

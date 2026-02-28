@@ -6,24 +6,22 @@
 
     <p class="basic-text">
         &nbsp;&nbsp;&nbsp;&nbsp;
-        Site créé par Pierre Meunier (Développeur).    
-        Si vous êtes sur ce site, cela est surement car vous êtes une entreprise auquelle j'ai pu envoyer un CV. 
-        Le but de ce site est en effet de servir de portfolio. Et ce site n'est ainsi pas indexé sur Google.
+        Mynrista est un site dédié à la documentation des jeux de type Visual Novel. Et cela afin de pouvoir
+        documenter des jeux présents sur Steam, sur Itchio, ou bien n'ayant connu qu'une sortie en support
+        physique.
         <br/>
         <br/>
         <br/>
         &nbsp;&nbsp;&nbsp;&nbsp;
-        Je dispose d'un Github, sur lequel vous pouvez retrouver le code de plusieurs de mes projets.    
-        Le code du site Mynrista y est également disponible.
+        Mynrista est l'oeuvre d'un développeur Solo, et est actuellement en version alpha. Des mises à jour
+        du site internet sont prévues. Afin de permettre d'ajouter des captures d'écran des visual novels, 
+        ou d'offrir une plus grande configuration pour la recherche.
         <br/>
         <br/>    
         <br/>
-        &nbsp;&nbsp;&nbsp;&nbsp;
-        <b>Page Github</b> &nbsp;&nbsp;&nbsp;&nbsp; https://github.com/mechanical-fox 
-        <br/>
-        <br/>
-        <br/>
-        <i>Site créé avec les technologies Java 25, et Vue 3.5 </i>
+        
+        <i>&nbsp;&nbsp;&nbsp;&nbsp; Développé par Pierre Meunier</i> <br/>
+        <i>&nbsp;&nbsp;&nbsp;&nbsp; Frameworks: Java 25, Vue 3.5 </i>
         <br/>
     </p>
 

@@ -1,9 +1,27 @@
 
 
+
+
+@media (min-width: 900px) { 
+
+    :root{
+        --welcome-div-width: 55vw;
+    }
+    
+}
+
+@media (max-width: 900px) { 
+
+    :root{
+        --welcome-div-width: 70vw;
+    }
+    
+}
+
 .about-div{
     display: block; 
-    margin: 15vh 0vw 5vh 20vw;
-    width: 50vw;
+    margin: 15vh 0vw 5vh 10vw;
+    width: var(--welcome-div-width);
     max-width: 700px;
 }
 
@@ -11,6 +29,6 @@
     text-align: justify;
     display: block;
     text-justify: inter-word;
-    font: 1.2rem Serif;
+    font: 1.1rem Serif;
 }
    

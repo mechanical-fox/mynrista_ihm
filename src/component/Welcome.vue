@@ -52,7 +52,7 @@
     import {Util} from "../script/Util";
     import ScoreBarA from "./ScoreBarA.vue";
 
-    const DELAY_BEFORE_LOADING_CIRCLE = 1200;
+    const DELAY_BEFORE_LOADING_CIRCLE = import.meta.env.VITE_DELAY_BEFORE_LOADING_CIRCLE;
     const emit = defineEmits(['requestVisual']) ;
     let topRecent = ref([]);
     let topRating = ref([]);
@@ -68,8 +68,10 @@
     /** Function that ask to the API the visual novels, and the top associated. After this function, the 
     * tops will be displayed */
     async function loadData(){
-        let answer = await API_Util.get("/visual-novel/top-new");
-        let answer2 = await API_Util.get("/visual-novel/top-rating");
+        let answerPromise = API_Util.get("/visual-novel/top-new");
+        let answer2Promise = API_Util.get("/visual-novel/top-rating");
+        let answer = await answerPromise;
+        let answer2 = await answer2Promise;
 
         if(answer.hasFailed && answer.errorCode == EErrorCode.ERROR_CONNECTION){
             MessageUtil.call("logError", ["ERR_CONNECT", "Erreur de connexion au serveur"]);

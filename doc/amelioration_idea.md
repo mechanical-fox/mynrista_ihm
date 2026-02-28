@@ -1,8 +1,69 @@
 
 # Idées d'améliorations
 
+## Rappel Priorité
 
-## Idée 1 : Gestion des Visuals Novel sans Note / Pourcentage d'Evaluation
+Pour rappel les trois priorités sur lesquelles j'ai travaillé au début, et que je dois garder
+bien remplis / tester à chaque version:
+
+1. Un cas qui peut arrivé, et est arrivé avec Erdline est l'API qui est down. En cas de site 
+indisponible, il faut faire attention à faire un message claire, et non juste un petit message
+rouge en haut à droite. Cela est plus important que la gestion des codes d'erreurs, qui 
+n'apparaisent qu'en cas de bugs en fait.
+
+2. Voir à réduire les timeouts avant de déclarer des erreurs. En particulier le timeout avant de 
+déterminer si un site est indisponible. Pour ce cas particulier, appeler une url "health"
+qui répond, sans faire d'appel à la base de donnée. Ainsi je pourrais mettre un timeout à 
+3 ou 4 secondes, et sans cercle de chargement.
+
+3. Il faut que la présence du cercle bleue qui est un peu stressante n'apparaisse qu'au dessus 
+d'un temps long. Comme 3 secondes.
+
+
+## Idée 0 : Gestion des Serveurs Indisponibles + Lent.
+
+Un point que je n'avait pas prévu est que assez fréquement les serveurs peuvent avoir des soucis.
+En particulier à cause de pirates informatiques. Ou aussi les serveurs peuvent être lent. Donc faire
+plusieurs choses:
+
+- Si serveur = indisponible, ne pas afficher des composants partiel comme "Nouveautés et Tendances"
+- Si serveur = indisponible, créer un composant vue à appeller pour la présentation. Partout la même
+présentation + ne PAS afficher de message d'erreur en haut à droite. Et bref, tout est géré dans le
+composant enfant, donc.
+- Voir à baiser le timeout avant de déclarer une erreur. Actuellement, 17 secondes.
+- Voir à monter le timeout avant de mettre un cercle de chargement. Plus vers 4 secondes
+
+## Idée 1 : Gérer Vue Mobile pour Publication + Edition
+
+Les pages Publications et Editions ne gèrent tous les deux pas la vue mobile.
+Voir à gérer cela. Et pour l'Edition l'idée est simple. Faire une requete à quelque chose
+comme windows, afin d'avoir la hauteur de fenetre, savoir si l'on est sur mobile. Et alors 
+modifier le html si cela est nécessaire pour modifier la largeur des text area.
+
+## Idée 2 : Ajout d'une Page "Recherche"
+
+Ajout d'une page recherche, avec barre de recherche (distance de xxx pour recherche en base). Ainsi 
+qu'avec des options supplémentaires, comme date de realese de x à x. Tag. Et autres.
+
+L'idée est que vraiment ajouter des pages, cela renvoit à une idée de site plus sérieux.
+
+Il faudra voir à adapter les tests si nécessaire. Car il y a de bonne chance que j'utilise des mots
+clés SQL spécifique à PostgreSQL qui ne marcheront pas en test avec une base H2. Il me faudra alors
+en tets soit envoyé une autre requête SQL, avec les mots clés pour la base H2, si cela existe. Ce
+qui serait le mieux. Soit ne pas tester la barre de recherche en test unitaire.
+
+## Idée 3 : Ajout de la page publication en vue non connecté
+
+Faire comme Itchio. En vue non connecté ajouter la page publication.
+
+L'idée est que vraiment ajouter des pages, cela renvoit à une idée de site plus sérieux. Et cela 
+va me permettre de montrer un peu ce que j'ai programmé (avec les images entre autres).
+
+Si une personne clique, préciser qu'il faudra alors se connecter. Aller regarder itchio pour voir des 
+exemples de comment bien faire. Mettre des images exemples de l'interface. Bref, cela permettra de
+montrer un peu mon travail à des employeurs.
+
+## Idée 4 : Gestion des Visuals Novel sans Note / Pourcentage d'Evaluation
 
 Certains Visual Novels sont sans Note / Pourcentage d'évaluation positives. Voir à gérer ce cas
 ci, car actuellement cela n'est pas très bien géré. 
@@ -10,7 +71,7 @@ ci, car actuellement cela n'est pas très bien géré.
 Rechercher via Catégorie le Visual Novel "Untold Atlas: otome sim inspired by expedition adventures"
 pour avoir un exemple de Visual Novel sans pourcentage d'évaluation.
 
-## Idée 2 : Ajouter Les catégories/tags en Vue détail
+## Idée 5 : Ajouter Les catégories/tags en Vue détail
 
 Lors du clic sur un Visual Novel, que cela soit en top ou via la page "Catégorie", l'on rentre
 dans une page qui est appellé la vue détail.
@@ -20,28 +81,18 @@ novel. Faire comme Steam, et au dessus d'un certain nombre de tag arreter de les
 ajouter un bouton avec une icone bootstrap "voir" qui permet de voir tous les tags. Et mettre en
 infobulle "voir tous les tags".
 
-## Idée 3: Ajout d'une barre de recherche
 
-Ajouter une barre de recherche. Et cela surement dans la page catégorie, et bien faire attention à
-la présentation en vue mobile.
-
-Il faudra voir à adapter les tests si nécessaire. Car il y a de bonne chance que j'utilise des mots
-clés SQL spécifique à PostgreSQL qui ne marcheront pas en test avec une base H2. Il me faudra alors
-en tets soit envoyé une autre requête SQL, avec les mots clés pour la base H2, si cela existe. Ce
-qui serait le mieux. Soit ne pas tester la barre de recherche en test unitaire.
-
-
-## Idée 4 : Ajout d'un bouton "Steam" et un "Itchio".
+## Idée 6 : Ajout d'un bouton "Steam" et un "Itchio".
 
 Ajouter un bouton Steam, ou itchio. Qui renvoit vers la bonne page Steam, ou itchio, selon le bouton.
 Et cela sur la page détail.
 
-## Idée 5 : Permettre d'ajouter des captures d'écrans
+## Idée 7 : Permettre d'ajouter des captures d'écrans
 
 Permettre pour les jeux d'ajouter des captures d'écran du jeu considéré. Eviter les vidéos par contre.
 Cela risquerait d'être un peu lourd.
 
-## Idée 6: Amélioration processus d'inscription
+## Idée 8: Amélioration processus d'inscription
 
 Le processus d'inscription actuelle à 2 soucis:
 - l'API doit être démarrée en mode Admin à cause de l'utilisation du port 80. Lié à servir une 
@@ -59,7 +110,7 @@ Et l'idée serait ensuite pour l'API d'enfin changer, le port de 80 à un port n
 de lancer l'API comme admin.
 
 
-## Idée 7 : Faire une vue profil client + séparer admin / non-admin
+## Idée 9 : Faire une vue profil client + séparer admin / non-admin
 
 Faire une vrai vue de profil client. En client sur le bouton en haut à droite.
 Juste permettre la modification des informations au début. Et plus tard, de voir les visuals novels
@@ -74,7 +125,19 @@ que les comptes non-admin plus:
 
 Le flag admin devra être switché directement en base. Et il faudra écrire en README cette spécificité.
 
-## Idée 8 : Possibilité de mettre Favoris + Interessé / Acheter...
+## Idée 10 : Possibilité de contacter par ticket (Envoi e-mail au modérateur)
+
+Permettre sur le site de logger des tickets. Et au niveau API renseigner dans application.yml l'email
+d'un administrateur, donc ici moi. Et à chaque ticket, si date dernier message > 24h (sécurité anti-spam),
+alors envoyer un mail.
+
+Et l'idée est de permettre de faire une communication par ticket.
+
+Niveau utilisateur, ajouter un champ "Mes tickets". Et envoyer avec contact@mynrista.fr un message disant
+que le ticket à récu une réponse. Et éventuellement le message à l'intérieur du mail.
+
+
+## Idée 11 : Possibilité de mettre Favoris + Interessé / Acheter...
 
 Ici il y a 2 fonctions. L'on doit pouvoir faire une liste de Favoris, et il y aura une page favoris
 à indiquer au client.
@@ -84,14 +147,14 @@ Ces états seront utilisés après pour des recommandations par genre
 
 
 
-## Idée 9 : Possibilité dd'ajouter des commentaires
+## Idée 12 : Possibilité d'ajouter des commentaires
 
 Permettre aux clients d'ajouter des commentaires. Il faudra éventuellement ajouter quelques commentaires.
 Mais je dirai en mettre juste 1/2 sur des Visuals Novels auxquelles j'ai pu jouer. Et toujours
 avec le même compte qui ici me représentera.
 
 
-## Idée 10 : Ajout d'une 3ème top
+## Idée 13 : Ajout d'une 3ème top
 
 Ajout d'un 3ème top qui mixera note + date release. S'aider de la présentation du 2ème top.
 
@@ -100,7 +163,7 @@ La formule de calcul sera note, et faire -10% pour chaque année écoulé. Mais 
 de puissance, afin que même d'anciens jeux puissent être proposé. La valeur de -10% sera d'ailleurs
 à mettre en paramètre, et sera éventuellement moins que 10. Comme par exemple 5%.
 
-## Idée 11 : Ajout de recommandations
+## Idée 14 : Ajout de recommandations
 
 Permettre d'avoir des recommandations. A faire uniquement en fonction du genre + d'un score qui sera le 
 même que pour le 3ème top (mix note et date release).

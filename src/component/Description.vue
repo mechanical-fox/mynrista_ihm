@@ -36,9 +36,9 @@
     import {Util} from "../script/Util";
     import ScoreBarB from "./ScoreBarB.vue";
 
+    const DELAY_BEFORE_LOADING_CIRCLE = import.meta.env.VITE_DELAY_BEFORE_LOADING_CIRCLE;
     const props = defineProps(['visual_id']);
     const visual_id = props.visual_id;
-    const DELAY_BEFORE_LOADING_CIRCLE = 1200;
     const isLoaded = ref(false);
     const isRecentlyOpened = ref(true);
     const visual = ref(null);
