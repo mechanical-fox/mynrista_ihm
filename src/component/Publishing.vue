@@ -15,7 +15,7 @@
                         <p class="publishing-novel-title">{{ novel.title }}</p>
                     </div>
                     <button class="publishing-edit-button" @click="edit(novel.title, novel.id)">
-                        <img src="/edit.svg" class="publishing-edit-image">
+                        <img src="/images/edit.svg" class="publishing-edit-image">
                     </button>
                 </div>
                 

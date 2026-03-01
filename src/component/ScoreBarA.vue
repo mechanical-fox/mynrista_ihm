@@ -22,14 +22,14 @@
     for(let i = 0; i < 5; i++){
         if(remain >= 20){
             remain -= 20;
-            images.value.push("star-filled.svg");
+            images.value.push("images/star-filled.svg");
         }
         else if(remain >= 10){
             remain -= 10;
-            images.value.push("star-half-filled.svg");
+            images.value.push("images/star-half-filled.svg");
         }
         else
-            images.value.push("star.svg");
+            images.value.push("images/star.svg");
     }
 
 </script>

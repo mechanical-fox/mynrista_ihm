@@ -48,6 +48,28 @@ export class API_Util {
         return API_Util.request(url, 'GET', {}, undefined);
     }
 
+    /** For a url accesible in GET without authentification, return true if the url is accessible, and false in
+     * others cases. It will be necessary to use await, to retrieve the result. The timeout is in millisecond. The
+     * goal of this function is to test if the APIs is down when a user connect. Because, it occurs sometimes 
+     * than the website is up, but the API is down.*/
+    static async testConnection(url, timeout){
+
+        let response = null;
+
+        try{
+            const newUrl = API_Util.BASE_URL + url;
+            const options = {
+                method : "GET",
+                signal: AbortSignal.timeout(timeout)
+            };
+            response = await Provider.fetch(newUrl, options);
+        }
+        catch(err){
+            return false;
+        }
+
+        return response && response.ok;
+    }
 
     /** This function performs a request to an url, and return the response of the request. It will be necessary to 
     * use await, to retrieve the result.In the case of a error, the message stored in the API_Response is volontary

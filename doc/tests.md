@@ -97,3 +97,19 @@ ci dans la base de donnée, au niveau de la table "visual_novel". Veuillez notez
 d'autres tables que la table "visual_novel", et vont géner le processus de suppression. Pour éviter ces soucis,
 avant de supprimer le Visual Novel test crée, il est conseillé de mettre 100% des tags à false, avant de supprimer
 le Visual Novel en base.
+
+# Test 8 : Vérification Comportement Crash Serveur
+
+Un cas à tester, car pouvant arriver, est de savoir ce qu'il se passe lorsque le serveur / l'API est en erreur.
+Pour cela, le mieux est de démarrer le serveur en dev, sans avoir démarré l'API en localhost. Il s'agit ensuite
+de vérifier:
+
+1. Le message d'erreur est il visible, et compréhensible ? Le but est d'éviter comme j'avais au début un message
+de taille très petite, écrit en haut à droite. Et cela s'ajoutais avec les mots "Nouveautés et Tendances",
+"Meilleurs évaluations", et un Top qui apparaisait vide sur la page... Donc la page rendait assez mal.
+
+2. Le message apparait il en un temps court ? L'idée est que sans timeout, le message apparait après 13 secondes.
+Idéalement, le message devrait apparaitre au bout de 4 secondes maximum. Et mettre un cercle de chargement au
+besoin.
+
+3. Passer en vue "smartphone", et vérifier que la présentation du message d'erreur reste correcte en vue smartphone

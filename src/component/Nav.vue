@@ -10,7 +10,7 @@
                 <button id="signin-button" class="nav-button" @click="select('Login')"> Connexion </button>
                 <button id="signup-button" class="nav-button" @click="select('Registration')"> Inscription </button>
             </div>
-            <img v-if="connected" id="user_image" class="nav-user-image" src="/user.svg"/>
+            <img v-if="connected" id="user_image" class="nav-user-image" src="/images/user.svg"/>
             <p v-if="connected" id="user_pseudo" class="nav-pseudo"> {{ pseudo }}</p>
         </div>
         <div class="flex-line-align-top">
@@ -29,13 +29,23 @@
     </div>
     
 
-    <Welcome v-if="selected=='Accueil'" @requestVisual="showVisual($event)"/>
-    <Category v-if="selected=='Catégories'" @requestVisual="showVisual($event)"/>
+    <Welcome v-if="server_up && selected=='Accueil'" @requestVisual="showVisual($event)"/>
+    <Category v-if="server_up && selected=='Catégories'" @requestVisual="showVisual($event)"/>
     <About v-if="selected=='A propos'" />
-    <Publishing v-if="selected=='Publication'" />
-    <Registration v-if="selected=='Registration'" />
-    <Login v-if="selected=='Login'" />
-    <Description v-if="selected=='Description'" :visual_id="idVisualRequested"/>
+    <Publishing v-if="server_up && selected=='Publication'" />
+    <Registration v-if="server_up  && selected=='Registration'" />
+    <Login v-if="server_up && selected=='Login'" />
+    <Description v-if="server_up  && selected=='Description'" :visual_id="idVisualRequested"/>
+
+    <div v-if="!server_up && test_server_finished && selected != 'A propos'" class="nav-server-down-div">
+        <img class="nav-server-down-image" src="/images/construction.svg"/>
+        <p class="nav-server-down-text"> 
+            <b>ERR_CONNECT</b> <br/><br/>
+            Service inaccessible. 
+            Nos serveurs sont actuellement surchargés, ou en erreur.<br/><br/>
+            Veuillez nous excuser pour la gêne occasionnée.
+        </p>
+    </div>
 
     <p v-if="error_message" class="error-message">
         <b>{{ error_title }}</b>
@@ -52,6 +62,7 @@
     import {ref} from 'vue';
     import {MessageUtil} from '../script/MessageUtil';
     import {Util} from '../script/Util';
+    import {API_Util} from '../script/API_Util';
 
     import Welcome from './Welcome.vue';
     import About from './About.vue';
@@ -60,6 +71,7 @@
     import Login from './Login.vue';
     import Description from './Description.vue';
     import Category from './Category.vue';
+
 
 
     const MESSAGE_TIME_MS = 8000;
@@ -74,10 +86,20 @@
     const error_message = ref("");
     const connected = ref(false);
     const pseudo = ref("");
+    const test_server_finished = ref(false);
+    const server_up = ref(false);
 
-    Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
-    MessageUtil.listen("logError", (args)=>logError(args));
-    MessageUtil.listen("connect", (args)=>connect(args));
+    setup();
+
+    /** A function than will setup the Nav, to be able to perform properly. The main */
+    async function setup(){
+        Util.createTimer("ErrorTimer",()=>clearError(), MESSAGE_TIME_MS);
+        MessageUtil.listen("logError", (args)=>logError(args));
+        MessageUtil.listen("connect", (args)=>connect(args));
+        
+        server_up.value = await API_Util.testConnection("/visual-novel/top-new", 3000);
+        test_server_finished.value = true;
+    }
 
     /** A function to redirect toward the page Description, giving informations about the visual novel of id
     * "event.id" */

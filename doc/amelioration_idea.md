@@ -1,37 +1,13 @@
 
 # Idées d'améliorations
 
-## Rappel Priorité
+## Idée 0 : Tester ajout cercle chargement crash serveur
 
-Pour rappel les trois priorités sur lesquelles j'ai travaillé au début, et que je dois garder
-bien remplis / tester à chaque version:
+Actuellement, la présentation en cas de crash serveur est mieux gérée qu'avant.
 
-1. Un cas qui peut arrivé, et est arrivé avec Erdline est l'API qui est down. En cas de site 
-indisponible, il faut faire attention à faire un message claire, et non juste un petit message
-rouge en haut à droite. Cela est plus important que la gestion des codes d'erreurs, qui 
-n'apparaisent qu'en cas de bugs en fait.
-
-2. Voir à réduire les timeouts avant de déclarer des erreurs. En particulier le timeout avant de 
-déterminer si un site est indisponible. Pour ce cas particulier, appeler une url "health"
-qui répond, sans faire d'appel à la base de donnée. Ainsi je pourrais mettre un timeout à 
-3 ou 4 secondes, et sans cercle de chargement.
-
-3. Il faut que la présence du cercle bleue qui est un peu stressante n'apparaisse qu'au dessus 
-d'un temps long. Comme 3 secondes.
-
-
-## Idée 0 : Gestion des Serveurs Indisponibles + Lent.
-
-Un point que je n'avait pas prévu est que assez fréquement les serveurs peuvent avoir des soucis.
-En particulier à cause de pirates informatiques. Ou aussi les serveurs peuvent être lent. Donc faire
-plusieurs choses:
-
-- Si serveur = indisponible, ne pas afficher des composants partiel comme "Nouveautés et Tendances"
-- Si serveur = indisponible, créer un composant vue à appeller pour la présentation. Partout la même
-présentation + ne PAS afficher de message d'erreur en haut à droite. Et bref, tout est géré dans le
-composant enfant, donc.
-- Voir à baiser le timeout avant de déclarer une erreur. Actuellement, 17 secondes.
-- Voir à monter le timeout avant de mettre un cercle de chargement. Plus vers 4 secondes
+Mais je trouve que cela fasse assez bizarre, le fait de ne pas voir de cercle de chargement
+juste avant de faire apparaitre le message d'erreur. Je pense que corriger cela serait assez
+rapide.
 
 ## Idée 1 : Gérer Vue Mobile pour Publication + Edition
 

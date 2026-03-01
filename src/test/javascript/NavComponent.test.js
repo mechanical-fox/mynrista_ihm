@@ -27,7 +27,7 @@ test(`La page affichée change lorsque je clique sur l'item "A propos"`, async (
     await wrapper.find("#about-item").trigger("click");
 
     expect(wrapper.find("#about-div").exists()).toBe(true);
-    expect(wrapper.find("#about-div").text()).toContain("Site créé avec les technologies Java 25, et Vue 3.5");
+    expect(wrapper.find("#about-div").text()).toContain("Mynrista est un site dédié à la documentation des jeux de type Visual Novel.");
     
 });
 
@@ -36,6 +36,8 @@ test("Impossible de s'enregistrer avec un mot de passe < 6 caractères", async (
 
 
     const wrapper = mount(Nav);
+
+    await Helper.sleep(500);
 
     expect(wrapper.find("#signup-button").exists()).toBe(true);
 
@@ -59,6 +61,8 @@ test("Impossible de s'enregistrer avec un email déjà utilisé", async ()=>{
 
     const wrapper = mount(Nav);
 
+    await Helper.sleep(500);
+
     expect(wrapper.find("#signup-button").exists()).toBe(true);
 
     await wrapper.find("#signup-button").trigger("click");
@@ -80,6 +84,8 @@ test("L'inscription est un succès, quand toutes les informations remplies sont 
 
 
     const wrapper = mount(Nav);
+
+    await Helper.sleep(500);
 
     expect(wrapper.find("#signup-button").exists()).toBe(true);
 
@@ -103,6 +109,8 @@ test("Un message d'erreur apparait en cas de mot de passe erroné", async ()=>{
 
     const wrapper = mount(Nav);
 
+    await Helper.sleep(500);
+
     expect(wrapper.find("#signin-button").exists()).toBe(true);
     await wrapper.find("#signin-button").trigger("click");
     await wrapper.find("#input-email").setValue("itsuki@gmail.com");
@@ -119,6 +127,8 @@ test("Après une connexion réussie, pseudo et image sont visibles", async ()=>{
 
 
     const wrapper = mount(Nav);
+
+    await Helper.sleep(500);
 
     expect(wrapper.find("#signin-button").exists()).toBe(true);
     await wrapper.find("#signin-button").trigger("click");

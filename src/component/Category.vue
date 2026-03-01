@@ -91,13 +91,13 @@
                 if(tag.selected){
                     tag.selected = false;
                     tag.div_style = "category-tag-div";
-                    tag.image = "/tag.svg";
+                    tag.image = "/images/tag.svg";
                     tag.text_style =  "category-tag-text";
                 }
                 else{
                     tag.selected = true;
                     tag.div_style = "category-tag-div-selected";
-                    tag.image = "/tag-selected.svg";
+                    tag.image = "/images/tag-selected.svg";
                     tag.text_style = "category-tag-text-selected";
                 }
             }
@@ -111,7 +111,7 @@
         for(let tag of tags.value){
             if(tag.name == name){
                 tag.div_style = "category-tag-div-selected";
-                tag.image = "/tag-selected.svg";
+                tag.image = "/images/tag-selected.svg";
                 tag.text_style = "category-tag-text-selected";
             }
         }
@@ -145,7 +145,7 @@
         for(let tag of tags.value){
             if(tag.name == name && tag.selected == false){
                 tag.div_style = "category-tag-div";
-                tag.image = "/tag.svg";
+                tag.image = "/images/tag.svg";
                 tag.text_style = "category-tag-text";
             }
         }
@@ -182,7 +182,7 @@
                             name: tag, 
                             selected: false,
                             div_style : "category-tag-div", 
-                            image : "/tag.svg", 
+                            image : "/images/tag.svg", 
                             text_style : "category-tag-text"
                         };
 
@@ -195,7 +195,7 @@
             if(tags.value.length > 0){
                 tags.value[0].selected = true;
                 tags.value[0].div_style = "category-tag-div-selected";
-                tags.value[0].image = "/tag-selected.svg";
+                tags.value[0].image = "/images/tag-selected.svg";
                 tags.value[0].text_style = "category-tag-text-selected";
             }
 
