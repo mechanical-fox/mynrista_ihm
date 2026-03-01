@@ -1,0 +1,147 @@
+@media (min-width: 1000px) { 
+
+    .edition-error-message{
+        margin: 1.4rem 0.7rem 0.3rem 7.0rem;
+        padding: 1.0rem 1.4rem 1.0rem 1.4rem;
+        color: rgb(0,0,0);
+        font: 1.0rem Serif;
+        box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+        border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+        width: 20vw;
+        background-color: rgb(255, 0, 0);
+    }  
+}
+
+@media (max-width: 1000px) { 
+
+    .edition-error-message{
+        margin: 1.4rem 0.7rem 0.3rem 1.0rem;
+        padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+        color: rgb(0,0,0);
+        font: 0.9rem Serif;
+        box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+        border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+        width: 50vw;
+        background-color: rgb(255, 0, 0);
+    }  
+}
+
+.edition-div{
+    display: block; 
+    margin: 5vh 0vw 5vh 20vw;
+    width: 50vw;
+    max-width: 700px;
+}
+
+.edition-text{
+    margin: 0.7rem 0.7rem 0.7rem 4.8rem;
+    color: rgb(0,0,0);
+    font: 1.0rem Serif;
+}
+
+.edition-browse-image-button{
+    display: block;
+    margin: 0.7rem 0.7rem 0.7rem 5rem;
+    font: 0.9rem Serif;
+}
+
+.edition-browse-image-button::file-selector-button {
+    margin: 0.2rem 1.7rem 0.2rem 0rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border: 0px solid rgb(0,0,0);
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    background-color: rgb(54, 54, 54);
+    color: rgb(255,255,255);
+    font: bold 0.9rem Serif;
+    cursor: pointer;   
+}
+
+.edition-image{
+    margin: 2.0rem;
+    display:block;
+    object-fit: cover;
+    width:345px;
+    height: 161px;
+    border-radius: 0.5rem;
+}
+
+.edition-textarea{
+    margin: 0.7rem 0.7rem 1.4rem 4.8rem;
+    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(117, 117, 117);
+    box-shadow: 0.3rem 0.3rem 0.2rem rgb(189, 211, 221);
+    font: 0.9rem Serif;
+}
+
+.edition-text-title{
+    margin: 0.7rem 0.7rem 0.2rem 2.8rem;
+    color: rgb(58, 58, 58);
+    font: italic 0.9rem Serif;
+}
+
+.edition-input-date{
+    margin: 1.0rem 0.7rem 0.7rem 4.8rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    font: italic 0.9rem Serif;
+    border: 1px solid rgb(97, 97, 97);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(189, 211, 221);
+}
+
+.edition-input-number{
+    margin: 1.0rem 0.7rem 0.7rem 4.8rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    font: italic 0.9rem Serif;
+    border: 1px solid rgb(97, 97, 97);
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(189, 211, 221);
+}
+
+.edition-button{
+    margin: 2.0rem 0.7rem 5.0rem 3rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+    border: 0px solid rgb(0,0,0);
+    border-radius: 0.4rem;
+    background-color: rgb(20, 18, 71);
+    color: rgb(255,255,255);
+    font: bold 1.0rem Serif;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+    cursor: pointer;
+}
+
+.edition-tag-flex{
+    max-width: 30rem;
+    margin: 1.0rem 0.7rem 0.7rem 4.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.edition-tag-flex2{
+    
+    margin: 0.5rem 0.3rem 0.5rem 0rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.edition-tag-name{
+   margin: 0rem 0.5rem 0rem 1rem;
+   display: inline-block;
+   font: 1.0rem Serif;
+}
+
+
+
+.edition-tag-checkbox{
+    margin: 0rem 0rem 0rem 0rem;
+    display: inline-block;
+    width: 1.3rem;
+    height: 1.3em;
+}
+

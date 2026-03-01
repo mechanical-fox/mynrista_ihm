@@ -1,0 +1,12 @@
+
+
+.score-a-div{
+    display: inline-block;
+    width: 10rem;
+}
+
+.score-a-star{
+    margin: 0rem 0.2rem 0rem 0.2rem;
+    width: 0.9rem;
+    height: 0.9rem;
+}

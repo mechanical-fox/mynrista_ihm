@@ -1,0 +1,126 @@
+
+@media (min-width: 1000px) { 
+
+    :root{
+        --description-width: 30rem;
+    }
+    
+}
+
+@media (max-width: 1000px) { 
+
+    :root{
+        --description-width: 75vw;
+    }
+    
+}
+
+
+.description-global-div{
+    display: block; 
+    margin: 0rem 0vw 10vh 10vw;
+    width: 85vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.description-left-div{
+    margin: 8rem 8rem 0rem 0rem;
+    padding: 1rem 1rem 2rem 1rem;
+    border-radius: 0.8rem;
+    background-color: rgb(17, 17, 17);
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.description-right-div{
+    margin: 4rem 0rem 0rem 0rem;
+    padding: 0rem 0rem 0rem 0rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.description-image{
+    margin: 1.0rem 1rem 0.5rem 1rem;
+    display:block;
+    object-fit: cover;
+    width: 16.5rem;
+    height: 7.58rem;
+    border-radius: 0.5rem;
+}
+
+.description-summary{
+    margin: 2.0rem 1rem 0.5rem 2rem;
+    color: rgb(192, 192, 192);
+    width: 14rem;
+    font: 1.0rem Serif;
+    text-align: justify;
+}
+
+.description-title{
+    margin: 0rem 0rem 1.5rem 0rem;
+    color: rgb(0, 0, 0);
+    width: 30rem;
+    font: bold 2.4rem Serif;
+    text-align: justify;
+}
+
+.description-sub-title{
+    margin: 0.5rem 0rem 0rem 0.5rem;
+    color: rgb(68, 68, 68);
+    width: 20rem;
+    font: 1.0rem Serif;
+    text-align: justify;
+}
+
+.description-date-text-left{
+    margin: 1.0rem 1.0rem 0.5rem 2rem;
+    color: rgb(88, 117, 247);
+    font: bold 1.0rem Serif;
+    text-align: justify;
+    display: inline-block;
+}
+
+.description-date-text-right{
+    margin: 1.0rem 1.0rem 0.5rem 1.0rem;
+    color: rgb(192, 192, 192);
+    font: 1.0rem Serif;
+    text-align: justify;
+    display: inline-block;
+}
+
+.description-score-bar{
+    padding: 0rem 0rem 1rem 0rem;
+}
+
+.description-div-text{
+    margin : 2rem 0rem 0rem 0rem;
+    width: var(--description-width);
+}
+
+.description-text{
+    display: inline-block;
+    margin: 1rem 1rem 0.5rem 0rem;
+    color: rgb(0, 0, 0);
+    width: var(--description-width);
+    font: 1.0rem Serif;
+    text-align: justify;
+}
+
+.description-section-title{
+    display: block;
+    margin: 0.5rem 1rem 0.5rem 0rem;
+    color: rgb(37, 26, 192);
+    width: var(--description-width);
+    font: bold 1.2rem Serif;
+    text-align: justify;
+}

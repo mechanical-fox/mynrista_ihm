@@ -1,0 +1,124 @@
+
+import {API_Response} from './API_Response';
+import { EErrorCode } from './EErrorCode';
+import { Provider } from './Provider';
+
+export class API_Util {
+
+    static BASE_URL = import.meta.env.VITE_BASE_URL;
+
+
+    /** A function to send a POST call, and perform an authentification. It will be necessary to use await, to 
+     * retrieve the result. The response is returned under the form of a Promise<API_Response>. */
+    static async postAuth(url, body, token){
+        let headers = { Authorization: `Bearer ${token}`};
+
+        if (body) 
+            headers['Content-Type'] = 'application/json';
+
+        return API_Util.request(url, 'POST', headers, body);
+    }
+
+    /** A function to send a PUT call, and perform an authentification. It will be necessary to use await, to 
+     * retrieve the result. The response is returned under the form of a Promise<API_Response>. */
+    static async putAuth(url, body, token){
+        let headers = { Authorization: `Bearer ${token}`};
+
+        if (body) 
+            headers['Content-Type'] = 'application/json';
+
+        return API_Util.request(url, 'PUT', headers, body);
+    }
+
+    /** A function to send a POST call. It will be necessary to use await, to retrieve the result.
+    * The response is returned under the form of a Promise<API_Response>. */
+    static async post(url, body){
+        let headers = {};
+
+        if (body) 
+            headers['Content-Type'] = 'application/json';
+
+        return API_Util.request(url, 'POST', headers, body);
+    }
+
+
+    /** A function to send a GET call. It will be necessary to use await, to retrieve the result.
+    * The response is returned under the form of a Promise<API_Response>. */
+    static async get(url) {
+        return API_Util.request(url, 'GET', {}, undefined);
+    }
+
+    /** For a url accesible in GET without authentification, return true if the url is accessible, and false in
+     * others cases. It will be necessary to use await, to retrieve the result. The timeout is in millisecond. The
+     * goal of this function is to test if the APIs is down when a user connect. Because, it occurs sometimes 
+     * than the website is up, but the API is down.*/
+    static async testConnection(url, timeout){
+
+        let response = null;
+
+        try{
+            const newUrl = API_Util.BASE_URL + url;
+            const options = {
+                method : "GET",
+                signal: AbortSignal.timeout(timeout)
+            };
+            response = await Provider.fetch(newUrl, options);
+        }
+        catch(err){
+            return false;
+        }
+
+        return response && response.ok;
+    }
+
+    /** This function performs a request to an url, and return the response of the request. It will be necessary to 
+    * use await, to retrieve the result.In the case of a error, the message stored in the API_Response is volontary
+    * fuzzy, to allow to display the message to the client in the browser, if needed.*/
+    static async request(url, method, headers, body){
+        const newUrl = API_Util.BASE_URL + url;
+        let bodyParsed = null;
+
+        if (body) 
+            bodyParsed = JSON.stringify(body);
+
+        const options = {
+            method : method,
+            headers: headers,
+            body : bodyParsed
+        };
+        
+        let response = null;
+
+        try {
+            response = await Provider.fetch(newUrl, options);
+        } 
+        catch {
+            return new API_Response(newUrl, undefined, true, EErrorCode.ERROR_CONNECTION, null, null);
+        }
+
+        if (response) {
+            const textData = await response.text();
+            const status = response.status;
+            let hasFailed  = response && response.ok ? false : true;
+            let errorCode  = null;
+            let data = null;
+
+            if (!hasFailed && textData) {
+                try {
+                    data = JSON.parse(textData);
+                } 
+                catch {
+                    data = textData;
+                }
+            } 
+            else if (hasFailed && status) 
+                errorCode = EErrorCode.ERROR_STATUS_CODE;
+            else if (hasFailed && !status) 
+                errorCode = EErrorCode.ERROR_CONNECTION;
+
+            return new API_Response(newUrl, status, hasFailed, errorCode, textData, data);
+        }
+        else
+            return new API_Response(newUrl, undefined, true, EErrorCode.ERROR_CONNECTION, null, null);
+    }
+}
