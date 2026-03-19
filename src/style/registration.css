@@ -1,35 +1,54 @@
 
 
 
-@media (min-width: 1000px) { 
+@media (min-width: 900px) { 
 
-    .registration-user-message{
-        margin: 2.4rem 0.7rem 0.7rem 3.0rem;
-        padding: 1.0rem 1.4rem 1.0rem 1.4rem;
-        color: rgb(0,0,0);
-        font: 1.0rem Serif;
-        box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
-        border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
-        width: 20vw;
-    }  
+    :root{
+        --registration-div-margin: 15vh 0vw 5vh 20vw;
+        --registration-text-input-margin: 0.7rem 0.7rem 0.2rem 2.8rem;
+        --registration-input-margin: 0.2rem 0.7rem 1.0rem 4.0rem;
+        --registration-button-margin: 3.0rem 0.7rem 0.7rem 5rem;
+        --input-width: 13rem;
+        --user-message-margin: 2.4rem 0.7rem 0.7rem 3.0rem;
+        --user-message-padding: 1.0rem 1.4rem 1.0rem 1.4rem;
+        --user-message-width: 20vw;
+    }
+
 }
 
-@media (max-width: 1000px) { 
+@media (min-width: 600px) and (max-width: 900px) { 
 
-    .registration-user-message{
-        margin: 2.4rem 0.7rem 0.7rem 1.0rem;
-        padding: 0.9rem 1.2rem 0.9rem 1.2rem;
-        color: rgb(0,0,0);
-        font: 0.9rem Serif;
-        box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
-        border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
-        width: 50vw;
-    }  
+    :root{
+        --registration-div-margin: 15vh 0vw 5vh 15vw;
+        --registration-text-input-margin: 0.7rem 0.7rem 0.2rem 2.8rem;
+        --registration-input-margin: 0.2rem 0.7rem 1.0rem 4.0rem;
+        --registration-button-margin: 3.0rem 0.7rem 0.7rem 5rem;
+        --input-width: 13rem;
+        --user-message-margin: 2.4rem 0.7rem 0.7rem 1.0rem;
+        --user-message-padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+        --user-message-width: 50vw;
+    }
+
+}
+
+@media (max-width: 600px){ 
+
+    :root{
+        --registration-div-margin: 15vh 0vw 5vh 10vw;
+        --registration-text-input-margin: 0.7rem 0.7rem 0.2rem 1.4rem;
+        --registration-input-margin: 0.2rem 0.7rem 1.0rem 2.0rem;
+        --registration-button-margin: 3.0rem 0.7rem 0.7rem 2.5rem;
+        --input-width: 50vw;
+        --user-message-margin: 2.4rem 0.7rem 0.7rem 1.0rem;
+        --user-message-padding: 0.9rem 1.2rem 0.9rem 1.2rem;
+        --user-message-width: 50vw;
+    }
+
 }
 
 .registration-div{
     display: block; 
-    margin: 15vh 0vw 5vh 20vw;
+    margin: var(--registration-div-margin);
     width: 60vw;
 }
 
@@ -40,13 +59,14 @@
 }
 
 .registration-text-input{
-    margin: 0.7rem 0.7rem 0.2rem 2.8rem;
+    margin: var(--registration-text-input-margin);
     color: rgb(58, 58, 58);
     font: italic 0.9rem Serif;
 }
 
 .registration-input{
-    margin: 0.2rem 0.7rem 1.0rem 4.0rem;
+    width: var(--input-width);
+    margin: var(--registration-input-margin);
     padding: 0.1rem 0.4rem 0.1rem 0.4rem;
     color: rgb(0, 0, 0);
     font: 1.0rem Serif;
@@ -56,7 +76,7 @@
 }
 
 .registration-button{
-    margin: 3.0rem 0.7rem 0.7rem 5rem;
+    margin: var(--registration-button-margin);
     padding: 0.3rem 0.5rem 0.3rem 0.5rem;
     border: 0px solid rgb(0,0,0);
     border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
@@ -76,6 +96,17 @@
 .registration-red{
     background: rgb(255, 0, 0);
 }
+
+
+.registration-user-message{
+    margin: var(--user-message-margin);
+    padding: var(--user-message-padding);
+    color: rgb(0,0,0);
+    font: 1.0rem Serif;
+    box-shadow: 0.1rem 0.1rem 0.2rem rgb(0,0,0);
+    border-radius: 0.4rem 0.4rem 0.4rem 0.4rem;
+    width: var(--user-message-width);
+}  
 
 
 

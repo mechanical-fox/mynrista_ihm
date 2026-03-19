@@ -2,14 +2,37 @@
 @media (min-width: 1000px) { 
 
     :root{
+        --description-image-width: 16.5rem;
+        --description-image-height: 7.58rem;
+        --description-summary-width: 14rem;
+        --description-left-date-width: 20rem;
+        --description-title-width: 30rem;
         --description-width: 30rem;
     }
     
 }
 
-@media (max-width: 1000px) { 
+@media (min-width: 600px) and (max-width: 1000px) { 
 
     :root{
+        --description-image-width: 16.5rem;
+        --description-image-height: 7.58rem;
+        --description-summary-width: 14rem;
+        --description-left-date-width: 20rem;
+        --description-title-width: 75vw;
+        --description-width: 75vw;
+    }
+    
+}
+
+@media (max-width: 600px) { 
+
+    :root{
+        --description-image-width: 60vw;
+        --description-image-height: 27.56vw;
+        --description-summary-width: 55vw;
+        --description-left-date-width: 60vw;
+        --description-title-width: 75vw;
         --description-width: 75vw;
     }
     
@@ -53,23 +76,33 @@
     margin: 1.0rem 1rem 0.5rem 1rem;
     display:block;
     object-fit: cover;
-    width: 16.5rem;
-    height: 7.58rem;
-    border-radius: 0.5rem;
+    width: var(--description-image-width);
+    height: var(--description-image-height);
+    border-radius: 5%;
 }
 
 .description-summary{
     margin: 2.0rem 1rem 0.5rem 2rem;
     color: rgb(192, 192, 192);
-    width: 14rem;
+    width: var(--description-summary-width);
     font: 1.0rem Serif;
     text-align: justify;
+}
+
+.description-div-date{
+    margin: 0.5rem 0rem 0.5rem 1rem;
+    width: var(--description-left-date-width);
+    flex-direction: row;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 .description-title{
     margin: 0rem 0rem 1.5rem 0rem;
     color: rgb(0, 0, 0);
-    width: 30rem;
+    width: var(--description-title-width);
     font: bold 2.4rem Serif;
     text-align: justify;
 }
@@ -82,8 +115,10 @@
     text-align: justify;
 }
 
+
+
 .description-date-text-left{
-    margin: 1.0rem 1.0rem 0.5rem 2rem;
+    margin: 0.5rem 1.0rem 0.5rem 1rem;
     color: rgb(88, 117, 247);
     font: bold 1.0rem Serif;
     text-align: justify;
@@ -91,7 +126,7 @@
 }
 
 .description-date-text-right{
-    margin: 1.0rem 1.0rem 0.5rem 1.0rem;
+    margin: 0.5rem 1.0rem 0.5rem 1.0rem;
     color: rgb(192, 192, 192);
     font: 1.0rem Serif;
     text-align: justify;
