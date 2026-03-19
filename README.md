@@ -6,8 +6,9 @@ pour image:
    
 
 - Fait: Vue welcome
-- Vue catégorie les tags qui dépassent
+- Fait: Vue catégorie les tags qui dépassent
 - Connexion et inscription les tailles des champs input
+- Supprimer partie TO Do
 
 # Projet
 

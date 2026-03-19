@@ -1,26 +1,37 @@
 
-@media (min-width: 900px) { 
+@media (min-width: 600px) { 
 
     :root{
+        --tag-panel-margin: 3rem 0rem 0rem 5vw;
+        --tag-panel-padding: 1rem 0rem 1rem 0rem;
         --tag-div-width: 10rem;
-        --tag-text-width: 4rem;
+        --tag-div-margin: 0.8rem 0rem 0.8rem 1rem;
+        --tag-div-padding: 0.7rem 1rem 0.7rem 1rem;
+        --tag-image-width: 1.3rem;
+        --tag-text-width: 6rem;
     }
 
 }
 
-@media (max-width: 900px) { 
+
+@media (max-width: 600px) { 
 
     :root{
-        --tag-div-width: 6rem;
-        --tag-text-width: 2rem;
+        --tag-panel-margin: 4% 0rem 0rem 5vw;
+        --tag-panel-padding: 4% 0rem 4% 0rem;
+        --tag-div-width: 30%;
+        --tag-div-margin: 3vw 0rem 3vw 1rem;
+        --tag-div-padding: 2vw 1rem 2vw 1rem;
+        --tag-image-width: 4vw;
+        --tag-text-width: 14vw;
     }
     
 }
 
 
 .category-tag-panel{
-    margin: 3rem 0rem 0rem 5vw;
-    padding: 1rem 0rem 1rem 0rem;
+    margin: var(--tag-panel-margin);
+    padding: var(--tag-panel-padding);
     background-color: rgb(32, 32, 32);
     width: 80vw;
     border-radius: 0.4rem;
@@ -33,8 +44,8 @@
 }
 
 .category-tag-div{
-    margin: 0.8rem 0rem 0.8rem 1rem;
-    padding: 0.7rem 1rem 0.7rem 1rem;
+    margin: var(--tag-div-margin);
+    padding:  var(--tag-div-padding);
     display: inline-block;
     flex-direction: row;
     flex-wrap: wrap;
@@ -46,8 +57,8 @@
 }
 
 .category-tag-div-selected{
-    margin: 0.8rem 0rem 0.8rem 1rem;
-    padding: 0.7rem 1rem 0.7rem 1rem;
+    margin: var(--tag-div-margin);
+    padding:  var(--tag-div-padding);
     background-color: rgb(180, 180, 180);
     display: inline-block;
     flex-direction: row;
@@ -61,13 +72,14 @@
 
 .category-tag-image{
     display: inline-block;
-    width: 1.3rem;
+    width: var(--tag-image-width);
 }
 
 .category-tag-text{
     width: var(--tag-text-width);
     margin: 0rem 0rem 0rem 1rem;
     display : inline-block;
+    word-wrap: break-word;
     font: 1.0rem Serif;
     color: rgb(194, 194, 194);
 }
@@ -76,6 +88,7 @@
     width: var(--tag-text-width);
     margin: 0rem 0rem 0rem 1rem;
     display : inline-block;
+    word-wrap: break-word;
     font: 1.0rem Serif;
     color: rgb(252, 252, 252);
 }
