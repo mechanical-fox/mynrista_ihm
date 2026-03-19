@@ -5,7 +5,7 @@
         <div class="description-left-div">
             <img :src="visual.image_base64" class="description-image" />
             <p class="description-summary">{{ visual.summary }}</p>
-            <div>
+            <div class="description-div-date">
                 <p class="description-date-text-left">Date de parution:</p>
                 <p class="description-date-text-right">{{ visual.textReleaseDate }}</p>
             </div> 
