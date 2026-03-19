@@ -1,3 +1,14 @@
+
+
+# TO DO
+
+pour image:
+   
+
+- Fait: Vue welcome
+- Vue catégorie les tags qui dépassent
+- Connexion et inscription les tailles des champs input
+
 # Projet
 
 Ce projet contient le code de la partie frontend / graphique, du site Mynrista. Le site mynrista permet

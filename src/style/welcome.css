@@ -2,17 +2,38 @@
 @media (min-width: 900px) { 
 
     :root{
+        --top-rating-image-width: 9.9rem;
+        --top-rating-image-height: 4.55rem;
+        --top-rating-item-margin: 1rem 1rem 2rem 1rem;
+        --top-rating-item-padding: 0rem 1.4rem 0rem 1.4rem;
         --top-rating-width: 40rem;
         --top-rating-item-right-width: 20rem;
     }
     
 }
 
-@media (max-width: 900px) { 
+@media  (min-width: 600px) and (max-width: 900px)  { 
 
     :root{
-        --top-rating-width: 20rem;
-        --top-rating-item-right-width: 10rem;
+        --top-rating-image-width: 14rem;
+        --top-rating-image-height: 6.43rem;
+        --top-rating-item-margin: 1rem 1rem 2rem 1rem;
+        --top-rating-item-padding: 0rem 1.4rem 0rem 1.4rem;
+        --top-rating-width: 25rem;
+        --top-rating-item-right-width: 13rem;
+    }
+    
+}
+
+@media  (max-width: 600px){ 
+
+    :root{
+        --top-rating-image-width: 52vw;
+        --top-rating-image-height: 23,89vw;
+        --top-rating-item-margin: 1rem 1rem 2rem 1rem;
+        --top-rating-item-padding: 0rem 0.7rem 0rem 0.7rem;
+        --top-rating-width: 80vw;
+        --top-rating-item-right-width: 48vw;
     }
     
 }
@@ -62,8 +83,8 @@
 }
 
 .welcome-div-top-rating-item{
-    margin: 1rem 1rem 2rem 1rem;
-    padding: 0rem 1.4rem 0rem 1.4rem;
+    margin: var(--top-rating-item-margin);
+    padding: var(--top-rating-item-padding);
     border-radius: 0.3rem;
     background-color: rgb(17, 17, 17);
     flex-direction: row;
@@ -75,8 +96,8 @@
 }
 
 .welcome-div-top-rating-item-selected{
-    margin: 1rem 1rem 2rem 1rem;
-    padding: 0rem 1.4rem 0rem 1.4rem;
+    margin: var(--top-rating-item-margin);
+    padding: var(--top-rating-item-padding);
     border-radius: 0.3rem;
     background-color: rgb(95, 95, 95);
     flex-direction: row;
@@ -104,7 +125,8 @@
     display: inline-block;
     margin: 1rem 0rem 0rem 0rem;
     color: rgb(255, 255, 255);
-    font:  bold 0.9rem Serif;   
+    font:  bold 0.9rem Serif;
+    width: 50%;   
 }
 
 
@@ -139,8 +161,8 @@
     margin: 1rem 1.5rem 1rem 1rem;
     display: inline-block;
     object-fit: cover;
-    width: 9.9rem;
-    height: 4.55rem;
+    width: var(--top-rating-image-width);
+    height: var(--top-rating-image-height);
     border-radius: 0.5rem;
 }
 
