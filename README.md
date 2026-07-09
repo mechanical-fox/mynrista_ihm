@@ -1,4 +1,29 @@
 
+# TO DO
+
+
+-> Passer en port 8082 (new_erdline utilise 8081) sur API + sur configuration IHM
+-> En API modifier pour ne PLUS avoir vérification Link + l'autre truc + plus de vérification en API
+-> Vérifier que cela a été détruit dans la base de donnée avec DBeaver
+-> En IHM faire processus inscription et connection automatique
+-> TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
+-> Faire run les tests unitaires en API + IHM en localhost
+-> Vérifier et Modifier README en API
+-> Vérifier et Modifier README en IHM
+
+-> API Changer numéro de version
+-> API Vérifier si les tests unitaires passent + il y en a a nouveau après le merge
+-> API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
+-> API faire tag + release après le merge
+
+
+-> IHM Changer numéro de version
+-> IHM Vérifier si les tests unitaires passent + il y en a a nouveau après le merge
+-> IHM Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
+-> IHM faire tag + release après le merge
+
+-> Supprimer ce to do
+
 
 # Projet
 
