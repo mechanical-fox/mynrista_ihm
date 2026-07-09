@@ -1,12 +1,18 @@
 
 # TO DO
 
+-> Fait: Passer en port 8082 (new_erdline utilise 8081) sur API + sur configuration IHM
+-> Fait: En API modifier pour ne PLUS avoir vérification Link + l'autre truc + plus de vérification en API
 
--> Passer en port 8082 (new_erdline utilise 8081) sur API + sur configuration IHM
--> En API modifier pour ne PLUS avoir vérification Link + l'autre truc + plus de vérification en API
--> Vérifier que cela a été détruit dans la base de donnée avec DBeaver
+-> Fait: Vérifier que cela a été détruit dans la base de donnée avec DBeaver
+
 -> En IHM faire processus inscription et connection automatique
 -> TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
+-> Faire new branch + changement numéro version +  merge + ... + changement de la base mynrista en PROJET GITHUB 
+pour avoir les 2 colonnes en moins + ne pas oublier de faire un nouveau tag et une nouvelle release
+-> Et mince... à voir mais je risque d'avoir le soucis pour l'API en production rapport à host.docker.internal:host-gateway,
+bref là j'ai modifié le README et la configuration. Cela devrait suffire. Au niveau configuration, cela était la base de
+donnée qui changeait d'adresse juste
 -> Faire run les tests unitaires en API + IHM en localhost
 -> Vérifier et Modifier README en API
 -> Vérifier et Modifier README en IHM
