@@ -68,25 +68,8 @@ Et cela sur la page détail.
 Permettre pour les jeux d'ajouter des captures d'écran du jeu considéré. Eviter les vidéos par contre.
 Cela risquerait d'être un peu lourd.
 
-## Idée 8: Amélioration processus d'inscription
 
-Le processus d'inscription actuelle à 2 soucis:
-- l'API doit être démarrée en mode Admin à cause de l'utilisation du port 80. Lié à servir une 
-page web par l'API lors de la vérification.
-- A la page de vérification, il n'est pas possible de continuer sur le site usuel
-- La présentation de la page de vérification n'est pas hyper jolie, ni hyper raccord avec le 
-site habituel
-
-Pour gérer ce soucis, le mieux serait de faire une deuxième page IHM "vérification", qui
-prendrait en paramètre query le token. Et cette page IHM ferait une requête à l'API pour faire
-la vérification, et l'activation. Donc ici à voir comment on gère les paramètres query pour des 
-pages vue, mais aussi voir comment on fait plusieurs pages.
-
-Et l'idée serait ensuite pour l'API d'enfin changer, le port de 80 à un port ne nécessittant pas
-de lancer l'API comme admin.
-
-
-## Idée 9 : Faire une vue profil client + séparer admin / non-admin
+## Idée 8 : Faire une vue profil client + séparer admin / non-admin
 
 Faire une vrai vue de profil client. En client sur le bouton en haut à droite.
 Juste permettre la modification des informations au début. Et plus tard, de voir les visuals novels
@@ -101,7 +84,7 @@ que les comptes non-admin plus:
 
 Le flag admin devra être switché directement en base. Et il faudra écrire en README cette spécificité.
 
-## Idée 10 : Possibilité de contacter par ticket (Envoi e-mail au modérateur)
+## Idée 9 : Possibilité de contacter par ticket (Envoi e-mail au modérateur)
 
 Permettre sur le site de logger des tickets. Et au niveau API renseigner dans application.yml l'email
 d'un administrateur, donc ici moi. Et à chaque ticket, si date dernier message > 24h (sécurité anti-spam),
@@ -113,7 +96,7 @@ Niveau utilisateur, ajouter un champ "Mes tickets". Et envoyer avec contact@mynr
 que le ticket à récu une réponse. Et éventuellement le message à l'intérieur du mail.
 
 
-## Idée 11 : Possibilité de mettre Favoris + Interessé / Acheter...
+## Idée 10 : Possibilité de mettre Favoris + Interessé / Acheter...
 
 Ici il y a 2 fonctions. L'on doit pouvoir faire une liste de Favoris, et il y aura une page favoris
 à indiquer au client.
@@ -123,14 +106,14 @@ Ces états seront utilisés après pour des recommandations par genre
 
 
 
-## Idée 12 : Possibilité d'ajouter des commentaires
+## Idée 11 : Possibilité d'ajouter des commentaires
 
 Permettre aux clients d'ajouter des commentaires. Il faudra éventuellement ajouter quelques commentaires.
 Mais je dirai en mettre juste 1/2 sur des Visuals Novels auxquelles j'ai pu jouer. Et toujours
 avec le même compte qui ici me représentera.
 
 
-## Idée 13 : Ajout d'une 3ème top
+## Idée 12 : Ajout d'une 3ème top
 
 Ajout d'un 3ème top qui mixera note + date release. S'aider de la présentation du 2ème top.
 
@@ -139,7 +122,7 @@ La formule de calcul sera note, et faire -10% pour chaque année écoulé. Mais 
 de puissance, afin que même d'anciens jeux puissent être proposé. La valeur de -10% sera d'ailleurs
 à mettre en paramètre, et sera éventuellement moins que 10. Comme par exemple 5%.
 
-## Idée 14 : Ajout de recommandations
+## Idée 13 : Ajout de recommandations
 
 Permettre d'avoir des recommandations. A faire uniquement en fonction du genre + d'un score qui sera le 
 même que pour le 3ème top (mix note et date release).

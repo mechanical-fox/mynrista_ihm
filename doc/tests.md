@@ -15,10 +15,7 @@ Connectez vous à la base de donnée, et dans la table "REGISTERED_USER" supprim
 avec votre mail si nécessaire. L'idée est que le logiciel interdit à 2 utilisateurs d'avoir le
 même mail.
 
-Essayez de vous connectez après le processus d'inscription, sans avoir cliqué sur le lien reçu
-en mail. Alors la connexion doit échoué, et un message d'erreur d'authentification doit apparaitre.
-
-Cliquez ensuite en mail sur le lien de vérification d'email. Alors la connexion doit être possible.
+Essayez de vous connectez après le processus d'inscription. Alors la connexion doit être possible.
 Et vous devez voir apparaitre en haut à droite votre pseudo.
 
 
