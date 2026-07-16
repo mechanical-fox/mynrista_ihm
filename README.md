@@ -6,8 +6,9 @@
 
 -> Fait: Vérifier que cela a été détruit dans la base de donnée avec DBeaver
 
--> En IHM faire processus inscription et connection automatique
--> TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
+-> Fait: En IHM faire processus inscription et connection automatique
+-> Fait: TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
+
 -> Faire new branch + changement numéro version +  merge + ... + changement de la base mynrista en PROJET GITHUB 
 pour avoir les 2 colonnes en moins + ne pas oublier de faire un nouveau tag et une nouvelle release
 -> Et mince... à voir mais je risque d'avoir le soucis pour l'API en production rapport à host.docker.internal:host-gateway,
@@ -19,7 +20,8 @@ donnée qui changeait d'adresse juste
 
 -> API Changer numéro de version
 -> API Vérifier si les tests unitaires passent + il y en a a nouveau après le merge
--> API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
+-> API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker --> En tout cas déploiement fait,
+j'ai utilisé pour y connecter l'IHM, et les commandes docker marchaient
 -> API faire tag + release après le merge
 
 

@@ -37,6 +37,7 @@
         
     import {ref} from 'vue';
     import {API_Util} from '../script/API_Util';
+    import { Util } from '@/script/Util';
     import {EErrorCode} from '../script/EErrorCode';
     import {MessageUtil} from '../script/MessageUtil';
 
@@ -115,12 +116,28 @@
         
     }
 
+    /** Call the server to retrieve a token with the informations provided. And after return to the welcome page, with a status connected.
+     * If the authentification is incorrect, or if the server is down, an error message is displayed to the client. */
+    async function connect(emailValue, passwordValue){
+        let body = {email : emailValue, password : passwordValue};
 
-    /* Chek if register an account, with the informations provided. A confirmation message is displayed on screen, in case of success. An error 
+        let answer = await API_Util.post("/auth", body);
+
+        if(!answer.hasFailed)
+            MessageUtil.call("connect", [answer.data.pseudo, answer.data.token]);
+        else
+            MessageUtil.call("logError", [answer.status, "Une erreur innatendue s'est produite. Veuillez réesayer ultérieurement."]);
+
+    }
+
+
+    /* Check if register an account, with the informations provided. A confirmation message is displayed on screen, in case of success. An error 
     message is displayed on screen, in case of failure. */
     async function register(){
 
         let valid = await checkValidity(pseudo.value, email.value, password1.value, password2.value);
+        let emailValue = email.value;
+        let passwordValue = password1.value;
 
         if(valid){
             let available = await checkAvailability(pseudo.value, email.value);
@@ -141,8 +158,11 @@
                     MessageUtil.call("logError", [answer.status, "Une erreur innatendue s'est produite. Veuillez réesayer ultérieurement."]);
                 else{
                     user_message.value = "Inscription prise en compte.<br/><br/>";
-                    user_message.value += "Un email vous a été envoyé, afin de confirmer la création de votre compte."
+                    user_message.value += "Vous allez être connecté dans quelques instants."
                     color_message.value = "green";
+
+                    await Util.sleep(4000);
+                    await connect(emailValue, passwordValue);
                 }
             }
 
