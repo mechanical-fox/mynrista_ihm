@@ -9,25 +9,30 @@
 -> Fait: En IHM faire processus inscription et connection automatique
 -> Fait: TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
 
--> Faire new branch + changement numéro version +  merge + ... + changement de la base mynrista en PROJET GITHUB 
+-> Fait: Faire new branch + changement numéro version +  merge + ... + changement de la base mynrista en PROJET GITHUB 
 pour avoir les 2 colonnes en moins + ne pas oublier de faire un nouveau tag et une nouvelle release
--> Et mince... à voir mais je risque d'avoir le soucis pour l'API en production rapport à host.docker.internal:host-gateway,
-bref là j'ai modifié le README et la configuration. Cela devrait suffire. Au niveau configuration, cela était la base de
-donnée qui changeait d'adresse juste
--> Faire run les tests unitaires en API + IHM en localhost
--> Vérifier et Modifier README en API
--> Vérifier et Modifier README en IHM
 
+-> Fait et testé par image docker prod: Et mince... à voir mais je risque d'avoir le soucis pour l'API en production 
+rapport à host.docker.internal:host-gateway, bref là j'ai modifié le README et la configuration. Cela devrait suffire. 
+Au niveau configuration, cela était la base de donnée qui changeait d'adresse juste
+
+
+-> Fait: Vérifier tests unitaires IHM
+-> Fait: Vérifier tests unitaires API
+
+-> Fait:Vérifier et Modifier README en API + AUSSI fichiers documentations
+-> Fait: Vérifier et Modifier README en IHM + AUSSI fichiers documentation
+
+-> Fait: API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
 -> API Changer numéro de version
--> API Vérifier si les tests unitaires passent + il y en a a nouveau après le merge
--> API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker --> En tout cas déploiement fait,
-j'ai utilisé pour y connecter l'IHM, et les commandes docker marchaient
+-> API Vérifier si les tests unitaires passent + si ceux-ci passent toujours après le merge
 -> API faire tag + release après le merge
 
 
+-> Fait: IHM Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
+-> Fait: Vérifier en dossier doc "amelioration_idea.md" et "tests.md"
 -> IHM Changer numéro de version
--> IHM Vérifier si les tests unitaires passent + il y en a a nouveau après le merge
--> IHM Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
+-> IHM Vérifier si les tests unitaires passent + si ceux-ci passent toujours après le merge
 -> IHM faire tag + release après le merge
 
 -> Supprimer ce to do
@@ -36,13 +41,13 @@ j'ai utilisé pour y connecter l'IHM, et les commandes docker marchaient
 # Projet
 
 Ce projet contient le code de la partie frontend / graphique, du site Mynrista. Le site mynrista permet
-d'ajouter, et de consulter les informations sur différents visual novel. Tels que le sommaire du visual
+d'ajouter, et de consulter les informations sur différents visual novel. Telles que le sommaire du visual
 novel, sa date de parution, son pourcentage d'évaluations positives (Steam), ...
 
 Les fonctionnalités actuelles sont les suivantes:
 
 - Création de compte
-- Création de Pages de présentation de Visual Novel
+- Création de pages de présentation de Visual Novel
 - Affichage des Visual Novels par top "Nouveautés et Tendances"
 - Affichage des Visual Novels par top "Meilleurs Evaluations"
 - Affichage des Visual Novels par tags / catégories
@@ -51,7 +56,7 @@ Les fonctionnalités actuelles sont les suivantes:
 # Tests unitaires
 
 
-Vous pouvez lancer les tests unitaire, puis vérifier le taux de coverage avec la commande suivante. 
+Vous pouvez lancer les tests unitaires, puis vérifier le taux de coverage avec la commande suivante. 
 Cette commande est configurée pour échouer si le taux de couverture de test est insufissant.
 
 ```sh
@@ -97,9 +102,6 @@ Description.vue, à la fonction translateDescription(text).
 
 Ce projet dispose de deux profils, development et production. Par défaut, exécuter npx vite
 utilisera le profil development. Et exécuter npx vite build utilisera l'environnement production.
-
-**Profil development:** Utilisation d'une API localhost\
-**Profil production:** Utilisation de l'API Production
 
 Vous pouvez spécifier un autre profil avec l'option --mode
 

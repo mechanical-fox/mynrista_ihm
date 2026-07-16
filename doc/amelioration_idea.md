@@ -71,8 +71,8 @@ Cela risquerait d'être un peu lourd.
 
 ## Idée 8 : Faire une vue profil client + séparer admin / non-admin
 
-Faire une vrai vue de profil client. En client sur le bouton en haut à droite.
-Juste permettre la modification des informations au début. Et plus tard, de voir les visuals novels
+Faire une vraie vue de profil client. En client sur le bouton en haut à droite.
+Juste permettre la modification des informations au début. Et plus tard, de voir les visual novels
 marqués en favoris, en "déjà acheté", ... et tout.
 
 Et ensuite faire le fait d'avoir des comptes "admin" et "non admin". Les comptes non-admin devront 
@@ -113,7 +113,7 @@ Mais je dirai en mettre juste 1/2 sur des Visuals Novels auxquelles j'ai pu joue
 avec le même compte qui ici me représentera.
 
 
-## Idée 12 : Ajout d'une 3ème top
+## Idée 12 : Ajout d'un 3ème top
 
 Ajout d'un 3ème top qui mixera note + date release. S'aider de la présentation du 2ème top.
 

@@ -1,7 +1,7 @@
 
 # Tests
 
-# Test 1 : Le système d'onglet est fonctionnel
+## Test 1 : Le système d'onglet est fonctionnel
 
 Cliquer sur la page de connexion sur les items "Accueil", et "A propos" plusieurs fois. Il faut
 vérifier que le contenu de la page change bien, à chaque fois qu'un item est cliqué.
@@ -9,7 +9,7 @@ vérifier que le contenu de la page change bien, à chaque fois qu'un item est c
 Inutile à cette étape de vérifier le contenu des onglets. Il s'agit plutôt de vérifier que le
 processus de gestion des onglets est fonctionnel.
 
-# Test 2 : Vérification du processus d'Inscription
+## Test 2 : Vérification du processus d'Inscription
 
 Connectez vous à la base de donnée, et dans la table "REGISTERED_USER" supprimez l'utilisateur
 avec votre mail si nécessaire. L'idée est que le logiciel interdit à 2 utilisateurs d'avoir le
@@ -19,7 +19,7 @@ Essayez de vous connectez après le processus d'inscription. Alors la connexion 
 Et vous devez voir apparaitre en haut à droite votre pseudo.
 
 
-# Test 3 : Impossible de se connecter avec un mauvais mot de passe
+## Test 3 : Impossible de se connecter avec un mauvais mot de passe
 
 
 Essayez de vous connecter avec un mauvais mot de passe. Vérifiez qu'alors la connexion échoue, 
@@ -28,7 +28,7 @@ et un message d'erreur d'authentification apparait.
 Essayez ensuite de vous connecter avec votre bon mot de passe. La connexion doit alors pouvoir
 réussir.
 
-# Test 4 : Vérification du Top Nouveautés et Tendances
+## Test 4 : Vérification du Top Nouveautés et Tendances
 
 En page d'accueil, il est présent un Top Nouveautés et tendance. Le but de ce top est de 
 montrer les Visual Novels selon la condition "Visual Novel avec la date de parution la plus 
@@ -39,11 +39,11 @@ de chaque Visual Novel. Ensuite cliquez sur les visuals novel du top "Meilleures
 qui ne sont pas dans le top Nouveautés et tendances. Vérifiez que tous les visuals novels du top 
 "Nouveautés et Tendances" respectent les conditions suivantes:
 - Les Visuals Novel du Top Nouveauté et Tendance ont tous une date de parution renseignée
-- Les Visuals Novel du Top Nouveauté et Tendance sont paru plus récemment que ceux qui n'y sont pas
-- Dans le Top Nouveauté et Tendance, les Visual Novels sont triées en fonction de la date de 
+- Les Visuals Novel du Top Nouveauté et Tendance sont parus plus récemment que ceux qui n'y sont pas
+- Dans le Top Nouveauté et Tendance, les Visual Novels sont triés en fonction de la date de 
 parution. Avec le Visual Novel le plus récent présent en haut à gauche.
 
-# Test 5 : Vérification du Top Meilleurs évaluations
+## Test 5 : Vérification du Top Meilleurs évaluations
 
 En page d'accueil, il est présent un Top Meilleures Evaluations. Le but de ce top est de montrer
 les Visual Novels selon la condition "Visual Novel avec le plus grand pourcentage d'évaluations 
@@ -57,7 +57,7 @@ Evaluations" respectent les conditions suivantes:
 - Dans le Top Nouveauté et Tendance, les Visual Novels sont triées en fonction de la date de parution.
 Avec le Visual Novel le plus récent présent en haut à gauche.
 
-# Test 6 : Vérification de la vue détail
+## Test 6 : Vérification de la vue détail
 
 Cliquez sur un Visual Novel, que cela soit via la page "Accueil" ou la page "Catégorie". Vous devrez
 alors normalement rentrer dans une vue Détail, avec plus d'informations sur le Visual Novel considéré.
@@ -75,7 +75,7 @@ Ensuite vérifiez sur un Visual Novel que vous avez bien les informations suivan
 - Vérifiez la présence d'un descriptif long du Visual Novel. Généralement 30 lignes ou plus.
 - Vérifiez que pour la description du Visual Novel, les titres se démarquent bien du texte (Titre en bleu, et gras)
 
-# Test 7 : Possibilité de créer un Visual Novel
+## Test 7 : Possibilité de créer un Visual Novel
 
 Pour ce test-ci il va falloir ce connecter. Une fois connecté, un page "Publication" devrait apparaitre.
 
@@ -95,7 +95,7 @@ d'autres tables que la table "visual_novel", et vont géner le processus de supp
 avant de supprimer le Visual Novel test crée, il est conseillé de mettre 100% des tags à false, avant de supprimer
 le Visual Novel en base.
 
-# Test 8 : Vérification Comportement Crash Serveur
+## Test 8 : Vérification Comportement Crash Serveur
 
 Un cas à tester, car pouvant arriver, est de savoir ce qu'il se passe lorsque le serveur / l'API est en erreur.
 Pour cela, le mieux est de démarrer le serveur en dev, sans avoir démarré l'API en localhost. Il s'agit ensuite
