@@ -3,13 +3,13 @@
 # Projet
 
 Ce projet contient le code de la partie frontend / graphique, du site Mynrista. Le site mynrista permet
-d'ajouter, et de consulter les informations sur différents visual novel. Tels que le sommaire du visual
+d'ajouter, et de consulter les informations sur différents visual novel. Telles que le sommaire du visual
 novel, sa date de parution, son pourcentage d'évaluations positives (Steam), ...
 
 Les fonctionnalités actuelles sont les suivantes:
 
 - Création de compte
-- Création de Pages de présentation de Visual Novel
+- Création de pages de présentation de Visual Novel
 - Affichage des Visual Novels par top "Nouveautés et Tendances"
 - Affichage des Visual Novels par top "Meilleurs Evaluations"
 - Affichage des Visual Novels par tags / catégories
@@ -18,7 +18,7 @@ Les fonctionnalités actuelles sont les suivantes:
 # Tests unitaires
 
 
-Vous pouvez lancer les tests unitaire, puis vérifier le taux de coverage avec la commande suivante. 
+Vous pouvez lancer les tests unitaires, puis vérifier le taux de coverage avec la commande suivante. 
 Cette commande est configurée pour échouer si le taux de couverture de test est insufissant.
 
 ```sh
@@ -64,9 +64,6 @@ Description.vue, à la fonction translateDescription(text).
 
 Ce projet dispose de deux profils, development et production. Par défaut, exécuter npx vite
 utilisera le profil development. Et exécuter npx vite build utilisera l'environnement production.
-
-**Profil development:** Utilisation d'une API localhost\
-**Profil production:** Utilisation de l'API Production
 
 Vous pouvez spécifier un autre profil avec l'option --mode
 
