@@ -1,42 +1,4 @@
 
-# TO DO
-
--> Fait: Passer en port 8082 (new_erdline utilise 8081) sur API + sur configuration IHM
--> Fait: En API modifier pour ne PLUS avoir vérification Link + l'autre truc + plus de vérification en API
-
--> Fait: Vérifier que cela a été détruit dans la base de donnée avec DBeaver
-
--> Fait: En IHM faire processus inscription et connection automatique
--> Fait: TOUT RETESTER, juste top / visualiser / un seul élément d'édition, pour vérifier que ce que j'ai push fonctionne
-
--> Fait: Faire new branch + changement numéro version +  merge + ... + changement de la base mynrista en PROJET GITHUB 
-pour avoir les 2 colonnes en moins + ne pas oublier de faire un nouveau tag et une nouvelle release
-
--> Fait et testé par image docker prod: Et mince... à voir mais je risque d'avoir le soucis pour l'API en production 
-rapport à host.docker.internal:host-gateway, bref là j'ai modifié le README et la configuration. Cela devrait suffire. 
-Au niveau configuration, cela était la base de donnée qui changeait d'adresse juste
-
-
--> Fait: Vérifier tests unitaires IHM
--> Fait: Vérifier tests unitaires API
-
--> Fait:Vérifier et Modifier README en API + AUSSI fichiers documentations
--> Fait: Vérifier et Modifier README en IHM + AUSSI fichiers documentation
-
--> Fait: API Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
--> API Changer numéro de version
--> API Vérifier si les tests unitaires passent + si ceux-ci passent toujours après le merge
--> API faire tag + release après le merge
-
-
--> Fait: IHM Vérifier 100% des commandes indiquées en README et cela DONT les commandes docker
--> Fait: Vérifier en dossier doc "amelioration_idea.md" et "tests.md"
--> IHM Changer numéro de version
--> IHM Vérifier si les tests unitaires passent + si ceux-ci passent toujours après le merge
--> IHM faire tag + release après le merge
-
--> Supprimer ce to do
-
 
 # Projet
 
